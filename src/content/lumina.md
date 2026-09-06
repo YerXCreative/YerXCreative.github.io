@@ -2,7 +2,7 @@
 title: "Lumina E-commerce"
 slug: "lumina"
 client: "Lumina"
-category: "DISEÑO WEB"
+category: "Web Design"
 services: "Web Design, CMS Integration, Performance Optimization"
 year: "2024"
 featuredImage: "./images/lumina/1.jpg"

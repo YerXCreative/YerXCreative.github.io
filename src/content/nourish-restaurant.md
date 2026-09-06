@@ -2,7 +2,7 @@
 title: "Nourish Restaurant"
 slug: "nourish-restaurant"
 client: "Nourish Restaurant Group"
-category: "DIRECCIÓN DE ARTE"
+category: "Art Direction"
 services: "Art Direction, Digital Campaign, Brand Activation"
 year: "2025"
 featuredImage: "./images/nourish/1.jpg"

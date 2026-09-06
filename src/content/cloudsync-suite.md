@@ -2,7 +2,7 @@
 title: "Cloudsync Suite"
 slug: "cloudsync-suite"
 client: "Cloudsync Technologies"
-category: "UI/UX Design"
+category: "Design"
 services: "User Research, Interface Design, Design System Development"
 year: "2025"
 featuredImage: "./images/cloudsync-suite/1.jpg"

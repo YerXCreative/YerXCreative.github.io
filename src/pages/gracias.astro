@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../components/elements/Container.astro";
+import Heading from "../components/elements/Heading.astro";
+import Text from "../components/elements/Text.astro";
+import Link from "../components/elements/Link.astro";
+---
+
+<Layout 
+    title="¡Mensaje Enviado! | YerxCreative"
+    description="Gracias por contactarme. Te responderé lo antes posible."
+>
+    <Container variant={'md'} class="flex flex-col items-center justify-center min-h-[60vh] text-center gap-8">
+        <Heading tagName="h1" tagSize="h1">¡Mensaje Enviado!</Heading>
+        <Text variant={'xl'} class="text-base-900 max-w-2xl">
+            Gracias por contactarme. He recibido tu mensaje y te responderé lo antes posible. 
+            ¡Hablemos sobre tu proyecto!
+        </Text>
+        <Link variant={'button'} href="/">Volver al Inicio</Link>
+    </Container>
+</Layout>

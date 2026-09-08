@@ -18,7 +18,8 @@ const {title, description, titleTemplate, siteName, ogImage, twitterSite, themeC
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<!-- 👉 CAMBIO: lang="es" en lugar de "en" -->
+<html lang="es" class="scroll-smooth">
 	<BaseHead 
 		title={title}
       	description={description}
@@ -30,7 +31,7 @@ const {title, description, titleTemplate, siteName, ogImage, twitterSite, themeC
       	locale={locale}
       	{...seoProps}
 	/>
-	<body style=`background-image: url(${backgroundImage.src})` class="bg-cover bg-center bg-no-repeat bg-fixed  box-border">
+	<body style=`background-image: url(${backgroundImage.src})` class="bg-cover bg-center bg-no-repeat bg-fixed box-border">
 		<!-- Background noise effect -->
 		<div class="noise-[67,22,25] fixed inset-0 pointer-events-none"></div>
 		<!-- Wrapper component to make sure all content on the website is above the noise filter background -->
@@ -43,5 +44,3 @@ const {title, description, titleTemplate, siteName, ogImage, twitterSite, themeC
 		</Wrapper>
 	</body>
 </html>
-
-

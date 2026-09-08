@@ -49,7 +49,7 @@ const {
   ogImageHeight = 630,
   ogType = "website",
   siteName,
-  locale = "en_US",
+  locale = "es_ES", // 👉 CAMBIO 1: Idioma por defecto a español
   twitterCard = "summary_large_image",
   twitterSite,
   twitterCreator,
@@ -68,7 +68,6 @@ const {
 } = Astro.props;
 
 // Derived values 
-
 const formattedTitle = titleTemplate
   ? titleTemplate.replace("%s", title)
   : title;
@@ -76,12 +75,17 @@ const formattedTitle = titleTemplate
 const canonicalURL =
   canonical ?? new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
 
+// 👉 CAMBIO 2: Asegurar que la imagen sea una URL absoluta (https://...)
+// WhatsApp y LinkedIn a veces fallan si la imagen empieza solo con "/"
+const absoluteOgImage = ogImage && ogImage.startsWith("/") && Astro.site
+  ? new URL(ogImage, Astro.site).href
+  : ogImage;
+
 const robotsContent =
   robots ??
   [noindex ? "noindex" : "index", nofollow ? "nofollow" : "follow"].join(", ");
 
 // Auto JSON-LD 
-
 function buildJsonLd() {
   if (!jsonLdEnabled) return null;
   if (jsonLd) return jsonLd;
@@ -92,12 +96,12 @@ function buildJsonLd() {
     name: formattedTitle,
     description,
     url: canonicalURL,
-    ...(ogImage && { image: ogImage }),
+    ...(absoluteOgImage && { image: absoluteOgImage }),
     ...(siteName && {
       publisher: {
         "@type": "Organization",
         name: siteName,
-        ...(ogImage && { logo: { "@type": "ImageObject", url: ogImage } }),
+        ...(absoluteOgImage && { logo: { "@type": "ImageObject", url: absoluteOgImage } }),
       },
     }),
   };
@@ -134,16 +138,16 @@ const structuredData = buildJsonLd();
 <!-- Theme colour -->
 {themeColor && <meta name="theme-color" content={themeColor} />}
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
 <meta property="og:type" content={ogType} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={formattedTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:locale" content={locale} />
 {siteName && <meta property="og:site_name" content={siteName} />}
-{ogImage && (
+{absoluteOgImage && (
   <>
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={absoluteOgImage} />
     <meta property="og:image:width" content={String(ogImageWidth)} />
     <meta property="og:image:height" content={String(ogImageHeight)} />
     {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
@@ -178,9 +182,9 @@ const structuredData = buildJsonLd();
 <meta name="twitter:description" content={description} />
 {twitterSite && <meta name="twitter:site" content={twitterSite} />}
 {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
-{ogImage && (
+{absoluteOgImage && (
   <>
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={absoluteOgImage} />
     {ogImageAlt && <meta name="twitter:image:alt" content={ogImageAlt} />}
   </>
 )}

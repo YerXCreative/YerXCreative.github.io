@@ -7,8 +7,13 @@ import Link from "../../elements/Link.astro";
 
 // content collections
 import { getCollection } from "astro:content";
+
 const works = await getCollection("works");
-const featuredWorks = works.filter(work => work.data.isFeatured === true);
+
+// 👉 CAMBIO AQUÍ: Filtramos los destacados y limitamos la lista a los primeros 4
+const featuredWorks = works
+    .filter(work => work.data.isFeatured === true)
+    .slice(0, 4); 
 ---
 
 <Container variant={'lg'} class="items-center">
@@ -24,8 +29,7 @@ const featuredWorks = works.filter(work => work.data.isFeatured === true);
                 client={work.data.client}
                 category={work.data.category}>
             </Work>
-        ))
-        }
+        ))}
     </Container>
     <Link variant={'button'} href="/works">TODOS LOS PROYECTOS</Link>
 </Container>

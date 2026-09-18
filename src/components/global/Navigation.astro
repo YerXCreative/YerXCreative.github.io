@@ -6,13 +6,23 @@ const navLinks = [
 ]
 ---
 
-<nav class="w-full py-3 px-12 flex justify-center bg-[#2d1b4e]">
-    <ul class="flex gap-8 text-sm font-medium">
+<nav class="w-full bg-white py-4 px-8 flex justify-between items-center">
+    <!-- Logo a la izquierda -->
+    <a href="/" class="text-[#2d1b4e] font-bold text-sm tracking-[0.3em] uppercase">
+        YerxCreative
+    </a>
+    
+    <!-- Botones a la derecha -->
+    <ul class="flex gap-2">
         {navLinks.map((link, index) => (
             <li>
                 <a 
                     href={link.href} 
-                    class={`px-4 py-2 rounded ${index === 0 ? 'bg-[#ccff00] text-[#2d1b4e]' : 'text-white hover:text-[#ccff00]'}`}
+                    class={`px-4 py-2 text-sm font-medium rounded-sm ${
+                        index === 0 
+                            ? 'bg-[#ccff00] text-[#2d1b4e]' 
+                            : 'text-[#2d1b4e] hover:bg-gray-100'
+                    }`}
                 >
                     {link.title}
                 </a>

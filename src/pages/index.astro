@@ -6,7 +6,7 @@ import peter from "../assets/images/peter.jpg";
 <Layout title="Yeray Díaz" description="Diseñador Gráfico y Web">
 
     <!-- FRANJA MORADA CON TÍTULO -->
-    <div class="w-full bg-[#5b3a8c] py-16 -mt-16 fixed left-0 right-0 z-40" style="width: 100vw; margin-left: -50vw; left: 50%;">
+    <div class="w-full bg-[#5b3a8c] py-16 -mt-8 fixed left-0 right-0 z-40" style="width: 100vw; margin-left: -50vw; left: 50%;">
         <h1 class="text-5xl md:text-7xl font-bold text-center text-[#ccff00]">
             ¡Hola! Soy Yeray
         </h1>
@@ -49,12 +49,12 @@ import peter from "../assets/images/peter.jpg";
                 </div>
             </div>
 
-            <!-- COLUMNA DERECHA: Foto -->
-            <div class="hidden md:block">
+            <!-- COLUMNA DERECHA: Foto con altura limitada -->
+            <div class="hidden md:block p-6">
                 <img 
                     src={peter.src} 
                     alt="Yeray" 
-                    class="w-full h-full object-cover"
+                    class="w-full h-[600px] object-cover rounded-lg"
                 />
             </div>
         </div>

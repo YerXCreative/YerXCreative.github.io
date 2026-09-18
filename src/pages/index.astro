@@ -12,12 +12,12 @@ import peter from "../assets/images/peter.jpg";
         </h1>
     </div>
 
-    <!-- CONTENIDO PRINCIPAL: Texto izquierda + Foto derecha -->
+    <!-- CONTENIDO PRINCIPAL: Texto izquierda + Foto derecha (full width) -->
     <div class="w-full bg-[#2d1b4e]">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6">
+        <div class="grid md:grid-cols-[1fr_1fr]">
             
-            <!-- COLUMNA IZQUIERDA: Textos apilados -->
-            <div class="flex flex-col gap-16 py-16">
+            <!-- COLUMNA IZQUIERDA: Textos apilados (con padding) -->
+            <div class="flex flex-col gap-16 py-16 px-6 md:px-24 lg:px-32">
                 
                 <!-- Bio -->
                 <div>
@@ -49,13 +49,13 @@ import peter from "../assets/images/peter.jpg";
                 </div>
             </div>
 
-            <!-- COLUMNA DERECHA: Foto gigante -->
-            <div class="flex justify-center items-start">
+            <!-- COLUMNA DERECHA: Foto gigante (sin padding, hasta el borde) -->
+            <div class="hidden md:block">
                 <img 
                     src={peter.src} 
                     alt="Yeray" 
-                    class="w-full h-full object-cover rounded-lg"
-                    style="min-height: 800px;"
+                    class="w-full h-full object-cover"
+                    style="min-height: 100%;"
                 />
             </div>
         </div>

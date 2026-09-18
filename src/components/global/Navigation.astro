@@ -1,80 +1,22 @@
 ---
-// components
-import Link from "../elements/Link.astro";
-
-// links (Simplificados, sin números)
 const navLinks = [
-    { title: "Inicio", href: "/" },
-    { title: "Proyectos", href: "/works" },
-    { title: "Sobre mí", href: "/about" },
-    { title: "Contacto", href: "/contact" }
+    { title: "Home", href: "/" },
+    { title: "Work", href: "/works" },
+    { title: "Resumé", href: "/about" }
 ]
 ---
 
-<!-- Menú limpio, con fondo ligeramente translúcido al hacer scroll -->
-<nav class="w-full flex justify-between items-center py-6 px-6 md:px-12 fixed top-0 left-0 z-50 bg-base-100/90 backdrop-blur-sm">
-    
-    <!-- Logo / Nombre simple a la izquierda -->
-    <a href="/" class="text-xl font-bold tracking-tight text-base-900 hover:opacity-70 transition-opacity">
-        YerxCreative
-    </a>
-
-    <!-- Desktop Nav: Limpio, sin números, alineado a la derecha -->
-    <ul class="hidden md:flex gap-8">
-        {
-            navLinks.map((link) => (
-                <li>
-                    <Link href={link.href} variant={'nav'} class="text-base-900 hover:opacity-60 transition-opacity font-medium">
-                        {link.title}
-                    </Link>
-                </li>
-            ))
-        }
+<nav class="w-full py-6 px-12 flex justify-center bg-[#2d1b4e]">
+    <ul class="flex gap-8 text-sm font-medium">
+        {navLinks.map((link, index) => (
+            <li>
+                <a 
+                    href={link.href} 
+                    class={`px-4 py-2 rounded ${index === 0 ? 'bg-[#ccff00] text-[#2d1b4e]' : 'text-white hover:text-[#ccff00]'}`}
+                >
+                    {link.title}
+                </a>
+            </li>
+        ))}
     </ul>
-
-    <!-- Mobile Nav -->
-    <div class="md:hidden">
-        <button id="open-nav" aria-label="Abrir menú" class="text-base-900">
-            <!-- Icono corregido a color oscuro (currentColor) -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                <path d="m9.5 16.5l7-4.5l-7-4.5v9ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"/>
-            </svg>
-        </button>
-        
-        <!-- Menú móvil con fondo blanco y texto oscuro -->
-        <div class="hidden fixed inset-0 bg-base-100 z-50 flex flex-col" id="mobile-nav">
-            <div class="flex flex-col items-center justify-center h-full gap-8">
-                <button id="close-nav" aria-label="Cerrar menú" class="absolute top-6 right-6 text-base-900">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M9 16h2V8H9v8Zm4 0h2V8h-2v8Zm-1 6q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z"/>
-                    </svg>
-                </button>
-                <ul class="flex flex-col gap-6 text-center">
-                    {
-                        navLinks.map((link) => (
-                            <li>
-                                <Link href={link.href} variant={'nav'} class="text-2xl font-medium text-base-900 hover:opacity-60 transition-opacity">
-                                    {link.title}
-                                </Link>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-        </div>
-    </div>
 </nav>
-
-<script>
-    const mobileNav = document.querySelector('#mobile-nav') as HTMLElement;
-    const openBtn = document.querySelector('#open-nav') as HTMLButtonElement;
-    const closeBtn = document.querySelector('#close-nav') as HTMLButtonElement;
-
-    openBtn.addEventListener("click", () => {
-        mobileNav.classList.remove('hidden');
-    })
-
-    closeBtn.addEventListener("click", () => {
-        mobileNav.classList.add('hidden');
-    })
-</script>

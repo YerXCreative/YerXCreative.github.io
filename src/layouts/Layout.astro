@@ -3,7 +3,6 @@ import "../styles/global.css";
 import BaseHead from "../components/global/BaseHead.astro";
 import Wrapper from "../components/global/Wrapper.astro";
 import NavBar from "../components/global/Navigation.astro";
-import Footer from "../components/global/Footer.astro";
 
 const {title, description, ...seoProps} = Astro.props;
 ---
@@ -17,7 +16,7 @@ const {title, description, ...seoProps} = Astro.props;
             <main>
                 <slot />
             </main>
-            <Footer />
+            <!-- Footer eliminado - ahora cada página tiene su propio footer -->
         </Wrapper>
     </body>
 </html>

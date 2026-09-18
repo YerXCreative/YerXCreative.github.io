@@ -1,39 +1,23 @@
 ---
-// stylesheet
 import "../styles/global.css";
-
-// components
 import BaseHead from "../components/global/BaseHead.astro";
 import Wrapper from "../components/global/Wrapper.astro";
 import NavBar from "../components/global/Navigation.astro";
 import Footer from "../components/global/Footer.astro";
 
-// props
-const {title, description, titleTemplate, siteName, ogImage, twitterSite, themeColor, locale, ...seoProps } = Astro.props;
+const {title, description, ...seoProps} = Astro.props;
 ---
 
 <!doctype html>
-<!-- 👉 CAMBIO: lang="es" en lugar de "en" -->
 <html lang="es" class="scroll-smooth">
-	<BaseHead 
-		title={title}
-      	description={description}
-      	titleTemplate={titleTemplate}
-    	siteName={siteName}
-      	ogImage={ogImage}
-      	twitterSite={twitterSite}
-      	themeColor={themeColor}
-      	locale={locale}
-      	{...seoProps}
-	/>
-	<body class="min-h-screen">
-		<!-- Wrapper component to make sure all content on the website is above the noise filter background -->
-		<Wrapper>
-			<NavBar />
-			<main class="flex flex-col xl:gap-48 lg:gap-40 gap-28">
-				<slot />
-			</main>
-			<Footer />
-		</Wrapper>
-	</body>
+    <BaseHead title={title} description={description} {...seoProps} />
+    <body class="min-h-screen">
+        <Wrapper>
+            <NavBar />
+            <main>
+                <slot />
+            </main>
+            <Footer />
+        </Wrapper>
+    </body>
 </html>

@@ -1,65 +1,48 @@
 ---
-// layout
 import Layout from '../layouts/Layout.astro';
 import peter from "../assets/images/peter.jpg";
 ---
 
-<Layout 
-    title="Yeray Díaz - Diseñador Gráfico y Web"
-    description="Director de Arte y Diseñador Gráfico."
->
-    <!-- HEADER -->
-    <header style="width: 100%; padding: 24px 48px; display: flex; justify-content: center; align-items: center; background-color: #2d1b4e;">
-        <nav style="display: flex; gap: 32px; font-size: 14px; font-weight: 500;">
-            <a href="/" style="padding: 8px 16px; border-radius: 4px; background-color: #ccff00; color: #2d1b4e;">Home</a>
-            <a href="/works" style="color: white;">Work</a>
-            <a href="/about" style="color: white;">Resumé</a>
+<Layout title="Yeray Díaz" description="Diseñador Gráfico y Web">
+    
+    <!-- Header -->
+    <header class="w-full py-6 px-12 flex justify-center bg-[#2d1b4e]">
+        <nav class="flex gap-8">
+            <a href="/" class="px-4 py-2 bg-[#ccff00] text-[#2d1b4e] rounded">Home</a>
+            <a href="/works" class="text-white">Work</a>
+            <a href="/about" class="text-white">Resumé</a>
         </nav>
     </header>
 
-    <!-- SECCIÓN 1: HOLA -->
-    <section style="width: 100%; padding: 64px 24px; background-color: #2d1b4e;">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 48px; text-align: center; color: #ccff00;">
-                ¡Hola! Soy Yeray
-            </h1>
-            
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; align-items: center;">
-                <div style="color: white; font-size: 18px; line-height: 1.6;">
-                    <p style="margin-bottom: 24px;">
-                        Soy Yeray Díaz, un Diseñador Gráfico y Web. Me especializo en crear identidades visuales y experiencias digitales que ayudan a las marcas a destacar.
-                    </p>
-                    <p>
-                        A lo largo de mi carrera, he colaborado con grandes empresas y startups, trabajando en todo, desde campañas integrales hasta proyectos de alto impacto.
-                    </p>
+    <!-- Sección 1 -->
+    <section class="w-full py-16 px-6 bg-[#2d1b4e]">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-6xl font-bold text-center text-[#ccff00] mb-12">¡Hola! Soy Yeray</h1>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white text-lg">
+                    <p class="mb-6">Soy Yeray Díaz, un Diseñador Gráfico y Web especializado en identidades visuales.</p>
+                    <p>He colaborado con grandes empresas y startups en campañas integrales.</p>
                 </div>
-                
-                <div style="display: flex; justify-content: center;">
-                    <img src={peter.src} alt="Yeray Díaz" style="width: 100%; max-width: 400px; height: 500px; object-fit: cover; border-radius: 8px;" />
+                <div class="flex justify-center">
+                    <img src={peter.src} alt="Yeray" class="w-full max-w-sm h-96 object-cover rounded-lg" />
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 2: NO SOY ROBOT -->
-    <section style="width: 100%; padding: 64px 24px; background-color: #2d1b4e;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 32px; color: #ccff00;">
-                No soy un robot.
-            </h2>
-            <p style="color: white; font-size: 18px; line-height: 1.6;">
-                Por eso aporto un toque humano a cada proyecto, combinando creatividad estratégica con las últimas herramientas de Inteligencia Artificial.
-            </p>
+    <!-- Sección 2 -->
+    <section class="w-full py-16 px-6 bg-[#2d1b4e]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-[#ccff00] mb-8">No soy un robot.</h2>
+            <p class="text-white text-lg">Aporto un toque humano combinando creatividad con IA.</p>
         </div>
     </section>
 
-    <!-- SECCIÓN 3: DATOS -->
-    <section style="width: 100%; padding: 64px 24px; background-color: #2d1b4e;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 32px; color: #ccff00;">
-                Otros datos sobre mí.
-            </h2>
-            <ul style="color: white; font-size: 18px; line-height: 2;">
+    <!-- Sección 3 -->
+    <section class="w-full py-16 px-6 bg-[#2d1b4e]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-[#ccff00] mb-8">Otros datos sobre mí.</h2>
+            <ul class="text-white text-lg space-y-2">
                 <li>• Amante del diseño minimalista</li>
                 <li>• Adicto a la cafeína</li>
                 <li>• Entusiasta de la tecnología</li>
@@ -68,24 +51,25 @@ import peter from "../assets/images/peter.jpg";
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer style="width: 100%; padding: 64px 24px; background-color: #7c3aed;">
-        <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; text-align: center;">
+    <!-- Footer -->
+    <footer class="w-full py-16 px-6 bg-[#7c3aed]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center">
             <div>
-                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #00ffff;">Phone</h3>
-                <p style="color: white; font-size: 14px;">+34 600 000 000</p>
+                <h3 class="text-xl font-bold text-[#00ffff] mb-2">Phone</h3>
+                <p class="text-white text-sm">+34 600 000 000</p>
             </div>
             <div>
-                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #00ffff;">Email</h3>
-                <p style="color: white; font-size: 14px;">yerxcreativestudio@gmail.com</p>
+                <h3 class="text-xl font-bold text-[#00ffff] mb-2">Email</h3>
+                <p class="text-white text-sm">yerxcreativestudio@gmail.com</p>
             </div>
             <div>
-                <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #00ffff;">Connect</h3>
-                <div style="display: flex; justify-content: center; gap: 16px; color: white; font-size: 14px;">
-                    <a href="https://www.instagram.com/yerxcreative/" style="color: white;">Instagram</a>
-                    <a href="https://www.threads.com/@yerxcreative" style="color: white;">Threads</a>
+                <h3 class="text-xl font-bold text-[#00ffff] mb-2">Connect</h3>
+                <div class="flex justify-center gap-4 text-white text-sm">
+                    <a href="https://instagram.com/yerxcreative">Instagram</a>
+                    <a href="https://threads.com/@yerxcreative">Threads</a>
                 </div>
             </div>
         </div>
     </footer>
+
 </Layout>

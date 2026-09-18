@@ -1,43 +1,27 @@
 @import "tailwindcss";
 
-@theme {
-    /* COLORES EXACTOS DE YESICA */
-    --color-bg-dark: #2d1b4e;        /* Morado oscuro (fondo principal) */
-    --color-bg-footer: #7c3aed;      /* Púrpura/violeta (footer) */
-    --color-text-white: #ffffff;     /* Blanco (texto normal) */
-    --color-text-neon: #ccff00;      /* Amarillo neón/verde lima (títulos) */
-    --color-text-cyan: #00ffff;      /* Cyan/azul claro (footer texto) */
-
-    /* FUENTES */
-    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-
-    /* TAMAÑOS DE TEXTO */
-    --text-216: 13.5rem;
-    --text-128: 8rem;
-    --text-96: 6rem;
-    --text-80: 5rem;
-    --text-64: 4rem;
-    --text-48: 3rem;
-    --text-40: 2.5rem;
-    --text-32: 2rem;
-    --text-24: 1.5rem;
-    --text-20: 1.25rem;
-    --text-16: 1rem;
-    --text-12: 0.75rem;
-
-    /* BREAKPOINTS */
-    --breakpoint-xsm: 320px;
-    --breakpoint-sm: 480px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 1200px;
-    --breakpoint-xl: 1440px;
-}
-
-/* ESTILOS BASE */
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #2d1b4e;
+    color: #ffffff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ccff00;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}

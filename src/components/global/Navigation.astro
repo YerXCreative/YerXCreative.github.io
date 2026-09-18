@@ -6,14 +6,17 @@ const navLinks = [
 ]
 ---
 
-<nav class="w-full bg-white py-4 px-8 flex justify-between items-center fixed top-0 left-0 z-50">
-    <!-- Logo a la izquierda -->
+<nav class="w-full bg-white py-4 px-8 flex items-center fixed top-0 left-0 z-50">
+    <!-- Espacio vacío a la izquierda para equilibrar -->
+    <div class="flex-1"></div>
+    
+    <!-- Logo centrado -->
     <a href="/" class="text-[#2d1b4e] font-bold text-sm tracking-[0.3em] uppercase">
         YerxCreative
     </a>
     
     <!-- Botones a la derecha -->
-    <ul class="flex gap-2">
+    <ul class="flex gap-2 flex-1 justify-end">
         {navLinks.map((link, index) => (
             <li>
                 <a 

@@ -5,48 +5,61 @@ import peter from "../assets/images/peter.jpg";
 
 <Layout title="Yeray Díaz" description="Diseñador Gráfico y Web">
 
-    <!-- FRANJA MORADA CON TÍTULO (pegada al header) -->
+    <!-- FRANJA MORADA CON TÍTULO -->
     <div class="w-full bg-[#5b3a8c] py-16 -mt-16" style="width: 100vw; margin-left: -50vw; left: 50%; position: relative;">
         <h1 class="text-5xl md:text-7xl font-bold text-center text-[#ccff00]">
             ¡Hola! Soy Yeray
         </h1>
     </div>
 
-    <!-- Sección 1: Bio y Foto -->
-    <section class="w-full py-16 px-6 bg-[#2d1b4e]">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="text-white text-lg">
-                    <p class="mb-6">Soy Yeray Díaz, un Diseñador Gráfico y Web especializado en identidades visuales.</p>
-                    <p>He colaborado con grandes empresas y startups en campañas integrales.</p>
+    <!-- CONTENIDO PRINCIPAL: Texto izquierda + Foto derecha -->
+    <div class="w-full bg-[#2d1b4e]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6">
+            
+            <!-- COLUMNA IZQUIERDA: Textos apilados -->
+            <div class="flex flex-col gap-16 py-16">
+                
+                <!-- Bio -->
+                <div>
+                    <p class="text-white text-lg mb-6">
+                        Soy Yeray Díaz, un Diseñador Gráfico y Web especializado en identidades visuales.
+                    </p>
+                    <p class="text-white text-lg">
+                        He colaborado con grandes empresas y startups en campañas integrales.
+                    </p>
                 </div>
-                <div class="flex justify-center">
-                    <img src={peter.src} alt="Yeray" class="w-full max-w-sm h-96 object-cover rounded-lg" />
+
+                <!-- No soy un robot -->
+                <div>
+                    <h2 class="text-4xl font-bold text-[#ccff00] mb-6">No soy un robot.</h2>
+                    <p class="text-white text-lg">
+                        Aporto un toque humano combinando creatividad con IA.
+                    </p>
+                </div>
+
+                <!-- Otros datos -->
+                <div>
+                    <h2 class="text-4xl font-bold text-[#ccff00] mb-6">Otros datos sobre mí.</h2>
+                    <ul class="text-white text-lg space-y-2">
+                        <li>• Amante del diseño minimalista</li>
+                        <li>• Adicto a la cafeína</li>
+                        <li>• Entusiasta de la tecnología</li>
+                        <li>• Creo en el buen diseño</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Sección 2: No soy un robot -->
-    <section class="w-full py-16 px-6 bg-[#2d1b4e]">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-[#ccff00] mb-8">No soy un robot.</h2>
-            <p class="text-white text-lg">Aporto un toque humano combinando creatividad con IA.</p>
+            <!-- COLUMNA DERECHA: Foto gigante -->
+            <div class="flex justify-center items-start">
+                <img 
+                    src={peter.src} 
+                    alt="Yeray" 
+                    class="w-full h-full object-cover rounded-lg"
+                    style="min-height: 800px;"
+                />
+            </div>
         </div>
-    </section>
-
-    <!-- Sección 3: Otros datos -->
-    <section class="w-full py-16 px-6 bg-[#2d1b4e]">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl font-bold text-[#ccff00] mb-8">Otros datos sobre mí.</h2>
-            <ul class="text-white text-lg space-y-2">
-                <li>• Amante del diseño minimalista</li>
-                <li>• Adicto a la cafeína</li>
-                <li>• Entusiasta de la tecnología</li>
-                <li>• Creo en el buen diseño</li>
-            </ul>
-        </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="w-full py-16 px-6 bg-[#7c3aed]">

@@ -5,18 +5,15 @@ import peter from "../assets/images/peter.jpg";
 
 <Layout title="Yeray Díaz" description="Diseñador Gráfico y Web">
 
-    <!-- FRANJA MORADA -->
     <div class="w-full bg-[#5b3a8c] py-16 -mt-16 fixed left-0 right-0 z-40" style="width: 100vw; margin-left: -50vw; left: 50%;">
         <h1 class="text-5xl md:text-7xl font-bold text-center text-[#ccff00]">
             ¡Hola! Soy Yeray
         </h1>
     </div>
 
-    <!-- CONTENIDO -->
     <div class="w-full bg-[#2d1b4e] pt-32">
         <div class="grid grid-cols-1 md:grid-cols-2">
             
-            <!-- TEXTO -->
             <div class="flex flex-col gap-16 py-16 px-6 md:px-24">
                 <div>
                     <p class="text-white text-lg mb-6">Soy Yeray Díaz, un Diseñador Gráfico y Web especializado en identidades visuales.</p>
@@ -39,19 +36,16 @@ import peter from "../assets/images/peter.jpg";
                 </div>
             </div>
 
-            <!-- FOTO - Pegada al borde derecho, ocupando todo el espacio -->
-            <div class="hidden md:block">
+            <div class="hidden md:block py-16 pr-16 pl-8">
                 <img 
                     src={peter.src} 
                     alt="Yeray" 
-                    class="w-full h-full object-cover object-top"
-                    style="height: 100%; min-height: 600px;"
+                    class="w-full h-full max-h-[700px] object-contain"
                 />
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="w-full py-16 px-6 bg-[#7c3aed]">
         <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 text-center">
             <div>

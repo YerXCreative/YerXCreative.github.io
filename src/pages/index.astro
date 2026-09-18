@@ -2,21 +2,80 @@
 // layout
 import Layout from '../layouts/Layout.astro';
 
-// components
-import Hero from '../components/sections/home/Hero.astro';
-import SelectedWorks from '../components/sections/home/SelectedWorks.astro';
-import Services from '../components/sections/home/Services.astro';
-import About from '../components/sections/home/About.astro';
-import Faq from '../components/sections/home/Faq.astro';
+// assets
+import peter from "../assets/images/peter.jpg"; // Asegúrate de que esta sea tu foto real
 ---
 
 <Layout 
-    title="Yeray Díaz - Diseñador Gráfico y Web | YerxCreative"
-    description="Diseñador especializado en branding, identidad visual y diseño web. Ayudo a empresas y startups a destacar con diseños únicos y estratégicos que generan impacto."
+    title="Yeray Díaz - Diseñador Gráfico y Web"
+    description="Director de Arte y Diseñador Gráfico. Combino creatividad y herramientas de IA para crear marcas únicas."
 >
-    <Hero />
-    <SelectedWorks />
-    <Services />
-    <About />
-    <Faq />
+    <!-- Contenedor principal estilo minimalista -->
+    <main class="max-w-5xl mx-auto px-6 py-24 font-sans text-base-900">
+        
+        <!-- SECCIÓN 1: HERO (Hola! Soy Yeray) -->
+        <section class="grid md:grid-cols-2 gap-16 items-center mb-32">
+            <div class="order-2 md:order-1">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">¡Hola! Soy Yeray.</h1>
+                <p class="text-lg text-base-700 mb-4 leading-relaxed">
+                    Soy Yeray Díaz, un Diseñador Gráfico y Web. Me especializo en crear identidades visuales y experiencias digitales que ayudan a las marcas a destacar.
+                </p>
+                <p class="text-lg text-base-700 leading-relaxed">
+                    A lo largo de mi carrera, he colaborado con grandes empresas y startups, trabajando en todo, desde campañas integrales hasta proyectos de alto impacto. Mi experiencia abarca diseño digital, branding y dirección de arte.
+                </p>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="aspect-[4/5] bg-base-200 rounded-sm overflow-hidden shadow-sm">
+                    <img src={peter.src} alt="Yeray Díaz" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ENFOQUE (No soy un robot) -->
+        <section class="mb-32 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-6 tracking-tight">No soy un robot.</h2>
+            <p class="text-lg text-base-700 leading-relaxed">
+                Por eso aporto un toque humano a cada proyecto, combinando creatividad estratégica con las últimas herramientas de Inteligencia Artificial para optimizar procesos, ahorrar tiempo y entregar un trabajo excepcional. Al abrazar la innovación, ayudo a asegurar que tu marca deje una huella positiva y duradera.
+            </p>
+        </section>
+
+        <!-- SECCIÓN 3: DATOS PERSONALES -->
+        <section class="mb-32 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-8 tracking-tight">Otros datos sobre mí.</h2>
+            <ul class="space-y-4 text-lg text-base-700">
+                <li class="flex gap-3">
+                    <span class="text-base-400 font-bold">•</span> 
+                    <span>Amante del diseño minimalista y la fotografía urbana.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-base-400 font-bold">•</span> 
+                    <span>Adicto a la cafeína: café negro para despertar y un latte como premio.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-base-400 font-bold">•</span> 
+                    <span>Entusiasta de la tecnología y siempre experimentando con nuevas herramientas creativas.</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="text-base-400 font-bold">•</span> 
+                    <span>Creo firmemente que el buen diseño resuelve problemas y genera conexiones.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 4: CONTACTO -->
+        <section class="mb-16 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-8 tracking-tight">Hablemos.</h2>
+            <div class="space-y-4 text-lg text-base-700">
+                <div>
+                    <span class="font-semibold text-base-900 block mb-1">Email</span>
+                    <a href="mailto:yerxcreativestudio@gmail.com" class="hover:text-base-500 transition-colors">yerxcreativestudio@gmail.com</a>
+                </div>
+                <div>
+                    <span class="font-semibold text-base-900 block mb-1">Instagram</span>
+                    <a href="https://www.instagram.com/yerxcreative/" target="_blank" class="hover:text-base-500 transition-colors">@Yerxcreative</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 </Layout>

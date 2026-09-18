@@ -6,11 +6,11 @@ import Layout from "../../layouts/Layout.astro";
 import Heading from "../../components/elements/Heading.astro";
 import Container from "../../components/elements/Container.astro";
 import Work from "../../components/elements/Work.astro";
-import Pagination from "../../components/sections/works/Pagination.astro";
 
 // routing
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
+
 export const getStaticPaths = (async ({paginate}) => {
     const works = await getCollection("works", ({data}) => !data.isDraft)
     return paginate(works, {pageSize: 6});
@@ -21,27 +21,15 @@ const { page } = Astro.props;
 ---
 
 <Layout 
-    title=`Proyectos - Page ${page.currentPage}`
-    description="Works page list description"
+    title="Proyectos | YerxCreative"
+    description="Una selección de mis proyectos más recientes en branding, diseño web y dirección de arte."
 >
-    <Heading tagName="h1" tagSize="h1" class="text-center">Proyectos</Heading>
-    <Container variant={'lg'}>
-        <Container class="grid lg:grid-cols-2 grid-cols-1 gap-24">
+    <main class="max-w-6xl mx-auto px-6 py-24 font-sans text-base-900">
+        <Heading tagName="h1" tagSize="h1" class="text-center mb-16 tracking-tight">Proyectos Seleccionados</Heading>
+        
+        <Container class="grid md:grid-cols-2 gap-12 md:gap-16">
             {page.data.map((work) => (
                 <Work 
                     slug={work.data.slug}
                     featuredImage={work.data.featuredImage}
-                    title={work.data.title}
-                    client={work.data.client}
-                    category={work.data.category}>
-                </Work>
-            ))
-            }
-        </Container>
-        <div class="flex flex-row gap-2">
-            <Pagination prev={page.url.prev}></Pagination>
-            <Pagination next={page.url.next}></Pagination>
-        </div>
-    </Container>
-    
-</Layout>
+                    title

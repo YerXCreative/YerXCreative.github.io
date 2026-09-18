@@ -5,47 +5,43 @@ import Heading from "../elements/Heading.astro";
 import Text from "../elements/Text.astro";
 import Link from "../elements/Link.astro";
 
-// links
+// Solo necesitamos redes, el menú ya está arriba (más minimalista)
 const socials = [
-
     { title: "Instagram", href: "https://www.instagram.com/yerxcreative/" },
     { title: "Threads", href: "https://www.threads.com/@yerxcreative?hl=es" },
-
 ];
-
-const navigation = [
-    { title: "Inicio", href: "/" },
-    { title: "Proyectos", href: "/work" },
-    { title: "Sobre mí", href: "/about" },
-    { title: "Contacto", href: "/contacto" }
-]
 ---
 
-<Container variant={'xl'} class="mt-32 pb-8">
-    <div class="flex flex-col gap-10 md:flex-row">
-        <div class="flex-1 md:text-left text-center">
-            <Heading tagName="h3" tagSize="h4" class="text-base-900 mb-5">Redes</Heading>
-            <ul>
-                {
-                    socials.map((social) => (
-                        <li><Link variant={'nav'} href={social.href}>{social.title}</Link></li>
-                    ))
-                }
-            </ul>
+<Container variant={'xl'} class="mt-32 pb-12 border-t border-base-200 pt-12">
+    <!-- Bloque de contacto estilo Yesica -->
+    <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+        
+        <!-- Columna 1: Email -->
+        <div>
+            <Heading tagName="h3" tagSize="h4" class="text-base-900 mb-4 font-semibold">Email</Heading>
+            <Link href="mailto:yeraydxz@gmail.com" variant={'nav'} class="text-base-700 hover:text-base-900 transition-colors text-lg">
+                yeraydxz@gmail.com
+            </Link>
         </div>
-        <div class="flex-1 md:text-right text-center">
-            <Heading tagName="h3" tagSize="h4" class="text-base-900 mb-5">Menú</Heading>
-            <ul>
-                {
-                    navigation.map((navLink) => (
-                        <li><Link variant={'nav'} href={navLink.href}>{navLink.title}</Link></li>
-                    ))
-                }
+
+        <!-- Columna 2: Conecta (Redes) -->
+        <div>
+            <Heading tagName="h3" tagSize="h4" class="text-base-900 mb-4 font-semibold">Conecta</Heading>
+            <ul class="flex flex-col gap-2">
+                {socials.map((social) => (
+                    <li>
+                        <Link href={social.href} variant={'nav'} class="text-base-700 hover:text-base-900 transition-colors text-lg" target="_blank">
+                            {social.title}
+                        </Link>
+                    </li>
+                ))}
             </ul>
         </div>
     </div>
-    <div class="flex flex-col text-center">
-        <Text variant={'sm'} class="text-base-900">YerxCreative © 2026</Text>
-        <Text variant={'sm'} class="text-base-900"><Link variant={'inline'} href="https://astro.build"></Link> by Yeray Díaz <Link variant={'inline'} href="https://jessgaspar.dev"></Link></Text>
+
+    <!-- Copyright sutil y limpio -->
+    <div class="mt-16 pt-8 border-t border-base-200 flex flex-col md:flex-row justify-between items-center text-base-500 text-sm">
+        <Text variant={'sm'}>YerxCreative © 2024</Text>
+        <Text variant={'sm'}>Diseñado por Yeray Díaz</Text>
     </div>
 </Container>

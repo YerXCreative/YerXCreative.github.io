@@ -1,26 +1,31 @@
 ---
-// assets
-import { Image } from "astro:assets";
-import symbol from "../../assets/ui/symbol.svg";
+import ImageContainer from "./ImageContainer.astro";
 
-// components
-import Text from "../elements/Text.astro";
-import Heading from "../elements/Heading.astro";
+export interface Props {
+    slug: string;
+    featuredImage: string;
+    title: string;
+    client: string;
+    category: string;
+}
 
-// props
 const { slug, featuredImage, title, client, category } = Astro.props;
 ---
 
-<div class="group lg:m-auto">
-    <a href=`/works/${slug}`>
-        <div class="relative xl:w-[350px] xl:h-[350px] lg:w-[300px] lg:h-[300px] md:w-[400px] md:h-[400px] sm:w-[250px] sm:h-[250px] w-[200px] h-[200px] overflow-visible mb-4">
-            <div class="absolute top-2 left-2 z-40 bg-base-900 border-2 border-base-100 px-4 flex gap-2">
-                <Text variant={'lg'} class="text-base-100">{category}</Text>
-                <Image src={symbol} alt="UI Symbol" width={30} loading="lazy"/>
-            </div>
-            <Image src={featuredImage} alt={title} class="relative w-full h-full object-cover z-20 transition-transform duration-500 group-hover:animate-pulse" loading="lazy" width={400}/>
-        </div>
-        <Heading tagName="h3" tagSize="h4" class="group-hover:underline">{title}</Heading>
-        <Text variant={'md'}>{client}</Text>
-    </a>
-</div>
+<a href={`/works/${slug}`} class="group block">
+    <!-- Imagen con efecto sutil de zoom al pasar el ratón -->
+    <div class="aspect-[4/3] bg-base-200 rounded-sm overflow-hidden mb-4 shadow-sm group-hover:shadow-md transition-shadow duration-300">
+        <ImageContainer 
+            src={featuredImage} 
+            alt={title} 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+        />
+    </div>
+    
+    <!-- Texto limpio y jerárquico -->
+    <div class="flex flex-col gap-1">
+        <span class="text-xs font-semibold uppercase tracking-wider text-base-500">{category}</span>
+        <h3 class="text-xl font-bold text-base-900 group-hover:text-base-700 transition-colors">{title}</h3>
+        <span class="text-sm text-base-600">{client}</span>
+    </div>
+</a>

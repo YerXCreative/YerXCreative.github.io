@@ -1,464 +1,585 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
 import peter from "../assets/images/peter.jpg";
------------------------------------------------
+---
 
 <Layout
-title="Yeray Díaz — Diseñador Digital"
-description="Portfolio de Yeray Díaz, diseñador digital y de proyectos."
-
+    title="Yeray Díaz — Diseñador Digital"
+    description="Portfolio de Yeray Díaz, diseñador digital y de proyectos."
 >
 
-```
-<!-- ========================================================= -->
-<!-- HERO -->
-<!-- ========================================================= -->
+    <!-- ========================================================= -->
+    <!-- HERO -->
+    <!-- ========================================================= -->
 
-<section class="relative bg-black text-white min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-20 pt-32 pb-8 overflow-hidden">
+    <section class="relative bg-black text-white min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-20 pt-32 pb-8 overflow-hidden">
 
-    <!-- Información superior -->
-    <div class="max-w-[1400px] mx-auto w-full flex items-center justify-between text-[10px] md:text-xs uppercase tracking-[0.2em] text-neutral-500">
+        <!-- Información superior -->
+        <div class="max-w-[1400px] mx-auto w-full flex items-center justify-between text-[10px] md:text-xs uppercase tracking-[0.2em] text-neutral-500">
 
-        <span>
-            Diseñador digital & proyectos
-        </span>
+            <span>
+                Diseñador digital & proyectos
+            </span>
 
-        <span class="hidden sm:block">
-            Gijón · Asturias
-        </span>
+            <span class="hidden sm:block">
+                Gijón · Asturias
+            </span>
 
-    </div>
+        </div>
 
 
-    <!-- Título principal -->
-    <div class="max-w-[1400px] mx-auto w-full flex-1 flex items-center py-16 md:py-20">
+        <!-- Título principal -->
+        <div class="max-w-[1400px] mx-auto w-full flex-1 flex items-center py-16 md:py-20">
 
-        <div>
+            <div>
 
-            <div class="flex items-center gap-4 mb-8">
+                <div class="flex items-center gap-4 mb-8">
 
-                <span class="w-2 h-2 rounded-full bg-[#0066FF]"></span>
+                    <span class="w-2 h-2 rounded-full bg-[#0066FF]"></span>
 
-                <p class="text-[#0066FF] text-sm md:text-base font-bold uppercase tracking-[0.2em]">
-                    Hola, soy Yeray
-                </p>
+                    <p class="text-[#0066FF] text-sm md:text-base font-bold uppercase tracking-[0.2em]">
+                        Hola, soy Yeray
+                    </p>
+
+                </div>
+
+
+                <h1 class="text-[clamp(4rem,11vw,10rem)] leading-[0.82] font-bold tracking-[-0.07em] uppercase max-w-[1300px]">
+
+                    Diseño
+                    <br />
+
+                    digital que
+                    <br />
+
+                    <span class="text-neutral-500">
+                        no parece
+                    </span>
+
+                    <br />
+
+                    hecho por un robot.
+
+                </h1>
 
             </div>
 
+        </div>
 
-            <h1 class="text-[clamp(4rem,11vw,10rem)] leading-[0.82] font-bold tracking-[-0.07em] uppercase max-w-[1300px]">
 
-                Diseño
-                <br />
+        <!-- Parte inferior -->
+        <div class="max-w-[1400px] mx-auto w-full flex flex-col md:flex-row md:items-end justify-between gap-10">
 
-                digital que
-                <br />
+            <p class="max-w-lg text-base md:text-lg text-neutral-400 leading-relaxed">
+                Diseño, web, campañas y proyectos digitales
+                con una mezcla bastante seria de creatividad,
+                estrategia y criterio.
+            </p>
 
-                <span class="text-neutral-500">
-                    no parece
+
+            <a
+                href="#selected-work"
+                aria-label="Bajar a los proyectos"
+                class="group flex items-center gap-4"
+            >
+
+                <span class="hidden md:block text-xs uppercase tracking-[0.2em] text-neutral-500">
+                    Scroll para explorar
                 </span>
 
-                <br />
+                <span class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#0066FF] text-white flex items-center justify-center group-hover:scale-110 transition-transform">
 
-                hecho por un robot.
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        class="w-6 h-6 md:w-7 md:h-7"
+                    >
+                        <path d="M12 5v14" />
+                        <path d="m19 12-7 7-7-7" />
+                    </svg>
 
-            </h1>
+                </span>
+
+            </a>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- Parte inferior -->
-    <div class="max-w-[1400px] mx-auto w-full flex flex-col md:flex-row md:items-end justify-between gap-10">
+    <!-- ========================================================= -->
+    <!-- SELECTED WORK -->
+    <!-- ========================================================= -->
 
-        <p class="max-w-lg text-base md:text-lg text-neutral-400 leading-relaxed">
-            Diseño, web, campañas y proyectos digitales
-            con una mezcla bastante seria de creatividad,
-            estrategia y criterio.
-        </p>
+    <section
+        id="selected-work"
+        class="bg-white text-black px-6 md:px-12 lg:px-20 py-20 md:py-32"
+    >
 
+        <div class="max-w-[1400px] mx-auto">
 
-        <a
-            href="#selected-work"
-            aria-label="Bajar a los proyectos"
-            class="group flex items-center gap-4"
-        >
+            <!-- Cabecera -->
+            <div class="flex items-start justify-between mb-16 md:mb-24">
 
-            <span class="hidden md:block text-xs uppercase tracking-[0.2em] text-neutral-500">
-                Scroll para explorar
-            </span>
+                <span class="text-[#0066FF] font-bold text-sm md:text-base">
+                    01
+                </span>
 
-            <span class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#0066FF] text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div class="text-right">
 
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    class="w-6 h-6 md:w-7 md:h-7"
-                >
-                    <path d="M12 5v14" />
-                    <path d="m19 12-7 7-7-7" />
-                </svg>
+                    <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500">
+                        Selected work
+                    </p>
 
-            </span>
+                    <p class="mt-2 text-sm text-neutral-400">
+                        Algunos proyectos y trabajos
+                    </p>
 
-        </a>
+                </div>
 
-    </div>
-
-</section>
+            </div>
 
 
-<!-- ========================================================= -->
-<!-- SELECTED WORK -->
-<!-- ========================================================= -->
+            <!-- Proyecto 01 -->
+            <a
+                href="/works"
+                class="group block mb-20 md:mb-32"
+            >
 
-<section
-    id="selected-work"
-    class="bg-white text-black px-6 md:px-12 lg:px-20 py-20 md:py-32"
->
+                <div class="relative overflow-hidden bg-[#0A0A0A] aspect-[16/9] md:aspect-[2/1]">
 
-    <div class="max-w-[1400px] mx-auto">
+                    <div class="absolute inset-0 flex items-center justify-center">
 
-        <!-- Cabecera -->
-        <div class="flex items-start justify-between mb-16 md:mb-24">
+                        <span class="text-white/10 text-[clamp(5rem,15vw,14rem)] font-bold tracking-[-0.08em]">
+                            01
+                        </span>
 
-            <span class="text-[#0066FF] font-bold text-sm md:text-base">
-                01
-            </span>
+                    </div>
 
-            <div class="text-right">
+
+                    <div class="absolute top-6 left-6 md:top-10 md:left-10">
+
+                        <span class="inline-flex items-center gap-2 bg-[#0066FF] text-white px-4 py-2 text-xs uppercase tracking-[0.15em] font-bold">
+                            Diseño digital
+                        </span>
+
+                    </div>
+
+
+                    <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex items-end justify-between">
+
+                        <h2 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9]">
+                            Proyecto
+                            <br />
+                            destacado
+                        </h2>
+
+
+                        <span class="hidden sm:flex w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#0066FF] text-white items-center justify-center group-hover:scale-110 group-hover:rotate-[-10deg] transition-transform shrink-0">
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                class="w-6 h-6"
+                            >
+                                <path d="M5 12h14" />
+                                <path d="m13 6 6 6-6 6" />
+                            </svg>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-5">
+
+                    <div>
+
+                        <h3 class="text-xl md:text-2xl font-bold">
+                            Diseño & dirección visual
+                        </h3>
+
+                        <p class="text-neutral-500 mt-1">
+                            Identidad · Digital · Dirección creativa
+                        </p>
+
+                    </div>
+
+                    <span class="text-sm text-neutral-400 uppercase tracking-[0.15em]">
+                        Ver proyectos →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- Proyecto 02 -->
+            <a
+                href="/works"
+                class="group block mb-20 md:mb-32"
+            >
+
+                <div class="relative overflow-hidden bg-[#0066FF] aspect-[16/9] md:aspect-[2/1]">
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+
+                        <span class="text-white/15 text-[clamp(5rem,15vw,14rem)] font-bold tracking-[-0.08em]">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="absolute top-6 left-6 md:top-10 md:left-10">
+
+                        <span class="inline-flex items-center gap-2 bg-black text-white px-4 py-2 text-xs uppercase tracking-[0.15em] font-bold">
+                            Web
+                        </span>
+
+                    </div>
+
+
+                    <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex items-end justify-between">
+
+                        <h2 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9]">
+                            Diseño
+                            <br />
+                            web
+                        </h2>
+
+
+                        <span class="hidden sm:flex w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-black items-center justify-center group-hover:scale-110 group-hover:rotate-[-10deg] transition-transform shrink-0">
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                class="w-6 h-6"
+                            >
+                                <path d="M5 12h14" />
+                                <path d="m13 6 6 6-6 6" />
+                            </svg>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-5">
+
+                    <div>
+
+                        <h3 class="text-xl md:text-2xl font-bold">
+                            Web, estructura y experiencia
+                        </h3>
+
+                        <p class="text-neutral-500 mt-1">
+                            UX · Responsive · WordPress · HTML/CSS
+                        </p>
+
+                    </div>
+
+                    <span class="text-sm text-neutral-400 uppercase tracking-[0.15em]">
+                        Ver proyectos →
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- Proyecto 03 -->
+            <a
+                href="/works"
+                class="group block"
+            >
+
+                <div class="relative overflow-hidden bg-[#0A0A0A] aspect-[16/9] md:aspect-[2/1]">
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+
+                        <span class="text-white/10 text-[clamp(5rem,15vw,14rem)] font-bold tracking-[-0.08em]">
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <div class="absolute top-6 left-6 md:top-10 md:left-10">
+
+                        <span class="inline-flex items-center gap-2 bg-white text-black px-4 py-2 text-xs uppercase tracking-[0.15em] font-bold">
+                            Campañas
+                        </span>
+
+                    </div>
+
+
+                    <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex items-end justify-between">
+
+                        <h2 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9]">
+                            Campañas
+                            <br />
+                            digitales
+                        </h2>
+
+
+                        <span class="hidden sm:flex w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#0066FF] text-white items-center justify-center group-hover:scale-110 group-hover:rotate-[-10deg] transition-transform shrink-0">
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                class="w-6 h-6"
+                            >
+                                <path d="M5 12h14" />
+                                <path d="m13 6 6 6-6 6" />
+                            </svg>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-5">
+
+                    <div>
+
+                        <h3 class="text-xl md:text-2xl font-bold">
+                            Contenido que conecta
+                        </h3>
+
+                        <p class="text-neutral-500 mt-1">
+                            Social media · Publicidad · Contenido digital
+                        </p>
+
+                    </div>
+
+                    <span class="text-sm text-neutral-400 uppercase tracking-[0.15em]">
+                        Ver proyectos →
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- SOBRE MÍ -->
+    <!-- ========================================================= -->
+
+    <section
+        id="sobre-mi"
+        class="bg-white text-black px-6 md:px-12 lg:px-20 py-20 md:py-32"
+    >
+
+        <div class="max-w-[1400px] mx-auto">
+
+            <!-- Cabecera -->
+            <div class="flex items-start justify-between mb-16 md:mb-24">
+
+                <span class="text-[#0066FF] font-bold text-sm md:text-base">
+                    02
+                </span>
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500">
-                    Selected work
+                    Sobre mí
                 </p>
 
-                <p class="mt-2 text-sm text-neutral-400">
-                    Algunos proyectos y trabajos
-                </p>
+            </div>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+                <!-- Texto -->
+                <div>
+
+                    <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-[-0.05em] mb-10">
+                        Diseño.
+                        <br />
+                        Proyectos.
+                        <br />
+                        Personas.
+                    </h2>
+
+                    <div class="max-w-xl space-y-6 text-lg md:text-xl leading-relaxed text-neutral-600">
+
+                        <p>
+                            Soy Yeray Díaz, diseñador digital y de proyectos.
+                        </p>
+
+                        <p>
+                            Trabajo en diseño web, campañas digitales,
+                            identidad visual y gestión de proyectos,
+                            llevando las ideas desde el briefing hasta la entrega.
+                        </p>
+
+                        <p>
+                            Me interesa que las cosas funcionen,
+                            pero también que tengan algo que decir.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Foto -->
+                <div class="relative">
+
+                    <div class="absolute -top-4 -left-4 w-full h-full border-2 border-[#0066FF]"></div>
+
+                    <div class="relative bg-black p-3">
+
+                        <img
+                            src={peter.src}
+                            alt="Yeray Díaz, diseñador digital y de proyectos"
+                            class="w-full h-auto object-cover"
+                        />
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
+    </section>
 
-        <!-- Proyecto 01 -->
-        <a
-            href="/works"
-            class="group block mb-20 md:mb-32"
-        >
 
-            <div class="relative overflow-hidden bg-[#0A0A0A] aspect-[16/9] md:aspect-[2/1]">
+    <!-- ========================================================= -->
+    <!-- LO QUE HAGO -->
+    <!-- ========================================================= -->
 
-                <div class="absolute inset-0 flex items-center justify-center">
+    <section class="bg-black text-white px-6 md:px-12 lg:px-20 py-20 md:py-32">
 
-                    <span class="text-white/10 text-[clamp(5rem,15vw,14rem)] font-bold tracking-[-0.08em]">
+        <div class="max-w-[1400px] mx-auto">
+
+            <!-- Cabecera -->
+            <div class="flex items-start justify-between mb-16 md:mb-24">
+
+                <span class="text-[#0066FF] font-bold text-sm md:text-base">
+                    03
+                </span>
+
+                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400">
+                    Lo que hago
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-800 border border-neutral-800">
+
+                <!-- Identidad -->
+                <div class="bg-black p-8 md:p-12 min-h-[280px] flex flex-col justify-between group hover:bg-[#0A0A0A] transition-colors">
+
+                    <span class="text-[#0066FF] text-sm">
                         01
                     </span>
 
-                </div>
+                    <div>
 
+                        <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                            Identidad visual
+                        </h3>
 
-                <div class="absolute top-6 left-6 md:top-10 md:left-10">
+                        <p class="text-neutral-400 text-lg leading-relaxed max-w-md">
+                            Diseño visual pensado para construir
+                            una identidad reconocible y coherente.
+                        </p>
 
-                    <span class="inline-flex items-center gap-2 bg-[#0066FF] text-white px-4 py-2 text-xs uppercase tracking-[0.15em] font-bold">
-                        Diseño digital
-                    </span>
-
-                </div>
-
-
-                <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex items-end justify-between">
-
-                    <h2 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9]">
-                        Proyecto
-                        <br />
-                        destacado
-                    </h2>
-
-
-                    <span class="hidden sm:flex w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#0066FF] text-white items-center justify-center group-hover:scale-110 group-hover:rotate-[-10deg] transition-transform shrink-0">
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            class="w-6 h-6"
-                        >
-                            <path d="M5 12h14" />
-                            <path d="m13 6 6 6-6 6" />
-                        </svg>
-
-                    </span>
+                    </div>
 
                 </div>
 
-            </div>
 
+                <!-- Web -->
+                <div class="bg-black p-8 md:p-12 min-h-[280px] flex flex-col justify-between group hover:bg-[#0A0A0A] transition-colors">
 
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-5">
-
-                <div>
-
-                    <h3 class="text-xl md:text-2xl font-bold">
-                        Diseño & dirección visual
-                    </h3>
-
-                    <p class="text-neutral-500 mt-1">
-                        Identidad · Digital · Dirección creativa
-                    </p>
-
-                </div>
-
-                <span class="text-sm text-neutral-400 uppercase tracking-[0.15em]">
-                    Ver proyectos →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- Proyecto 02 -->
-        <a
-            href="/works"
-            class="group block mb-20 md:mb-32"
-        >
-
-            <div class="relative overflow-hidden bg-[#0066FF] aspect-[16/9] md:aspect-[2/1]">
-
-                <div class="absolute inset-0 flex items-center justify-center">
-
-                    <span class="text-white/15 text-[clamp(5rem,15vw,14rem)] font-bold tracking-[-0.08em]">
+                    <span class="text-[#0066FF] text-sm">
                         02
                     </span>
 
-                </div>
+                    <div>
 
+                        <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                            Diseño web
+                        </h3>
 
-                <div class="absolute top-6 left-6 md:top-10 md:left-10">
+                        <p class="text-neutral-400 text-lg leading-relaxed max-w-md">
+                            Webs responsive donde diseño,
+                            estructura y experiencia trabajan juntas.
+                        </p>
 
-                    <span class="inline-flex items-center gap-2 bg-black text-white px-4 py-2 text-xs uppercase tracking-[0.15em] font-bold">
-                        Web
-                    </span>
-
-                </div>
-
-
-                <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex items-end justify-between">
-
-                    <h2 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9]">
-                        Diseño
-                        <br />
-                        web
-                    </h2>
-
-
-                    <span class="hidden sm:flex w-14 h-14 md:w-16 md:h-16 rounded-full bg-white text-black items-center justify-center group-hover:scale-110 group-hover:rotate-[-10deg] transition-transform shrink-0">
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            class="w-6 h-6"
-                        >
-                            <path d="M5 12h14" />
-                            <path d="m13 6 6 6-6 6" />
-                        </svg>
-
-                    </span>
+                    </div>
 
                 </div>
 
-            </div>
 
+                <!-- Campañas -->
+                <div class="bg-black p-8 md:p-12 min-h-[280px] flex flex-col justify-between group hover:bg-[#0A0A0A] transition-colors">
 
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-5">
-
-                <div>
-
-                    <h3 class="text-xl md:text-2xl font-bold">
-                        Web, estructura y experiencia
-                    </h3>
-
-                    <p class="text-neutral-500 mt-1">
-                        UX · Responsive · WordPress · HTML/CSS
-                    </p>
-
-                </div>
-
-                <span class="text-sm text-neutral-400 uppercase tracking-[0.15em]">
-                    Ver proyectos →
-                </span>
-
-            </div>
-
-        </a>
-
-
-        <!-- Proyecto 03 -->
-        <a
-            href="/works"
-            class="group block"
-        >
-
-            <div class="relative overflow-hidden bg-[#0A0A0A] aspect-[16/9] md:aspect-[2/1]">
-
-                <div class="absolute inset-0 flex items-center justify-center">
-
-                    <span class="text-white/10 text-[clamp(5rem,15vw,14rem)] font-bold tracking-[-0.08em]">
+                    <span class="text-[#0066FF] text-sm">
                         03
                     </span>
 
+                    <div>
+
+                        <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                            Campañas digitales
+                        </h3>
+
+                        <p class="text-neutral-400 text-lg leading-relaxed max-w-md">
+                            Contenido y campañas digitales
+                            pensadas para conectar con personas.
+                        </p>
+
+                    </div>
+
                 </div>
 
 
-                <div class="absolute top-6 left-6 md:top-10 md:left-10">
+                <!-- Gestión -->
+                <div class="bg-black p-8 md:p-12 min-h-[280px] flex flex-col justify-between group hover:bg-[#0A0A0A] transition-colors">
 
-                    <span class="inline-flex items-center gap-2 bg-white text-black px-4 py-2 text-xs uppercase tracking-[0.15em] font-bold">
-                        Campañas
+                    <span class="text-[#0066FF] text-sm">
+                        04
                     </span>
 
-                </div>
+                    <div>
 
+                        <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                            Gestión de proyectos
+                        </h3>
 
-                <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex items-end justify-between">
+                        <p class="text-neutral-400 text-lg leading-relaxed max-w-md">
+                            Organización, plazos, clientes y entregas.
+                            Porque una buena idea también necesita llegar a puerto.
+                        </p>
 
-                    <h2 class="text-white text-4xl md:text-6xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9]">
-                        Campañas
-                        <br />
-                        digitales
-                    </h2>
-
-
-                    <span class="hidden sm:flex w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#0066FF] text-white items-center justify-center group-hover:scale-110 group-hover:rotate-[-10deg] transition-transform shrink-0">
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            class="w-6 h-6"
-                        >
-                            <path d="M5 12h14" />
-                            <path d="m13 6 6 6-6 6" />
-                        </svg>
-
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-5">
-
-                <div>
-
-                    <h3 class="text-xl md:text-2xl font-bold">
-                        Contenido que conecta
-                    </h3>
-
-                    <p class="text-neutral-500 mt-1">
-                        Social media · Publicidad · Contenido digital
-                    </p>
-
-                </div>
-
-                <span class="text-sm text-neutral-400 uppercase tracking-[0.15em]">
-                    Ver proyectos →
-                </span>
-
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- SOBRE MÍ -->
-<!-- ========================================================= -->
-
-<section
-    id="sobre-mi"
-    class="bg-white text-black px-6 md:px-12 lg:px-20 py-20 md:py-32"
->
-
-    <div class="max-w-[1400px] mx-auto">
-
-        <!-- Cabecera -->
-        <div class="flex items-start justify-between mb-16 md:mb-24">
-
-            <span class="text-[#0066FF] font-bold text-sm md:text-base">
-                02
-            </span>
-
-            <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500">
-                Sobre mí
-            </p>
-
-        </div>
-
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
-            <!-- Texto -->
-            <div>
-
-                <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-[-0.05em] mb-10">
-                    Diseño.
-                    <br />
-                    Proyectos.
-                    <br />
-                    Personas.
-                </h2>
-
-                <div class="max-w-xl space-y-6 text-lg md:text-xl leading-relaxed text-neutral-600">
-
-                    <p>
-                        Soy Yeray Díaz, diseñador digital y de proyectos.
-                    </p>
-
-                    <p>
-                        Trabajo en diseño web, campañas digitales,
-                        identidad visual y gestión de proyectos,
-                        llevando las ideas desde el briefing hasta la entrega.
-                    </p>
-
-                    <p>
-                        Me interesa que las cosas funcionen,
-                        pero también que tengan algo que decir.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Foto -->
-            <div class="relative">
-
-                <div class="absolute -top-4 -left-4 w-full h-full border-2 border-[#0066FF]"></div>
-
-                <div class="relative bg-black p-3">
-
-                    <img
-                        src={peter.src}
-                        alt="Yeray Díaz, diseñador digital y de proyectos"
-                        class="w-full h-auto object-cover"
-                    />
+                    </div>
 
                 </div>
 
@@ -466,120 +587,97 @@ description="Portfolio de Yeray Díaz, diseñador digital y de proyectos."
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ========================================================= -->
-<!-- LO QUE HAGO -->
-<!-- ========================================================= -->
+    <!-- ========================================================= -->
+    <!-- ALGUNOS DATOS -->
+    <!-- ========================================================= -->
 
-<section class="bg-black text-white px-6 md:px-12 lg:px-20 py-20 md:py-32">
+    <section class="bg-[#0066FF] text-white px-6 md:px-12 lg:px-20 py-20 md:py-32">
 
-    <div class="max-w-[1400px] mx-auto">
+        <div class="max-w-[1400px] mx-auto">
 
-        <!-- Cabecera -->
-        <div class="flex items-start justify-between mb-16 md:mb-24">
+            <div class="flex items-start justify-between mb-16 md:mb-24">
 
-            <span class="text-[#0066FF] font-bold text-sm md:text-base">
-                03
-            </span>
-
-            <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400">
-                Lo que hago
-            </p>
-
-        </div>
-
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-800 border border-neutral-800">
-
-            <!-- Identidad -->
-            <div class="bg-black p-8 md:p-12 min-h-[280px] flex flex-col justify-between group hover:bg-[#0A0A0A] transition-colors">
-
-                <span class="text-[#0066FF] text-sm">
-                    01
-                </span>
-
-                <div>
-
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                        Identidad visual
-                    </h3>
-
-                    <p class="text-neutral-400 text-lg leading-relaxed max-w-md">
-                        Diseño visual pensado para construir
-                        una identidad reconocible y coherente.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Web -->
-            <div class="bg-black p-8 md:p-12 min-h-[280px] flex flex-col justify-between group hover:bg-[#0A0A0A] transition-colors">
-
-                <span class="text-[#0066FF] text-sm">
-                    02
-                </span>
-
-                <div>
-
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                        Diseño web
-                    </h3>
-
-                    <p class="text-neutral-400 text-lg leading-relaxed max-w-md">
-                        Webs responsive donde diseño,
-                        estructura y experiencia trabajan juntas.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Campañas -->
-            <div class="bg-black p-8 md:p-12 min-h-[280px] flex flex-col justify-between group hover:bg-[#0A0A0A] transition-colors">
-
-                <span class="text-[#0066FF] text-sm">
-                    03
-                </span>
-
-                <div>
-
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                        Campañas digitales
-                    </h3>
-
-                    <p class="text-neutral-400 text-lg leading-relaxed max-w-md">
-                        Contenido y campañas digitales
-                        pensadas para conectar con personas.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Gestión -->
-            <div class="bg-black p-8 md:p-12 min-h-[280px] flex flex-col justify-between group hover:bg-[#0A0A0A] transition-colors">
-
-                <span class="text-[#0066FF] text-sm">
+                <span class="text-sm md:text-base font-bold">
                     04
                 </span>
 
+                <p class="uppercase tracking-[0.2em] text-xs md:text-sm">
+                    Algunos datos sobre mí
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+
                 <div>
 
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                        Gestión de proyectos
+                    <span class="text-6xl md:text-8xl font-bold tracking-[-0.05em]">
+                        01
+                    </span>
+
+                    <h3 class="text-2xl md:text-3xl font-bold mt-6 mb-3">
+                        Diseño
                     </h3>
 
-                    <p class="text-neutral-400 text-lg leading-relaxed max-w-md">
-                        Organización, plazos, clientes y entregas.
-                        Porque una buena idea también necesita llegar a puerto.
+                    <p class="text-white/80 text-lg leading-relaxed">
+                        Me gusta el diseño limpio, directo y con intención.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span class="text-6xl md:text-8xl font-bold tracking-[-0.05em]">
+                        02
+                    </span>
+
+                    <h3 class="text-2xl md:text-3xl font-bold mt-6 mb-3">
+                        Café
+                    </h3>
+
+                    <p class="text-white/80 text-lg leading-relaxed">
+                        Una cantidad razonable. Probablemente.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span class="text-6xl md:text-8xl font-bold tracking-[-0.05em]">
+                        03
+                    </span>
+
+                    <h3 class="text-2xl md:text-3xl font-bold mt-6 mb-3">
+                        Tecnología
+                    </h3>
+
+                    <p class="text-white/80 text-lg leading-relaxed">
+                        Siempre probando herramientas nuevas
+                        para trabajar mejor.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span class="text-6xl md:text-8xl font-bold tracking-[-0.05em]">
+                        04
+                    </span>
+
+                    <h3 class="text-2xl md:text-3xl font-bold mt-6 mb-3">
+                        IA
+                    </h3>
+
+                    <p class="text-white/80 text-lg leading-relaxed">
+                        Una herramienta más. La creatividad
+                        sigue teniendo que ponerla alguien.
                     </p>
 
                 </div>
@@ -588,237 +686,126 @@ description="Portfolio de Yeray Díaz, diseñador digital y de proyectos."
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ========================================================= -->
-<!-- ALGUNOS DATOS -->
-<!-- ========================================================= -->
+    <!-- ========================================================= -->
+    <!-- CONTACTO -->
+    <!-- ========================================================= -->
 
-<section class="bg-[#0066FF] text-white px-6 md:px-12 lg:px-20 py-20 md:py-32">
+    <section
+        id="contact"
+        class="bg-black text-white px-6 md:px-12 lg:px-20 py-24 md:py-40"
+    >
 
-    <div class="max-w-[1400px] mx-auto">
+        <div class="max-w-[1400px] mx-auto">
 
-        <div class="flex items-start justify-between mb-16 md:mb-24">
-
-            <span class="text-sm md:text-base font-bold">
-                04
-            </span>
-
-            <p class="uppercase tracking-[0.2em] text-xs md:text-sm">
-                Algunos datos sobre mí
+            <p class="text-[#0066FF] uppercase tracking-[0.2em] text-sm font-bold mb-8">
+                ¿Hablamos?
             </p>
 
-        </div>
+            <h2 class="text-[clamp(3.5rem,9vw,8rem)] leading-[0.85] font-bold tracking-[-0.06em] max-w-6xl">
+                Hablemos
+                <br />
+                de tu próximo
+                <br />
+                proyecto.
+            </h2>
 
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+            <div class="mt-16 md:mt-24 flex flex-wrap gap-4">
 
-            <div>
-
-                <span class="text-6xl md:text-8xl font-bold tracking-[-0.05em]">
-                    01
-                </span>
-
-                <h3 class="text-2xl md:text-3xl font-bold mt-6 mb-3">
-                    Diseño
-                </h3>
-
-                <p class="text-white/80 text-lg leading-relaxed">
-                    Me gusta el diseño limpio, directo y con intención.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <span class="text-6xl md:text-8xl font-bold tracking-[-0.05em]">
-                    02
-                </span>
-
-                <h3 class="text-2xl md:text-3xl font-bold mt-6 mb-3">
-                    Café
-                </h3>
-
-                <p class="text-white/80 text-lg leading-relaxed">
-                    Una cantidad razonable. Probablemente.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <span class="text-6xl md:text-8xl font-bold tracking-[-0.05em]">
-                    03
-                </span>
-
-                <h3 class="text-2xl md:text-3xl font-bold mt-6 mb-3">
-                    Tecnología
-                </h3>
-
-                <p class="text-white/80 text-lg leading-relaxed">
-                    Siempre probando herramientas nuevas
-                    para trabajar mejor.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <span class="text-6xl md:text-8xl font-bold tracking-[-0.05em]">
-                    04
-                </span>
-
-                <h3 class="text-2xl md:text-3xl font-bold mt-6 mb-3">
-                    IA
-                </h3>
-
-                <p class="text-white/80 text-lg leading-relaxed">
-                    Una herramienta más. La creatividad
-                    sigue teniendo que ponerla alguien.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ========================================================= -->
-<!-- CONTACTO -->
-<!-- ========================================================= -->
-
-<section
-    id="contact"
-    class="bg-black text-white px-6 md:px-12 lg:px-20 py-24 md:py-40"
->
-
-    <div class="max-w-[1400px] mx-auto">
-
-        <p class="text-[#0066FF] uppercase tracking-[0.2em] text-sm font-bold mb-8">
-            ¿Hablamos?
-        </p>
-
-        <h2 class="text-[clamp(3.5rem,9vw,8rem)] leading-[0.85] font-bold tracking-[-0.06em] max-w-6xl">
-            Hablemos
-            <br />
-            de tu próximo
-            <br />
-            proyecto.
-        </h2>
-
-
-        <div class="mt-16 md:mt-24 flex flex-wrap gap-4">
-
-            <!-- WhatsApp -->
-            <a
-                href="https://wa.me/34697601146?text=Hola%20Yeray%2C%20me%20gustar%C3%ADa%20hablar%20contigo%20sobre%20un%20proyecto.%20%C2%BFPodemos%20comentar%20los%20detalles%3F"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-3 border border-neutral-700 px-6 py-4 hover:bg-[#0066FF] hover:border-[#0066FF] transition-colors"
-            >
-                WhatsApp
-
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="w-5 h-5"
+                <!-- WhatsApp -->
+                <a
+                    href="https://wa.me/34697601146?text=Hola%20Yeray%2C%20me%20gustar%C3%ADa%20hablar%20contigo%20sobre%20un%20proyecto.%20%C2%BFPodemos%20comentar%20los%20detalles%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-3 border border-neutral-700 px-6 py-4 hover:bg-[#0066FF] hover:border-[#0066FF] transition-colors"
                 >
-                    <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.51 0 .17 5.34.17 11.9c0 2.1.55 4.15 1.6 5.96L.1 24l6.28-1.64a11.88 11.88 0 0 0 5.69 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.46-8.43ZM12.08 21.8h-.01a9.88 9.88 0 0 1-5.04-1.38l-.36-.21-3.73.98.99-3.64-.23-.37a9.88 9.88 0 1 1 8.38 4.62Zm5.42-7.4c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.97 1.18-.18.2-.36.22-.66.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.69-1.66-.94-2.28-.25-.6-.5-.52-.69-.53h-.59c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.12-.27-.2-.57-.35Z"/>
-                </svg>
-            </a>
+                    WhatsApp
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-5 h-5"
+                    >
+                        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.51 0 .17 5.34.17 11.9c0 2.1.55 4.15 1.6 5.96L.1 24l6.28-1.64a11.88 11.88 0 0 0 5.69 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.16-3.46-8.43ZM12.08 21.8h-.01a9.88 9.88 0 0 1-5.04-1.38l-.36-.21-3.73.98.99-3.64-.23-.37a9.88 9.88 0 1 1 8.38 4.62Zm5.42-7.4c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.97 1.18-.18.2-.36.22-.66.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.64-2.06-.17-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.69-1.66-.94-2.28-.25-.6-.5-.52-.69-.53h-.59c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.12-.27-.2-.57-.35Z"/>
+                    </svg>
+                </a>
 
 
-            <!-- Email -->
-            <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=yeraydxz@gmail.com&su=Empecemos%20tu%20proyecto&body=Hola%20Yeray%2C%0A%0AMe%20gustar%C3%ADa%20hablar%20contigo%20sobre%20un%20proyecto."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-3 border border-neutral-700 px-6 py-4 hover:bg-[#0066FF] hover:border-[#0066FF] transition-colors"
-            >
-                Email
-
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    class="w-5 h-5"
+                <!-- Email -->
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=yeraydxz@gmail.com&su=Empecemos%20tu%20proyecto&body=Hola%20Yeray%2C%0A%0AMe%20gustar%C3%ADa%20hablar%20contigo%20sobre%20un%20proyecto."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-3 border border-neutral-700 px-6 py-4 hover:bg-[#0066FF] hover:border-[#0066FF] transition-colors"
                 >
-                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                    <path d="M3 7l9 6 9-6" />
-                </svg>
-            </a>
+                    Email
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        class="w-5 h-5"
+                    >
+                        <rect x="3" y="5" width="18" height="14" rx="2" />
+                        <path d="M3 7l9 6 9-6" />
+                    </svg>
+                </a>
 
 
-            <!-- Instagram -->
-            <a
-                href="https://instagram.com/yerxcreative"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram de Yeray"
-                class="inline-flex items-center gap-3 border border-neutral-700 px-6 py-4 hover:bg-[#0066FF] hover:border-[#0066FF] transition-colors"
-            >
-                Instagram
-            </a>
+                <!-- Instagram -->
+                <a
+                    href="https://instagram.com/yerxcreative"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram de Yeray"
+                    class="inline-flex items-center gap-3 border border-neutral-700 px-6 py-4 hover:bg-[#0066FF] hover:border-[#0066FF] transition-colors"
+                >
+                    Instagram
+                </a>
 
 
-            <!-- Threads -->
-            <a
-                href="https://threads.com/@yerxcreative"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Threads de Yeray"
-                class="inline-flex items-center gap-3 border border-neutral-700 px-6 py-4 hover:bg-[#0066FF] hover:border-[#0066FF] transition-colors"
-            >
-                Threads
-            </a>
+                <!-- Threads -->
+                <a
+                    href="https://threads.com/@yerxcreative"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Threads de Yeray"
+                    class="inline-flex items-center gap-3 border border-neutral-700 px-6 py-4 hover:bg-[#0066FF] hover:border-[#0066FF] transition-colors"
+                >
+                    Threads
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ========================================================= -->
-<!-- FOOTER -->
-<!-- ========================================================= -->
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
 
-<footer class="bg-black border-t border-neutral-800 px-6 md:px-12 py-8">
+    <footer class="bg-black border-t border-neutral-800 px-6 md:px-12 py-8">
 
-    <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
 
-        <span>
-            © {new Date().getFullYear()} YerxCreative
-        </span>
+            <span>
+                © {new Date().getFullYear()} YerxCreative
+            </span>
 
-        <span>
-            Diseño digital con criterio.
-        </span>
+            <span>
+                Diseño digital con criterio.
+            </span>
 
-    </div>
+        </div>
 
-</footer>
-```
+    </footer>
 
 </Layout>
-```
-
-**Este es el archivo que tienes que pegar en `src/pages/index.astro`.** El punto importante está corregido:
-
-```astro
-<p class="text-neutral-400 text-lg leading-relaxed max-w-md">
-```
-
-No hay que añadir ni quitar ninguna otra cosa.

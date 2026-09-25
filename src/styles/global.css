@@ -23,11 +23,3 @@ a {
 a:hover {
     opacity: 0.8;
 }
-
-/* Líneas estructurales YerxCreative */
-
-.border-neutral-800,
-.border-neutral-700,
-.border-base-200 {
-    border-color: #0066FF !important;
-}

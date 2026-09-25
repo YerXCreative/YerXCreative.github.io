@@ -1,50 +1,100 @@
 ---
-// components
-import Container from "../../elements/Container.astro";
-import Heading from "../../elements/Heading.astro";
-import ResumeDropdown from "../../elements/ResumeDropdown.astro";
-import ContainerBottom from "../../elements/ContainerBottom.astro";
-
-// content
 const experience = [
-    { 
-        title: "Diseño Gráfico & Branding",
-        place: "Freelance",
-        period: "Actualidad",
-        text: "Creo identidades visuales y soluciones gráficas para marcas que necesitan definir, mejorar o renovar su imagen."
-    }, 
-    { 
-        title: "Identidad Visual",
-        place: "Proyectos de Marca",
-        period: "Actualidad",
-        text: "Trabajo el concepto, la dirección visual, el logotipo y los diferentes elementos que forman una identidad coherente y reconocible."
-    }, 
-    { 
-        title: "Diseño para Digital",
-        place: "Proyectos Freelance",
-        period: "Actualidad",
-        text: "Diseño piezas para redes sociales, páginas web y otros soportes digitales, manteniendo una comunicación visual clara y consistente."
-    }, 
-    { 
-        title: "Diseño Gráfico",
-        place: "Proyectos Creativos",
-        period: "Actualidad",
-        text: "Desarrollo propuestas gráficas combinando composición, tipografía, color e imagen para convertir ideas en soluciones visuales."
+    {
+        number: "01",
+        title: "Diseñador Gráfico & Digital",
+        place: "Caprica Digital",
+        location: "Oviedo",
+        text: "Gestión de proyectos creativos de principio a fin, diseño de campañas digitales y contenido para redes sociales, combinando creatividad, organización y atención al cliente."
     },
-]
+    {
+        number: "02",
+        title: "Diseño & Organización de Eventos",
+        place: "Fenicia",
+        location: "Gijón",
+        text: "Coordinación logística del Campeonato de Pinchos de Asturias y desarrollo de mapas de localización y planimetría para los eventos."
+    },
+    {
+        number: "03",
+        title: "Diseñador Web & Gráfico",
+        place: "Colectivo Trabajadores EMULSA",
+        location: "Gijón",
+        text: "Diseño y desarrollo de una web responsive, junto con la creación de materiales gráficos y contenido digital."
+    },
+    {
+        number: "04",
+        title: "Asesor de Multiproducto",
+        place: "Seguros Santalucía",
+        location: "Gijón",
+        text: "Gestión y seguimiento de cartera de clientes mediante CRM, atención personalizada y resolución de incidencias."
+    },
+    {
+        number: "05",
+        title: "Community Manager & Publicidad Digital",
+        place: "Apptelo",
+        location: "Gijón",
+        text: "Gestión de campañas de Meta Ads y contenido para eventos y redes sociales, optimizando la comunicación digital de diferentes clientes."
+    }
+];
 ---
 
-<Container variant={'md'}>
-    <Heading tagName="h2" tagSize="h2" class="text-center">Experiencia</Heading>
-    <div class="flex flex-col gap-4">  
-        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
-            {
-                experience.map((i) => (
-                    <ResumeDropdown title={i.title} place={i.place} period={i.period} text={i.text} />
-                ))
-            }
-        </Container>
-        <ContainerBottom />
+<section class="max-w-7xl mx-auto px-6 md:px-10 pb-24">
+
+    <!-- Cabecera -->
+    <header class="mb-12">
+        <div class="flex items-end justify-between gap-6 mb-6">
+            <span class="text-[#0066FF] text-sm font-bold tracking-[0.2em]">
+                02
+            </span>
+
+            <span class="hidden md:block text-neutral-500 text-sm">
+                Experiencia
+            </span>
+        </div>
+
+        <div class="border-t border-[#292929] pt-8">
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.05em] leading-[0.9] text-white">
+                Experiencia
+            </h2>
+        </div>
+    </header>
+
+    <!-- Experiencia -->
+    <div class="border-t border-[#292929]">
+
+        {experience.map((item) => (
+            <article class="grid md:grid-cols-[80px_1fr_auto] gap-5 md:gap-8 py-8 border-b border-[#292929]">
+
+                <!-- Número -->
+                <span class="text-[#0066FF] text-sm font-bold tracking-[0.15em]">
+                    {item.number}
+                </span>
+
+                <!-- Información -->
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold tracking-[-0.03em] text-white">
+                        {item.title}
+                    </h3>
+
+                    <div class="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm text-neutral-500">
+                        <span>{item.place}</span>
+                        <span>·</span>
+                        <span>{item.location}</span>
+                    </div>
+
+                    <p class="mt-5 max-w-2xl text-neutral-400 leading-relaxed">
+                        {item.text}
+                    </p>
+                </div>
+
+                <!-- Indicador -->
+                <span class="hidden md:block text-[#0066FF] text-xl">
+                    ↗
+                </span>
+
+            </article>
+        ))}
+
     </div>
 
-</Container>
+</section>

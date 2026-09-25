@@ -1,11 +1,55 @@
 ---
 import peter3 from "../../../assets/images/peter3.jpg";
+
+const skills = [
+    {
+        number: "01",
+        title: "Identidad visual",
+        text: "Concepto, dirección visual, logotipos y sistemas gráficos coherentes para construir marcas reconocibles."
+    },
+    {
+        number: "02",
+        title: "Diseño web",
+        text: "Diseño de páginas web responsive y trabajo con WordPress, Elementor, HTML y CSS."
+    },
+    {
+        number: "03",
+        title: "Campañas digitales",
+        text: "Diseño de contenidos para redes sociales y campañas digitales, incluyendo trabajo con Meta Ads."
+    },
+    {
+        number: "04",
+        title: "Diseño gráfico",
+        text: "Composición, tipografía, imagen y diseño editorial para soportes digitales e impresos."
+    },
+    {
+        number: "05",
+        title: "Gestión de proyectos",
+        text: "Organización, planificación, seguimiento de tareas, coordinación de entregas y resolución de incidencias."
+    },
+    {
+        number: "06",
+        title: "Cliente y comunicación",
+        text: "Atención al cliente, seguimiento mediante CRM y comunicación durante las diferentes fases de un proyecto."
+    },
+    {
+        number: "07",
+        title: "Herramientas creativas",
+        text: "Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom y Procreate."
+    },
+    {
+        number: "08",
+        title: "IA aplicada al diseño",
+        text: "Uso de herramientas de inteligencia artificial para explorar conceptos, generar recursos y acelerar procesos creativos."
+    }
+];
 ---
 
 <section class="max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-24">
 
-    <!-- Cabecera -->
+    <!-- CABECERA -->
     <header class="mb-16 md:mb-20">
+
         <div class="flex items-end justify-between gap-6 mb-6">
             <span class="text-[#0066FF] text-sm font-bold tracking-[0.2em]">
                 01
@@ -21,18 +65,22 @@ import peter3 from "../../../assets/images/peter3.jpg";
                 Sobre mí
             </h1>
         </div>
+
     </header>
 
-    <!-- Presentación -->
+
+    <!-- PRESENTACIÓN -->
     <div class="grid md:grid-cols-[1fr_360px] gap-12 md:gap-20 items-start">
 
-        <!-- Texto -->
+        <!-- TEXTO -->
         <div>
+
             <p class="text-2xl md:text-4xl lg:text-5xl font-bold tracking-[-0.03em] leading-tight text-white max-w-4xl">
                 Diseño, proyectos y creatividad para convertir ideas en experiencias visuales.
             </p>
 
             <div class="mt-10 max-w-2xl space-y-6 text-neutral-400 text-base md:text-lg leading-relaxed">
+
                 <p>
                     Soy Yeray Díaz Cortina, diseñador digital y de proyectos.
                     Trabajo en diseño web, campañas digitales, identidad visual
@@ -45,10 +93,13 @@ import peter3 from "../../../assets/images/peter3.jpg";
                     Combino diseño y tecnología con una forma de trabajar cercana,
                     organizada y orientada a resultados.
                 </p>
+
             </div>
+
         </div>
 
-        <!-- Fotografía -->
+
+        <!-- FOTO -->
         <div class="border border-[#292929] p-3">
             <img
                 src={peter3.src}
@@ -58,5 +109,76 @@ import peter3 from "../../../assets/images/peter3.jpg";
         </div>
 
     </div>
+
+
+    <!-- LO QUE SÉ HACER -->
+    <section class="mt-32 md:mt-40">
+
+        <header class="mb-12">
+
+            <div class="flex items-end justify-between gap-6 mb-6">
+                <span class="text-[#0066FF] text-sm font-bold tracking-[0.2em]">
+                    02
+                </span>
+
+                <span class="hidden md:block text-neutral-500 text-sm">
+                    Habilidades
+                </span>
+            </div>
+
+            <div class="border-t border-[#292929] pt-8">
+
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.05em] leading-[0.9] text-white">
+                    Lo que sé hacer
+                </h2>
+
+            </div>
+
+        </header>
+
+
+        <!-- LISTA DE HABILIDADES -->
+        <div class="border-t border-[#292929]">
+
+            {skills.map((skill) => (
+                <article class="grid md:grid-cols-[80px_1fr] gap-5 md:gap-8 py-8 border-b border-[#292929]">
+
+                    <span class="text-[#0066FF] text-sm font-bold tracking-[0.15em]">
+                        {skill.number}
+                    </span>
+
+                    <div>
+
+                        <h3 class="text-2xl md:text-3xl font-bold tracking-[-0.03em] text-white">
+                            {skill.title}
+                        </h3>
+
+                        <p class="mt-4 max-w-2xl text-neutral-400 leading-relaxed">
+                            {skill.text}
+                        </p>
+
+                    </div>
+
+                </article>
+            ))}
+
+        </div>
+
+    </section>
+
+
+    <!-- CIERRE -->
+    <section class="mt-32 md:mt-40">
+
+        <div class="border-t border-[#292929] pt-8">
+
+            <p class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.04em] leading-tight text-white max-w-5xl">
+                Diseño con intención.
+                <span class="text-[#0066FF]">Creatividad con criterio.</span>
+            </p>
+
+        </div>
+
+    </section>
 
 </section>

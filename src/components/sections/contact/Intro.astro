@@ -1,15 +1,30 @@
----
-// components
-import Heading from "../../elements/Heading.astro";
-import Container from "../../elements/Container.astro";
-import Text from "../../elements/Text.astro";
----
+<section class="max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-16">
 
-<Container variant={'xl'} class="text-center text-base-900 flex flex-col items-center">
-    <Heading tagName="h1" tagSize="h1">Contacto</Heading>
-    <div class="max-w-3xl flex flex-col gap-4">
-        <Text variant={'xl'}>¡Creemos algo increíble juntos!</Text>
-        <Text variant={'sm'}>Me encantaría conocer tu proyecto y explorar cómo podemos trabajar juntos para crear soluciones de diseño que generen resultados.</Text>
-        <Text variant={'sm'}>Actualmente acepto nuevos proyectos. Tiempo de respuesta: 24-48 horas.</Text>
-    </div>
-</Container>
+    <!-- Cabecera -->
+    <header>
+
+        <div class="flex items-end justify-between gap-6 mb-6">
+            <span class="text-[#0066FF] text-sm font-bold tracking-[0.2em]">
+                04
+            </span>
+
+            <span class="hidden md:block text-neutral-500 text-sm">
+                YerxCreative / Contacto
+            </span>
+        </div>
+
+        <div class="border-t border-[#292929] pt-8">
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9] text-white max-w-5xl">
+                Hablemos.
+            </h1>
+
+            <p class="mt-8 max-w-2xl text-xl md:text-2xl text-neutral-400 leading-relaxed">
+                ¿Tienes un proyecto en mente? Cuéntame qué necesitas y vemos cómo darle forma.
+            </p>
+
+        </div>
+
+    </header>
+
+</section>

@@ -1,10 +1,9 @@
-```astro
 ---
 const navLinks = [
-    { title: "Home", href: "/" },
-    { title: "Work", href: "/works" },
-    { title: "About", href: "/about" },
-    { title: "Contact", href: "#contact" }
+    { title: "Inicio", href: "/" },
+    { title: "Proyectos", href: "/works" },
+    { title: "Sobre mí", href: "/about" },
+    { title: "Contacto", href: "/#contact" }
 ];
 ---
 
@@ -19,10 +18,8 @@ const navLinks = [
             YerxCreative
         </a>
 
-
         <!-- Navegación -->
         <ul class="hidden md:flex items-center gap-1">
-
             {navLinks.map((link) => (
                 <li>
                     <a
@@ -33,13 +30,11 @@ const navLinks = [
                     </a>
                 </li>
             ))}
-
         </ul>
-
 
         <!-- Botón contacto -->
         <a
-            href="#contact"
+            href="/#contact"
             aria-label="Ir a contacto"
             class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#0066FF] text-white flex items-center justify-center hover:scale-105 hover:bg-[#1687FF] transition-all duration-200 shrink-0"
         >
@@ -58,4 +53,3 @@ const navLinks = [
 
     </div>
 </nav>
-```

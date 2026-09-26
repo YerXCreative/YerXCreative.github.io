@@ -6,7 +6,10 @@ import { getCollection } from "astro:content";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const works = await getCollection("works", ({ data }) => !data.isDraft);
-    return paginate(works, { pageSize: 6 });
+
+    return paginate(works, {
+        pageSize: 6
+    });
 }) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
@@ -16,90 +19,110 @@ const { page } = Astro.props;
     title="Proyectos | YerxCreative"
     description="Una selección de proyectos de Yeray Díaz en diseño web, campañas digitales e identidad visual."
 >
-    <main class="max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-20">
 
-        <!-- CABECERA -->
-        <header class="mb-16 md:mb-20">
+    <main class="bg-black text-white px-6 md:px-12 lg:px-20 pt-32 pb-24">
 
-            <div class="flex items-end justify-end gap-6 mb-6">
-                <span class="hidden md:block text-neutral-500 text-sm">
+        <div class="max-w-[1400px] mx-auto">
+
+            <!-- CABECERA -->
+
+            <header class="mb-20 md:mb-28">
+
+                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-6">
                     YerxCreative / Proyectos
-                </span>
-            </div>
-
-            <div class="border-t border-[#292929] pt-8">
-
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9] text-white max-w-5xl">
-                    Proyectos
-                </h1>
-
-                <p class="mt-8 max-w-2xl text-neutral-400 text-lg md:text-xl leading-relaxed">
-                    Una selección de trabajos en diseño web, campañas digitales,
-                    identidad visual y proyectos creativos.
                 </p>
 
-            </div>
+                <div class="border-t border-[#292929] pt-8">
 
-        </header>
+                    <h1 class="text-[clamp(4rem,10vw,9rem)] font-bold tracking-[-0.07em] leading-[0.82] max-w-6xl">
+                        Proyectos.
+                    </h1>
 
+                    <p class="mt-10 max-w-2xl text-lg md:text-xl text-neutral-400 leading-relaxed">
+                        Una selección de trabajos en diseño web,
+                        campañas digitales, identidad visual
+                        y proyectos creativos.
+                    </p>
 
-        <!-- PROYECTOS -->
-        <section aria-label="Proyectos seleccionados">
+                </div>
 
-            <div class="grid md:grid-cols-2 gap-x-8 gap-y-16 md:gap-y-20">
-
-                {page.data.map((work) => (
-                    <Work
-                        slug={work.data.slug}
-                        featuredImage={work.data.featuredImage}
-                        title={work.data.title}
-                        client={work.data.client}
-                        category={work.data.category}
-                    />
-                ))}
-
-            </div>
-
-        </section>
+            </header>
 
 
-        <!-- PAGINACIÓN -->
-        {page.totalPages > 1 && (
-            <nav
-                aria-label="Paginación de proyectos"
-                class="mt-20 pt-8 border-t border-[#292929] flex items-center justify-between"
-            >
+            <!-- PROYECTOS -->
 
-                {page.url.prev ? (
-                    <a
-                        href={page.url.prev}
-                        class="text-white hover:text-[#0066FF] transition-colors text-sm font-medium"
-                    >
-                        ← Anterior
-                    </a>
-                ) : (
-                    <span></span>
-                )}
+            <section aria-label="Proyectos seleccionados">
 
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 md:gap-y-24">
 
-                <span class="text-neutral-500 text-sm">
-                    {page.currentPage} / {page.totalPages}
-                </span>
+                    {page.data.map((work) => (
+                        <Work
+                            slug={work.data.slug}
+                            featuredImage={work.data.featuredImage}
+                            title={work.data.title}
+                            client={work.data.client}
+                            category={work.data.category}
+                        />
+                    ))}
+
+                </div>
+
+            </section>
 
 
-                {page.url.next ? (
-                    <a
-                        href={page.url.next}
-                        class="text-white hover:text-[#0066FF] transition-colors text-sm font-medium"
-                    >
-                        Siguiente →
-                    </a>
-                ) : (
-                    <span></span>
-                )}
+            <!-- PAGINACIÓN -->
 
-            </nav>
-        )}
+            {page.totalPages > 1 && (
+                <nav
+                    aria-label="Paginación de proyectos"
+                    class="mt-24 pt-8 border-t border-[#292929] flex items-center justify-between"
+                >
+
+                    {page.url.prev ? (
+                        <a
+                            href={page.url.prev}
+                            class="group inline-flex items-center gap-3 text-white text-sm font-medium"
+                        >
+                            <span class="text-[#0066FF] group-hover:-translate-x-1 transition-transform">
+                                ←
+                            </span>
+
+                            <span class="group-hover:text-[#0066FF] transition-colors">
+                                Anterior
+                            </span>
+                        </a>
+                    ) : (
+                        <span></span>
+                    )}
+
+
+                    <span class="text-neutral-600 text-xs uppercase tracking-[0.2em]">
+                        Página {page.currentPage}
+                    </span>
+
+
+                    {page.url.next ? (
+                        <a
+                            href={page.url.next}
+                            class="group inline-flex items-center gap-3 text-white text-sm font-medium"
+                        >
+                            <span class="group-hover:text-[#0066FF] transition-colors">
+                                Siguiente
+                            </span>
+
+                            <span class="text-[#0066FF] group-hover:translate-x-1 transition-transform">
+                                →
+                            </span>
+                        </a>
+                    ) : (
+                        <span></span>
+                    )}
+
+                </nav>
+            )}
+
+        </div>
 
     </main>
+
 </Layout>

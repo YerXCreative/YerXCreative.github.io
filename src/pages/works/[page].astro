@@ -1,82 +1,293 @@
 ---
-// Layout
 import Layout from "../../layouts/Layout.astro";
-
-// Styling
 import "../../styles/markdown.css";
 
-// Components
-import Container from "../../components/elements/Container.astro";
-import Heading from "../../components/elements/Heading.astro";
-import Text from "../../components/elements/Text.astro";
-import ImageContainer from "../../components/elements/ImageContainer.astro";
-import Link from "../../components/elements/Link.astro";
-
-// Routing
 import type { GetStaticPaths } from "astro";
 import { render } from "astro:content";
 import { getCollection } from "astro:content";
+
+import ImageContainer from "../../components/elements/ImageContainer.astro";
+
 export const getStaticPaths = (async () => {
-    const works = await getCollection("works", ({data}) => !data.isDraft)
+    const works = await getCollection("works", ({ data }) => !data.isDraft);
+
     return works.map((work) => ({
         params: {
             page: work.data.slug,
         },
         props: {
             work,
-        }
+        },
     }));
 }) satisfies GetStaticPaths;
 
-// props
+
 const { work } = Astro.props;
+
 const { Content } = await render(work);
-const { title, client, category, services, year, description, featuredImage, imageTwo, imageThree, imageFour, liveSite } = work.data;
-const details = [
-    { heading: "Cliente", text: `${client}` },
-    { heading: "Categoría", text: `${category}` },
-    { heading: "Servicios", text: `${services}` },
-    { heading: "Año", text: `${year}` }
-]
+
+const {
+    title,
+    client,
+    category,
+    services,
+    year,
+    description,
+    featuredImage,
+    imageTwo,
+    imageThree,
+    imageFour,
+    liveSite,
+} = work.data;
 ---
 
-<Layout 
-    title={`Work - ${title}`}
+<Layout
+    title={`${title} | YerxCreative`}
     description={description}
 >
-    <Container variant={'xl'} aria-label="Work Details" class="items-center">
-        <Heading tagName="h1" tagSize="h1" class="text-center">{title}</Heading>
-        <div class="w-full md:h-[600px] h-[300px]">
-            <ImageContainer src={featuredImage} alt={title} />
-        </div>
-        <div class="flex flex-col gap-7 md:grid md:grid-cols-4">
-            {
-                details.map((detail) => (
-                    <div class="text-center">
-                        <Heading tagName="h2" tagSize="h4" class="mb-2">{detail.heading}</Heading>
-                        <Text variant={'sm'} class="text-base-900">{detail.text}</Text>
-                    </div>
-                ))
-            }
-        </div>
-        <Link variant={'button'} href={liveSite}>Ver Sitio</Link>
-        <div class="md:max-w-3xl text-base-900">
-            <Text variant={'xl'}>{description}</Text>
-        </div>
-        <div class="flex md:flex-row flex-col gap-7">
-            <div>
-                <ImageContainer src={imageTwo} alt={title} />
+
+    <main class="max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-24">
+
+
+        <!-- CABECERA -->
+
+        <header class="mb-16 md:mb-24">
+
+            <div class="flex items-end justify-end mb-6">
+                <span class="hidden md:block text-neutral-500 text-sm">
+                    YerxCreative / Proyectos
+                </span>
             </div>
-            <div>
-                <ImageContainer src={imageThree} alt={title} />
+
+            <div class="border-t border-[#292929] pt-8">
+
+                <p class="text-[#0066FF] text-sm uppercase tracking-[0.16em] font-semibold mb-6">
+                    {category}
+                </p>
+
+                <h1 class="text-5xl md:text-7xl lg:text-[7rem] font-bold tracking-[-0.06em] leading-[0.88] text-white max-w-6xl">
+                    {title}
+                </h1>
+
             </div>
-        </div>
-        <article class="markdown-content md:max-w-3xl flex flex-col gap-4">
-            <Content />
-        </article>
-        <div class="w-full md:h-[600px] h-[300px]">
-            <ImageContainer src={imageFour} alt={title} />
-        </div>
-        <Link variant={'button'} href="/works">Todos los Proyectos</Link>
-    </Container>
+
+        </header>
+
+
+        <!-- IMAGEN PRINCIPAL -->
+
+        <section class="mb-16 md:mb-24">
+
+            <div class="w-full aspect-[16/9] overflow-hidden bg-[#0A0A0A] border border-[#292929]">
+
+                <ImageContainer
+                    src={featuredImage}
+                    alt={title}
+                    class="w-full h-full object-cover"
+                />
+
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACIÓN DEL PROYECTO -->
+
+        <section class="border-t border-[#292929] py-10 md:py-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 mb-3">
+                        Cliente
+                    </p>
+
+                    <p class="text-white text-lg">
+                        {client}
+                    </p>
+                </div>
+
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 mb-3">
+                        Categoría
+                    </p>
+
+                    <p class="text-white text-lg">
+                        {category}
+                    </p>
+                </div>
+
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 mb-3">
+                        Servicios
+                    </p>
+
+                    <p class="text-white text-lg">
+                        {services}
+                    </p>
+                </div>
+
+
+                <div>
+                    <p class="text-xs uppercase tracking-[0.15em] text-neutral-500 mb-3">
+                        Año
+                    </p>
+
+                    <p class="text-white text-lg">
+                        {year}
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DESCRIPCIÓN -->
+
+        <section class="py-16 md:py-24">
+
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-20">
+
+                <div>
+                    <p class="text-sm uppercase tracking-[0.16em] text-neutral-500">
+                        El proyecto
+                    </p>
+                </div>
+
+
+                <div>
+
+                    <p class="text-2xl md:text-4xl lg:text-5xl font-bold tracking-[-0.035em] leading-tight text-white">
+                        {description}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALERÍA -->
+
+        <section class="space-y-8 md:space-y-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="bg-[#0A0A0A] border border-[#292929] overflow-hidden">
+
+                    <ImageContainer
+                        src={imageTwo}
+                        alt={`${title} — imagen del proyecto`}
+                        class="w-full h-auto"
+                    />
+
+                </div>
+
+
+                <div class="bg-[#0A0A0A] border border-[#292929] overflow-hidden">
+
+                    <ImageContainer
+                        src={imageThree}
+                        alt={`${title} — imagen del proyecto`}
+                        class="w-full h-auto"
+                    />
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTENIDO DEL PROYECTO -->
+
+            <article class="markdown-content max-w-4xl mx-auto py-12 md:py-20 flex flex-col gap-4">
+
+                <Content />
+
+            </article>
+
+
+            <!-- IMAGEN FINAL -->
+
+            <div class="w-full bg-[#0A0A0A] border border-[#292929] overflow-hidden">
+
+                <ImageContainer
+                    src={imageFour}
+                    alt={`${title} — imagen final del proyecto`}
+                    class="w-full h-auto"
+                />
+
+            </div>
+
+        </section>
+
+
+        <!-- ENLACES -->
+
+        <section class="mt-20 md:mt-32 border-t border-[#292929] pt-8">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+
+                <a
+                    href="/works"
+                    class="inline-flex items-center gap-3 text-white font-semibold group"
+                >
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
+                        aria-hidden="true"
+                    >
+                        <path d="M19 12H5" />
+                        <path d="m11 18-6-6 6-6" />
+                    </svg>
+
+                    <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
+                        Todos los proyectos
+                    </span>
+
+                </a>
+
+
+                {liveSite && (
+                    <a
+                        href={liveSite}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center gap-3 text-white font-semibold group"
+                    >
+
+                        <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
+                            Ver proyecto online
+                        </span>
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                            aria-hidden="true"
+                        >
+                            <path d="M7 17 17 7" />
+                            <path d="M7 7h10v10" />
+                        </svg>
+
+                    </a>
+                )}
+
+            </div>
+
+        </section>
+
+    </main>
+
 </Layout>

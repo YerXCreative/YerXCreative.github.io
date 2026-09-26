@@ -37,128 +37,151 @@ const skills = [
 ];
 ---
 
-<section class="max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-24">
+<section class="bg-black text-white px-6 md:px-12 lg:px-20 pt-32 pb-24">
 
-    <!-- CABECERA -->
-    <header class="mb-16 md:mb-20">
+    <div class="max-w-[1400px] mx-auto">
 
-        <div class="flex items-end justify-end gap-6 mb-6">
-            <span class="hidden md:block text-neutral-500 text-sm">
+        <!-- CABECERA -->
+
+        <header class="mb-20 md:mb-28">
+
+            <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-6">
                 YerxCreative / Sobre mí
-            </span>
-        </div>
-
-        <div class="border-t border-[#292929] pt-8">
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.05em] leading-[0.9] text-white max-w-5xl">
-                Sobre mí
-            </h1>
-        </div>
-
-    </header>
-
-
-    <!-- PRESENTACIÓN -->
-    <div class="grid md:grid-cols-[1fr_360px] gap-12 md:gap-20 items-start">
-
-        <!-- TEXTO -->
-        <div>
-
-            <p class="text-2xl md:text-4xl lg:text-5xl font-bold tracking-[-0.03em] leading-tight text-white max-w-4xl">
-                Diseño, proyectos y creatividad para convertir ideas en experiencias visuales.
             </p>
-
-            <div class="mt-10 max-w-2xl space-y-6 text-neutral-400 text-base md:text-lg leading-relaxed">
-
-                <p>
-                    Soy Yeray Díaz Cortina, diseñador digital y de proyectos.
-                    Trabajo en diseño web, campañas digitales, identidad visual
-                    y gestión de proyectos.
-                </p>
-
-                <p>
-                    Me gusta involucrarme en todo el proceso: entender el proyecto,
-                    organizarlo, desarrollar la parte visual y llevarlo hasta la entrega.
-                    Combino diseño y tecnología con una forma de trabajar cercana,
-                    organizada y orientada a resultados.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- FOTO -->
-        <div class="border border-[#292929] p-3">
-            <img
-                src={peter3.src}
-                alt="Yeray Díaz, diseñador digital y de proyectos"
-                class="w-full h-auto object-cover"
-            />
-        </div>
-
-    </div>
-
-
-    <!-- LO QUE SÉ HACER -->
-    <section class="mt-32 md:mt-40">
-
-        <header class="mb-12">
-
-            <div class="flex items-end justify-end gap-6 mb-6">
-                <span class="hidden md:block text-neutral-500 text-sm">
-                    Habilidades
-                </span>
-            </div>
 
             <div class="border-t border-[#292929] pt-8">
 
-                <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.05em] leading-[0.9] text-white">
-                    Lo que sé hacer
-                </h2>
+                <h1 class="text-[clamp(4rem,10vw,9rem)] font-bold tracking-[-0.07em] leading-[0.82] max-w-6xl">
+                    Sobre
+                    <br />
+                    mí.
+                </h1>
 
             </div>
 
         </header>
 
 
-        <!-- LISTA DE HABILIDADES -->
-        <div class="border-t border-[#292929]">
+        <!-- PRESENTACIÓN -->
 
-            {skills.map((skill) => (
-                <article class="py-8 border-b border-[#292929]">
+        <section class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-24 items-center">
 
-                    <div>
+            <!-- TEXTO -->
 
-                        <h3 class="text-2xl md:text-3xl font-bold tracking-[-0.03em] text-white">
-                            {skill.title}
-                        </h3>
+            <div>
 
-                        <p class="mt-4 max-w-2xl text-neutral-400 leading-relaxed">
-                            {skill.text}
-                        </p>
+                <p class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.045em] leading-[0.95] max-w-5xl">
+                    Diseño, proyectos y creatividad para convertir ideas en experiencias visuales.
+                </p>
 
-                    </div>
+                <div class="mt-10 max-w-2xl space-y-6 text-base md:text-lg text-neutral-400 leading-relaxed">
 
-                </article>
-            ))}
+                    <p>
+                        Soy Yeray Díaz Cortina, diseñador digital y de proyectos.
+                        Trabajo en diseño web, campañas digitales, identidad visual
+                        y gestión de proyectos.
+                    </p>
 
-        </div>
+                    <p>
+                        Me gusta involucrarme en todo el proceso: entender el proyecto,
+                        organizarlo, desarrollar la parte visual y llevarlo hasta la entrega.
+                    </p>
 
-    </section>
+                    <p>
+                        Combino diseño y tecnología con una forma de trabajar cercana,
+                        organizada y orientada a resultados.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-    <!-- CIERRE -->
-    <section class="mt-32 md:mt-40">
+            <!-- FOTO -->
 
-        <div class="border-t border-[#292929] pt-8">
+            <div class="relative">
 
-            <p class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.04em] leading-tight text-white max-w-5xl">
-                Diseño con intención.
-                <span class="text-[#0066FF]">Creatividad con criterio.</span>
-            </p>
+                <div class="absolute -top-4 -left-4 w-full h-full border-2 border-[#0066FF]"></div>
 
-        </div>
+                <div class="relative bg-[#0A0A0A] border border-[#292929] p-3">
 
-    </section>
+                    <img
+                        src={peter3.src}
+                        alt="Yeray Díaz, diseñador digital y de proyectos"
+                        class="w-full h-auto object-cover"
+                    />
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HABILIDADES -->
+
+        <section class="mt-32 md:mt-40">
+
+            <header class="mb-14 md:mb-16">
+
+                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-6">
+                    Habilidades
+                </p>
+
+                <div class="border-t border-[#292929] pt-8">
+
+                    <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.06em] leading-[0.88] max-w-5xl">
+                        Lo que sé hacer.
+                    </h2>
+
+                </div>
+
+            </header>
+
+
+            <div class="border-t border-[#292929]">
+
+                {skills.map((skill) => (
+                    <article class="py-8 md:py-10 border-b border-[#292929]">
+
+                        <div class="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-6 md:gap-16 items-start">
+
+                            <h3 class="text-2xl md:text-4xl font-bold tracking-[-0.04em] leading-tight text-white">
+                                {skill.title}
+                            </h3>
+
+                            <p class="max-w-2xl text-base md:text-lg text-neutral-400 leading-relaxed">
+                                {skill.text}
+                            </p>
+
+                        </div>
+
+                    </article>
+                ))}
+
+            </div>
+
+        </section>
+
+
+        <!-- CIERRE -->
+
+        <section class="mt-32 md:mt-40">
+
+            <div class="border-t border-[#292929] pt-8">
+
+                <p class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.05em] leading-[0.95] text-white max-w-6xl">
+                    Diseño con intención.
+                    <br />
+                    <span class="text-[#0066FF]">
+                        Creatividad con criterio.
+                    </span>
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
 
 </section>

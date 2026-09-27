@@ -5,12 +5,11 @@ client: "Play to Die"
 category: "Branding"
 services: "Diseño de logotipo, Identidad visual, Dirección gráfica, Mockups"
 year: "2024"
-featuredImage: "./images/pun-to-die/1.jpg"
-imageTwo: "./images/pun-to-die/2.jpg"
-imageThree: "./images/pun-to-die/3.jpg"
-imageFour: "./images/pun-to-die/4.jpg"
-liveSite: ""
-description: "Identidad visual y diseño de logotipo para Pun to Die, una propuesta gráfica con estética gaming, personalidad propia y un lenguaje visual pensado para funcionar tanto en digital como en aplicaciones físicas."
+featuredImage: "./images/play-to-die/1.jpg"
+imageTwo: "./images/play-to-die/2.jpg"
+imageThree: "./images/play-to-die/3.jpg"
+imageFour: "./images/play-to-die/4.jpg"
+description: "Identidad visual y diseño de logotipo para Play to Die, una propuesta gráfica con estética gaming, personalidad propia y un lenguaje visual pensado para funcionar tanto en digital como en aplicaciones físicas."
 isFeatured: true
 isDraft: false
 ---

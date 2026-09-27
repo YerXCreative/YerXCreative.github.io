@@ -9,7 +9,6 @@ featuredImage: "./images/maverick/1.jpg"
 imageTwo: "./images/maverick/2.jpg"
 imageThree: ""
 imageFour: ""
-liveSite: ""
 description: "Diseño de identidad visual para Maverick, construido alrededor de un logotipo de carácter contundente y una estética urbana, deportiva y contemporánea."
 isFeatured: true
 isDraft: false

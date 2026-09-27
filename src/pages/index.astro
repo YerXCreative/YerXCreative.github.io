@@ -3,6 +3,29 @@ import Layout from "../layouts/Layout.astro";
 import peter from "../assets/images/peter.jpg";
 ---
 
+<style>
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+            opacity 700ms ease,
+            transform 700ms ease;
+    }
+
+    .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .reveal-on-scroll {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+</style>
+
 <Layout
     title="Yeray Díaz — Diseñador Digital"
     description="Portfolio de Yeray Díaz, diseñador digital y de proyectos."
@@ -10,7 +33,7 @@ import peter from "../assets/images/peter.jpg";
 
     <!-- HERO -->
 
-    <section class="relative bg-black text-white min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-20 pt-32 pb-8 overflow-hidden">
+    <section class="relative bg-black text-white min-h-screen flex flex-col justify-between px-6 md:px-12 lg:px-20 pt-24 pb-8 overflow-hidden">
 
         <div class="max-w-[1400px] mx-auto w-full flex items-center justify-between text-[10px] md:text-xs uppercase tracking-[0.2em] text-neutral-500">
 
@@ -25,7 +48,7 @@ import peter from "../assets/images/peter.jpg";
         </div>
 
 
-        <div class="max-w-[1400px] mx-auto w-full flex-1 flex items-center py-16 md:py-20">
+        <div class="max-w-[1400px] mx-auto w-full flex-1 flex items-center py-10 md:py-12">
 
             <div>
 
@@ -63,7 +86,7 @@ import peter from "../assets/images/peter.jpg";
         </div>
 
 
-        <div class="max-w-[1400px] mx-auto w-full flex flex-col md:flex-row md:items-end justify-between gap-10">
+        <div class="max-w-[1400px] mx-auto w-full flex flex-col md:flex-row md:items-end justify-between gap-8">
 
             <p class="max-w-lg text-base md:text-lg text-neutral-400 leading-relaxed">
                 Diseño, web, campañas y proyectos digitales
@@ -110,12 +133,12 @@ import peter from "../assets/images/peter.jpg";
 
     <section
         id="about-preview"
-        class="bg-black text-white px-6 md:px-12 lg:px-20 py-20 md:py-32"
+        class="reveal-on-scroll bg-black text-white px-6 md:px-12 lg:px-20 py-12 md:py-20"
     >
 
         <div class="max-w-[1400px] mx-auto">
 
-            <div class="mb-14 md:mb-20">
+            <div class="mb-10 md:mb-14">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400">
                     Sobre mí
@@ -130,7 +153,7 @@ import peter from "../assets/images/peter.jpg";
 
                 <div>
 
-                    <h2 class="text-5xl md:text-7xl lg:text-[7rem] font-bold leading-[0.86] tracking-[-0.06em] mb-10">
+                    <h2 class="text-5xl md:text-7xl lg:text-[7rem] font-bold leading-[0.86] tracking-[-0.06em] mb-8">
 
                         Diseño.
                         <br />
@@ -192,11 +215,11 @@ import peter from "../assets/images/peter.jpg";
 
     <!-- LO QUE HAGO -->
 
-    <section class="bg-black text-white px-6 md:px-12 lg:px-20 py-20 md:py-32">
+    <section class="reveal-on-scroll bg-black text-white px-6 md:px-12 lg:px-20 py-12 md:py-20">
 
         <div class="max-w-[1400px] mx-auto">
 
-            <div class="mb-16 md:mb-20">
+            <div class="mb-10 md:mb-14">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400">
                     Lo que hago
@@ -207,7 +230,7 @@ import peter from "../assets/images/peter.jpg";
 
             <div class="border-t border-[#292929]">
 
-                <div class="py-8 md:py-10 border-b border-[#292929]">
+                <div class="py-6 md:py-8 border-b border-[#292929]">
 
                     <h3 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.04em]">
                         Identidad visual
@@ -216,7 +239,7 @@ import peter from "../assets/images/peter.jpg";
                 </div>
 
 
-                <div class="py-8 md:py-10 border-b border-[#292929]">
+                <div class="py-6 md:py-8 border-b border-[#292929]">
 
                     <h3 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.04em]">
                         Diseño web
@@ -225,7 +248,7 @@ import peter from "../assets/images/peter.jpg";
                 </div>
 
 
-                <div class="py-8 md:py-10 border-b border-[#292929]">
+                <div class="py-6 md:py-8 border-b border-[#292929]">
 
                     <h3 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.04em]">
                         Campañas digitales
@@ -234,7 +257,7 @@ import peter from "../assets/images/peter.jpg";
                 </div>
 
 
-                <div class="py-8 md:py-10 border-b border-[#292929]">
+                <div class="py-6 md:py-8 border-b border-[#292929]">
 
                     <h3 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.04em]">
                         Gestión de proyectos
@@ -253,12 +276,12 @@ import peter from "../assets/images/peter.jpg";
 
     <section
         id="selected-work"
-        class="bg-black text-white px-6 md:px-12 lg:px-20 py-20 md:py-32"
+        class="reveal-on-scroll bg-black text-white px-6 md:px-12 lg:px-20 py-12 md:py-20"
     >
 
         <div class="max-w-[1400px] mx-auto">
 
-            <div class="mb-16 md:mb-20">
+            <div class="mb-10 md:mb-14">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400">
                     Selected work
@@ -271,7 +294,7 @@ import peter from "../assets/images/peter.jpg";
             </div>
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 md:gap-y-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-14 md:gap-y-16">
 
 
                 <a href="/works" class="group block">
@@ -488,12 +511,12 @@ import peter from "../assets/images/peter.jpg";
 
     <section
         id="contact"
-        class="bg-black text-white px-6 md:px-12 lg:px-20 pt-24 md:pt-32 pb-20 md:pb-24"
+        class="reveal-on-scroll bg-black text-white px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-12 md:pb-16"
     >
 
         <div class="max-w-[1400px] mx-auto">
 
-            <div class="mb-10 md:mb-12">
+            <div class="mb-8 md:mb-10">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400">
                     Contacto
@@ -515,7 +538,7 @@ import peter from "../assets/images/peter.jpg";
             </h2>
 
 
-            <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+            <div class="mt-10 md:mt-12 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
 
                 <p class="max-w-xl text-lg md:text-xl leading-relaxed text-neutral-400">
                     Si tienes una idea, un proyecto o simplemente quieres
@@ -524,12 +547,13 @@ import peter from "../assets/images/peter.jpg";
 
 
                 <a
-                    href="mailto:yeraydxz@gmail.com"
+                    href="#contact"
                     class="group inline-flex items-center gap-4 text-white text-base md:text-lg font-medium"
+                    aria-label="Cuéntame tu idea"
                 >
 
                     <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
-                        yeraydxz@gmail.com
+                        Cuéntame tu idea
                     </span>
 
                     <span class="w-10 h-10 rounded-full bg-[#0066FF] flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -556,5 +580,28 @@ import peter from "../assets/images/peter.jpg";
         </div>
 
     </section>
+
+    <script>
+        const revealElements = document.querySelectorAll(".reveal-on-scroll");
+
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px",
+            }
+        );
+
+        revealElements.forEach((element) => {
+            revealObserver.observe(element);
+        });
+    </script>
 
 </Layout>

@@ -4,47 +4,68 @@
     line-height: 1.7;
 }
 
+
+/* Títulos */
+
 .markdown-content h1,
 .markdown-content h2,
 .markdown-content h3,
 .markdown-content h4,
 .markdown-content h5,
 .markdown-content h6 {
+    color: #ffffff;
     font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.04em;
-    line-height: 1;
+    letter-spacing: -0.05em;
+    line-height: 0.95;
 }
+
+
+/* H1 */
 
 .markdown-content h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
 }
 
+
+/* H2 */
+
 .markdown-content h2 {
     font-size: 2.5rem;
-    margin-top: 3rem;
-    margin-bottom: 1.25rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
 }
+
+
+/* H3 */
 
 .markdown-content h3 {
     font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+/* H4 */
+
+.markdown-content h4 {
+    font-size: 1.5rem;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
 }
 
-.markdown-content h4 {
-    font-size: 1.5rem;
+
+/* H5 */
+
+.markdown-content h5 {
+    font-size: 1.25rem;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
 }
 
-.markdown-content h5 {
-    font-size: 1.25rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-}
+
+/* H6 */
 
 .markdown-content h6 {
     font-size: 1rem;
@@ -52,21 +73,31 @@
     margin-bottom: 0.5rem;
 }
 
+
+/* Párrafos */
+
 .markdown-content p {
     color: #999999;
     line-height: 1.8;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 }
+
+
+/* Enlaces */
 
 .markdown-content a {
     color: #0066FF;
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
 .markdown-content a:hover {
     color: #1687FF;
 }
+
+
+/* Listas */
 
 .markdown-content ul,
 .markdown-content ol {
@@ -84,26 +115,38 @@
 }
 
 .markdown-content li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
+
+
+/* Texto destacado */
 
 .markdown-content strong {
     color: #ffffff;
     font-weight: 700;
 }
 
+
+/* Citas */
+
 .markdown-content blockquote {
     border-left: 2px solid #0066FF;
-    padding-left: 1.25rem;
-    margin: 2rem 0;
+    padding-left: 1.5rem;
+    margin: 3rem 0;
     color: #ffffff;
 }
+
+
+/* Separadores */
 
 .markdown-content hr {
     border: 0;
     border-top: 1px solid #292929;
-    margin: 3rem 0;
+    margin: 4rem 0;
 }
+
+
+/* Desktop */
 
 @media (min-width: 768px) {
 

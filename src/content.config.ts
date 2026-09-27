@@ -15,7 +15,7 @@ const works = defineCollection({
         imageTwo: image(),
         imageThree: image(),
         imageFour: image(),
-        liveSite: z.url(),
+liveSite: z.url().optional(),
         description: z.string().max(350),
         isFeatured: z.boolean(),
         isDraft: z.boolean()

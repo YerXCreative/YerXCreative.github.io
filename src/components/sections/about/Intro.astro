@@ -1,200 +1,22 @@
----
-import peter3 from "../../../assets/images/peter3.jpg";
-
-const skills = [
-    {
-        title: "Identidad visual",
-        text: "Concepto, dirección visual, logotipos y sistemas gráficos coherentes para construir marcas reconocibles."
-    },
-    {
-        title: "Diseño web",
-        text: "Diseño de páginas web responsive y trabajo con WordPress, Elementor, HTML y CSS."
-    },
-    {
-        title: "Campañas digitales",
-        text: "Diseño de contenidos para redes sociales y campañas digitales, incluyendo trabajo con Meta Ads."
-    },
-    {
-        title: "Diseño gráfico",
-        text: "Composición, tipografía, imagen y diseño editorial para soportes digitales e impresos."
-    },
-    {
-        title: "Gestión de proyectos",
-        text: "Organización, planificación, seguimiento de tareas, coordinación de entregas y resolución de incidencias."
-    },
-    {
-        title: "Cliente y comunicación",
-        text: "Atención al cliente, seguimiento mediante CRM y comunicación durante las diferentes fases de un proyecto."
-    },
-    {
-        title: "Herramientas creativas",
-        text: "Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom y Procreate."
-    },
-    {
-        title: "IA aplicada al diseño",
-        text: "Uso de herramientas de inteligencia artificial para explorar conceptos, generar recursos y acelerar procesos creativos."
-    }
-];
----
-
-<section class="bg-black text-white px-5 sm:px-6 md:px-12 lg:px-20 pt-16 sm:pt-20 md:pt-28 pb-16 md:pb-20">
+<section class="bg-black text-white px-5 sm:px-6 md:px-12 lg:px-20 pt-16 sm:pt-20 md:pt-32 pb-8 sm:pb-9 md:pb-10">
 
     <div class="max-w-[1400px] mx-auto">
 
-        <!-- CABECERA -->
-
-        <header class="mb-12 sm:mb-14 md:mb-20">
+        <header>
 
             <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-5 md:mb-6">
-                YerxCreative / Sobre mí
+                YerxCreative / Contacto
             </p>
 
             <div class="border-t border-[#292929] pt-6 sm:pt-7 md:pt-8">
 
-                <h1 class="text-[clamp(4.5rem,18vw,11rem)] sm:text-[clamp(5rem,14vw,11rem)] md:text-[clamp(5rem,12vw,11rem)] font-bold uppercase max-w-6xl leading-[1]">
-
-                    <span class="block">
-                        Sobre
-                    </span>
-
-                    <span class="block mt-5 sm:mt-6 md:mt-8 text-[#0066FF]">
-                        mí.
-                    </span>
-
+                <h1 class="text-[clamp(4.5rem,18vw,9rem)] sm:text-[clamp(5rem,14vw,9rem)] md:text-[clamp(4rem,10vw,9rem)] font-bold max-w-6xl leading-[1]">
+                    Hablemos.
                 </h1>
 
             </div>
 
         </header>
-
-
-        <!-- PRESENTACIÓN -->
-
-        <section class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-14 lg:gap-24 items-start">
-
-            <div>
-
-                <h2 class="text-[2.8rem] sm:text-4xl md:text-6xl lg:text-[5.5rem] font-bold max-w-5xl mb-8 md:mb-10 leading-[1.05]">
-
-                    Diseño, proyectos
-                    <br />
-                    y creatividad.
-
-                </h2>
-
-
-                <div class="max-w-2xl space-y-5 md:space-y-6 text-base sm:text-lg md:text-xl text-neutral-400 leading-relaxed">
-
-                    <p>
-                        Soy Yeray Díaz Cortina, diseñador digital y de proyectos.
-                        Trabajo en diseño web, campañas digitales, identidad visual
-                        y gestión de proyectos.
-                    </p>
-
-                    <p>
-                        Me gusta involucrarme en todo el proceso: entender el proyecto,
-                        organizarlo, desarrollar la parte visual y llevarlo hasta la entrega.
-                    </p>
-
-                    <p>
-                        Combino diseño y tecnología con una forma de trabajar cercana,
-                        organizada y orientada a resultados.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- FOTO -->
-
-            <div class="relative w-full max-w-[520px] lg:ml-auto mt-2 lg:mt-0">
-
-                <div class="absolute -right-3 sm:-right-4 -bottom-3 sm:-bottom-4 w-full h-full border-r-2 border-b-2 border-[#0066FF] rounded-br-2xl pointer-events-none"></div>
-
-                <div class="relative overflow-hidden rounded-2xl bg-[#0A0A0A]">
-
-                    <img
-                        src={peter3.src}
-                        alt="Yeray Díaz, diseñador digital y de proyectos"
-                        class="w-full h-auto object-cover"
-                    />
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- HABILIDADES -->
-
-        <section class="mt-20 sm:mt-24 md:mt-28">
-
-            <header class="mb-10 sm:mb-12 md:mb-14">
-
-                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-5 md:mb-6">
-                    Habilidades
-                </p>
-
-                <div class="border-t border-[#292929] pt-6 sm:pt-7 md:pt-8">
-
-                    <h2 class="text-[3.5rem] sm:text-5xl md:text-7xl lg:text-[7rem] font-bold leading-[1]">
-                        Lo que sé hacer.
-                    </h2>
-
-                </div>
-
-            </header>
-
-
-            <div class="border-t border-[#292929]">
-
-                {skills.map((skill) => (
-
-                    <article class="py-7 sm:py-8 md:py-9 border-b border-[#292929]">
-
-                        <div class="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-4 sm:gap-5 md:gap-16 items-start">
-
-                            <h3 class="text-[2rem] sm:text-3xl md:text-5xl font-bold text-white leading-[1.05]">
-                                {skill.title}
-                            </h3>
-
-                            <p class="max-w-2xl text-sm sm:text-base md:text-lg text-neutral-400 leading-relaxed">
-                                {skill.text}
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                ))}
-
-            </div>
-
-        </section>
-
-
-        <!-- CIERRE -->
-
-        <section class="mt-12 sm:mt-14 md:mt-20">
-
-            <div class="pt-2">
-
-                <p class="text-[2.4rem] sm:text-4xl md:text-6xl lg:text-[5.5rem] font-bold max-w-6xl leading-[1.05]">
-
-                    Diseño con intención.
-                    <br />
-
-                    <span class="text-[#0066FF]">
-                        Creatividad con criterio.
-                    </span>
-
-                </p>
-
-            </div>
-
-        </section>
 
     </div>
 

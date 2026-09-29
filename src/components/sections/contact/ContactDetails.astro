@@ -1,193 +1,86 @@
----
----
-
-<section class="bg-black text-white px-6 md:px-12 lg:px-20 pb-8">
+<section class="bg-black text-white px-6 md:px-12 lg:px-20 pb-24">
 
     <div class="max-w-[1400px] mx-auto">
 
-        <div class="pt-4">
+        <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-24">
 
-            <div class="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-24">
+            <!-- TEXTO -->
 
-                <!-- TEXTO -->
+            <div>
 
-                <div>
+                <p class="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-6">
+                    Tu proyecto
+                </p>
+
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.35]">
+                    Cuéntame
+                    <br />
+                    qué tienes
+                    <br />
+                    <span class="text-[#0066FF]">
+                        entre manos.
+                    </span>
+                </h2>
+
+                <p class="mt-7 max-w-md text-base md:text-lg text-neutral-500 leading-relaxed">
+                    Puede ser una identidad visual, una web, una ilustración,
+                    una campaña o simplemente una idea que todavía está
+                    tomando forma.
+                </p>
+
+                <a
+                    href="mailto:yeraydxz@gmail.com"
+                    class="inline-block mt-5 text-sm text-neutral-400 hover:text-[#0066FF] transition-colors"
+                >
+                    yeraydxz@gmail.com
+                </a>
+
+            </div>
+
+
+            <!-- CONTACTO DIRECTO -->
+
+            <div class="flex flex-col justify-end">
+
+                <div class="border-t border-[#292929] pt-8">
 
                     <p class="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-6">
-                        Tu proyecto
+                        Contacto directo
                     </p>
 
-                   <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.35]">
-                        Cuéntame
-                        <br />
-                        qué tienes
-                        <br />
-                        <span class="text-[#0066FF]">
-                            entre manos.
-                        </span>
-                    </h2>
+                    <div class="space-y-6">
 
-                    <p class="mt-7 max-w-md text-base md:text-lg text-neutral-500 leading-relaxed">
-                        Puede ser una identidad visual, una web, una ilustración,
-                        una campaña o simplemente una idea que todavía está
-                        tomando forma.
-                    </p>
+                        <a
+                            href="mailto:yeraydxz@gmail.com"
+                            class="group flex items-center justify-between gap-6 border-b border-[#292929] pb-5"
+                        >
+                            <span class="text-xl md:text-2xl text-white group-hover:text-[#0066FF] transition-colors">
+                                Email
+                            </span>
 
-                    <a
-                        href="mailto:yeraydxz@gmail.com"
-                        class="inline-block mt-5 text-sm text-neutral-400 hover:text-[#0066FF] transition-colors"
-                    >
-                        yeraydxz@gmail.com
-                    </a>
+                            <span class="text-sm md:text-base text-neutral-500 group-hover:text-white transition-colors">
+                                yeraydxz@gmail.com
+                            </span>
+                        </a>
+
+                        <a
+                            href="https://wa.me/34697601146?text=Hola%20Yeray%2C%20me%20gustar%C3%ADa%20hablar%20contigo%20sobre%20un%20proyecto.%20%C2%BFPodemos%20comentar%20los%20detalles%3F"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group flex items-center justify-between gap-6 border-b border-[#292929] pb-5"
+                        >
+                            <span class="text-xl md:text-2xl text-white group-hover:text-[#0066FF] transition-colors">
+                                WhatsApp
+                            </span>
+
+                            <span class="text-sm md:text-base text-neutral-500 group-hover:text-white transition-colors">
+                                Hablemos
+                            </span>
+                        </a>
+
+                    </div>
 
                 </div>
-
-
-                <!-- FORMULARIO -->
-
-                <form
-                    action="https://formspree.io/f/TU_ENDPOINT"
-                    method="POST"
-                    class="space-y-5"
-                >
-
-                    <!-- NOMBRE -->
-
-                    <div>
-
-                        <label
-                            for="name"
-                            class="block text-xs uppercase tracking-[0.2em] text-neutral-500 mb-2"
-                        >
-                            Nombre
-                        </label>
-
-                        <input
-                            id="name"
-                            name="name"
-                            type="text"
-                            autocomplete="name"
-                            required
-                            placeholder="Tu nombre"
-                            class="w-full bg-transparent border-0 border-b border-[#292929] px-0 py-3 text-lg text-white placeholder:text-neutral-700 outline-none focus:border-[#0066FF] transition-colors"
-                        />
-
-                    </div>
-
-
-                    <!-- EMAIL -->
-
-                    <div>
-
-                        <label
-                            for="email"
-                            class="block text-xs uppercase tracking-[0.2em] text-neutral-500 mb-2"
-                        >
-                            Email
-                        </label>
-
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            autocomplete="email"
-                            required
-                            placeholder="tu@email.com"
-                            class="w-full bg-transparent border-0 border-b border-[#292929] px-0 py-3 text-lg text-white placeholder:text-neutral-700 outline-none focus:border-[#0066FF] transition-colors"
-                        />
-
-                    </div>
-
-
-                    <!-- PROYECTO -->
-
-                    <div>
-
-                        <label
-                            for="project"
-                            class="block text-xs uppercase tracking-[0.2em] text-neutral-500 mb-2"
-                        >
-                            ¿Qué necesitas?
-                        </label>
-
-                        <input
-                            id="project"
-                            name="project"
-                            type="text"
-                            placeholder="Logo, branding, web, ilustración..."
-                            class="w-full bg-transparent border-0 border-b border-[#292929] px-0 py-3 text-lg text-white placeholder:text-neutral-700 outline-none focus:border-[#0066FF] transition-colors"
-                        />
-
-                    </div>
-
-
-                    <!-- MENSAJE -->
-
-                    <div>
-
-                        <label
-                            for="message"
-                            class="block text-xs uppercase tracking-[0.2em] text-neutral-500 mb-2"
-                        >
-                            Cuéntame un poco más
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            required
-                            placeholder="Cuéntame qué tienes en mente..."
-                            class="w-full resize-none bg-transparent border border-[#292929] rounded-2xl px-5 py-4 text-lg text-white placeholder:text-neutral-700 outline-none focus:border-[#0066FF] transition-colors"
-                        ></textarea>
-
-                    </div>
-
-
-                    <!-- ASUNTO -->
-
-                    <input
-                        type="hidden"
-                        name="_subject"
-                        value="Nuevo proyecto desde YerxCreative"
-                    />
-
-
-                    <!-- BOTÓN -->
-
-                    <div class="flex justify-end pt-1">
-
-                        <button
-                            type="submit"
-                            class="group inline-flex items-center gap-4 text-white text-base md:text-lg font-medium"
-                        >
-
-                            <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
-                                Enviar mensaje
-                            </span>
-
-                            <span class="w-14 h-14 rounded-full bg-[#0066FF] flex items-center justify-center group-hover:scale-110 transition-transform">
-
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    class="w-5 h-5"
-                                    aria-hidden="true"
-                                >
-                                    <path d="M5 12h14" />
-                                    <path d="m13 6 6 6-6 6" />
-                                </svg>
-
-                            </span>
-
-                        </button>
-
-                    </div>
-
-                </form>
 
             </div>
 

@@ -7,14 +7,16 @@ import type { ImageMetadata } from "astro";
 export const getStaticPaths = (async () => {
     const works = await getCollection("works", ({ data }) => !data.isDraft);
 
-    return works.map((work) => ({
-        params: {
-            page: undefined,
+    return [
+        {
+            params: {
+                page: undefined,
+            },
+            props: {
+                works,
+            },
         },
-        props: {
-            works,
-        },
-    }));
+    ];
 }) satisfies GetStaticPaths;
 
 const { works } = Astro.props;
@@ -51,13 +53,14 @@ const getProjectImages = (slug: string) => {
     title="Proyectos | YerxCreative"
     description="Una selección de proyectos de Yeray Díaz en diseño web, campañas digitales e identidad visual."
 >
-    <main class="bg-black text-white px-6 md:px-12 lg:px-20 pt-28 md:pt-32 pb-20">
+
+    <main class="bg-black text-white px-6 md:px-12 lg:px-20 pt-28 md:pt-32 pb-16">
 
         <div class="max-w-[1400px] mx-auto">
 
             <!-- CABECERA -->
 
-            <header class="mb-28 md:mb-40">
+            <header class="mb-20 md:mb-28">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-6">
                     YerxCreative / Proyectos
@@ -69,7 +72,7 @@ const getProjectImages = (slug: string) => {
                         Proyectos.
                     </h1>
 
-                    <p class="mt-10 max-w-2xl text-lg md:text-xl text-neutral-400 leading-relaxed">
+                    <p class="mt-8 max-w-2xl text-lg md:text-xl text-neutral-400 leading-relaxed">
                         Una selección de trabajos en diseño web,
                         campañas digitales, identidad visual
                         y proyectos creativos.
@@ -93,11 +96,11 @@ const getProjectImages = (slug: string) => {
                     const visibleImages = images.slice(0, 4);
 
                     return (
-                        <article class="border-t border-[#292929] pt-10 md:pt-12 mb-32 md:mb-48">
+                        <article class="border-t border-[#292929] pt-10 md:pt-12 mb-28 md:mb-36">
 
                             <!-- CABECERA DEL PROYECTO -->
 
-                            <header class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16 mb-12 md:mb-16">
+                            <header class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16 mb-10 md:mb-12">
 
                                 <div>
 
@@ -111,9 +114,10 @@ const getProjectImages = (slug: string) => {
 
                                 </div>
 
+
                                 <div class="md:pt-2">
 
-                                    <div class="flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.15em] text-neutral-500 mb-8">
+                                    <div class="flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.15em] text-neutral-500 mb-7">
 
                                         <span>
                                             {work.data.client}
@@ -141,12 +145,12 @@ const getProjectImages = (slug: string) => {
                             <!-- IMÁGENES DEL PROYECTO -->
 
                             {visibleImages.length > 0 && (
-                                <div class="max-w-3xl mx-auto">
+                                <div class="max-w-5xl mx-auto">
 
                                     <!-- 1 IMAGEN -->
 
                                     {visibleImages.length === 1 && (
-                                        <div class="max-w-[384px] mx-auto">
+                                        <div class="max-w-[520px] mx-auto">
 
                                             <button
                                                 type="button"

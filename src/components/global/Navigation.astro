@@ -9,53 +9,110 @@ const navLinks = [
 
 <nav class="sticky top-4 z-50 w-[calc(100%-2rem)] max-w-5xl mx-auto">
 
-    <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/20 rounded-full px-4 py-3 md:px-5 md:py-3 flex items-center justify-between gap-4 shadow-[0_8px_40px_rgba(0,0,0,0.2)]">
+    <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/20 rounded-full px-4 py-3 md:px-5 md:py-3 shadow-[0_8px_40px_rgba(0,0,0,0.2)]">
 
-        <!-- LOGO -->
-        <a
-            href="/"
-            class="text-white font-bold tracking-[-0.03em] text-sm md:text-base whitespace-nowrap hover:text-[#0066FF] transition-colors duration-200"
-        >
-            YerxCreative
-        </a>
+        <!-- BARRA PRINCIPAL -->
 
+        <div class="flex items-center justify-between gap-4">
 
-        <!-- NAVEGACIÓN ESCRITORIO -->
-        <ul class="hidden md:flex items-center gap-1">
+            <!-- LOGO -->
 
-            {navLinks.map((link) => (
-                <li>
-                    <a
-                        href={link.href}
-                        class="text-neutral-300 px-4 py-2 rounded-full text-sm font-medium hover:text-white hover:bg-white/10 transition-all duration-200"
-                    >
-                        {link.title}
-                    </a>
-                </li>
-            ))}
-
-        </ul>
-
-
-        <!-- BOTÓN CONTACTO -->
-        <a
-            href="/#contact"
-            aria-label="Ir a contacto"
-            class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#0066FF] text-white flex items-center justify-center hover:bg-[#1687FF] hover:scale-105 transition-all duration-200 shrink-0"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="w-4 h-4 md:w-5 md:h-5"
-                aria-hidden="true"
+            <a
+                href="/"
+                class="text-white font-bold tracking-[-0.03em] text-sm md:text-base whitespace-nowrap hover:text-[#0066FF] transition-colors duration-200"
             >
-                <path d="M5 12h14" />
-                <path d="m13 6 6 6-6 6" />
-            </svg>
-        </a>
+                YerxCreative
+            </a>
+
+
+            <!-- NAVEGACIÓN ESCRITORIO -->
+
+            <ul class="hidden md:flex items-center gap-1">
+
+                {navLinks.map((link) => (
+                    <li>
+                        <a
+                            href={link.href}
+                            class="text-neutral-300 px-4 py-2 rounded-full text-sm font-medium hover:text-white hover:bg-white/10 transition-all duration-200"
+                        >
+                            {link.title}
+                        </a>
+                    </li>
+                ))}
+
+            </ul>
+
+
+            <!-- CONTROLES -->
+
+            <div class="flex items-center gap-2">
+
+                <!-- MENÚ MÓVIL -->
+
+                <details class="md:hidden relative">
+
+                    <summary
+                        class="list-none cursor-pointer w-9 h-9 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors duration-200"
+                        aria-label="Abrir menú"
+                    >
+                        <span class="text-lg leading-none">
+                            ☰
+                        </span>
+                    </summary>
+
+
+                    <!-- MENÚ DESPLEGABLE -->
+
+                    <div class="absolute right-0 top-12 w-56 bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/20 rounded-2xl p-2 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+
+                        <ul class="flex flex-col">
+
+                            {navLinks.map((link) => (
+                                <li>
+
+                                    <a
+                                        href={link.href}
+                                        class="block px-4 py-3 rounded-xl text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                    >
+                                        {link.title}
+                                    </a>
+
+                                </li>
+                            ))}
+
+                        </ul>
+
+                    </div>
+
+                </details>
+
+
+                <!-- BOTÓN CONTACTO -->
+
+                <a
+                    href="/#contact"
+                    aria-label="Ir a contacto"
+                    class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-[#0066FF] text-white flex items-center justify-center hover:bg-[#1687FF] hover:scale-105 transition-all duration-200 shrink-0"
+                >
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        class="w-4 h-4 md:w-5 md:h-5"
+                        aria-hidden="true"
+                    >
+                        <path d="M5 12h14" />
+                        <path d="m13 6 6 6-6 6" />
+                    </svg>
+
+                </a>
+
+            </div>
+
+        </div>
 
     </div>
 

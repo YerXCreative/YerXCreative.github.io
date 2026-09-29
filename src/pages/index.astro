@@ -10,135 +10,32 @@ import maverickImage from "../content/images/maverick/1.jpg";
     description="Portfolio de Yeray Díaz, diseñador digital y de proyectos."
 >
 
-    <!-- HERO -->
-
+    <!-- PRESENTACIÓN -->
     <section class="relative bg-black text-white px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-12 md:pb-14 overflow-hidden">
-
         <div class="max-w-[1400px] mx-auto w-full">
-
-            <div class="flex items-center justify-between text-[10px] md:text-xs uppercase tracking-[0.2em] text-neutral-500 mb-7">
-
-                <span>
-                    Diseñador digital & proyectos
-                </span>
-
-                <span class="hidden sm:block">
-                    Gijón · Asturias
-                </span>
-
-            </div>
-
-
-            <div class="flex items-center gap-4 mb-5">
-
-                <span class="w-2 h-2 rounded-full bg-[#0066FF]"></span>
-
-                <p class="text-[#0066FF] text-sm md:text-base font-bold uppercase tracking-[0.16em]">
-                    Hola, soy Yeray
-                </p>
-
-            </div>
-
-
-            <h1 class="text-[clamp(4.5rem,12vw,11rem)] font-bold uppercase max-w-[1400px]">
-
-                Diseño con cabeza.
-                <br />
-
-                <span class="text-[#0066FF]">
-                    Creatividad con actitud.
-                </span>
-
-            </h1>
-
-
-            <div class="mt-8 md:mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-7">
-
-                <p class="max-w-lg text-base md:text-lg text-neutral-400 leading-relaxed">
-                    Diseño, web, campañas y proyectos digitales
-                    con una mezcla bastante seria de creatividad,
-                    estrategia y criterio.
-                </p>
-
-
-                <a
-                    href="#about-preview"
-                    aria-label="Bajar a sobre mí"
-                    class="group flex items-center gap-4 self-start md:self-auto"
-                >
-
-                    <span class="hidden md:block text-xs uppercase tracking-[0.2em] text-neutral-500">
-                        Conóceme
-                    </span>
-
-                    <span class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#0066FF] text-white flex items-center justify-center group-hover:scale-105 transition-transform">
-
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            class="w-6 h-6 md:w-7 md:h-7"
-                            aria-hidden="true"
-                        >
-                            <path d="M12 5v14" />
-                            <path d="m19 12-7 7-7-7" />
-                        </svg>
-
-                    </span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SOBRE MÍ -->
-
-    <section
-        id="about-preview"
-        class="bg-black text-white px-6 md:px-12 lg:px-20 pt-10 md:pt-14 lg:pt-16 pb-12 md:pb-16"
-    >
-
-        <div class="max-w-[1400px] mx-auto">
-
-            <div class="flex items-end justify-between mb-8 md:mb-10">
-
-                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400">
-                    Sobre mí
-                </p>
-
-                <span class="hidden md:block text-xs uppercase tracking-[0.2em] text-neutral-600">
-                    YerxCreative
-                </span>
-
-            </div>
-
 
             <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-20 items-end">
 
-                <div class="max-w-4xl">
+                <!-- TEXTO -->
+                <div class="max-w-5xl">
 
-                    <h2 class="text-5xl md:text-7xl lg:text-[7rem] font-bold mb-8">
+                    <div class="flex items-center gap-4 mb-5">
+                        <span class="w-2 h-2 rounded-full bg-[#0066FF]"></span>
 
+                        <p class="text-[#0066FF] text-sm md:text-base font-bold uppercase tracking-[0.16em]">
+                            Hola, soy Yeray
+                        </p>
+                    </div>
+
+                    <h1 class="text-[clamp(4.5rem,10vw,9rem)] font-bold uppercase max-w-[1000px]">
+                        Diseño con cabeza.
+                        <br />
                         <span class="text-[#0066FF]">
-                            Diseño.
+                            Creatividad con actitud.
                         </span>
-                        <br />
+                    </h1>
 
-                        Proyectos.
-                        <br />
-
-                        Personas.
-
-                    </h2>
-
-
-                    <div class="max-w-2xl space-y-5 text-lg md:text-xl leading-relaxed text-neutral-400">
+                    <div class="mt-8 md:mt-10 max-w-2xl space-y-5 text-lg md:text-xl leading-relaxed text-neutral-400">
 
                         <p>
                             Soy Yeray Díaz, diseñador digital y de proyectos.
@@ -159,7 +56,7 @@ import maverickImage from "../content/images/maverick/1.jpg";
 
                 </div>
 
-
+                <!-- FOTO -->
                 <div class="relative max-w-[520px] lg:ml-auto">
 
                     <div
@@ -167,13 +64,11 @@ import maverickImage from "../content/images/maverick/1.jpg";
                     ></div>
 
                     <div class="relative overflow-hidden rounded-2xl">
-
                         <img
                             src={peter.src}
                             alt="Yeray Díaz, diseñador digital y de proyectos"
                             class="w-full h-auto object-cover"
                         />
-
                     </div>
 
                 </div>
@@ -181,14 +76,11 @@ import maverickImage from "../content/images/maverick/1.jpg";
             </div>
 
         </div>
-
     </section>
 
 
     <!-- LO QUE HAGO -->
-
     <section class="bg-black text-white px-6 md:px-12 lg:px-20 pt-6 md:pt-10 pb-8 md:pb-10">
-
         <div class="max-w-[1400px] mx-auto">
 
             <div class="flex items-end justify-between mb-8 md:mb-10">
@@ -204,11 +96,9 @@ import maverickImage from "../content/images/maverick/1.jpg";
 
             </div>
 
-
             <div class="border-t border-[#292929]">
 
                 <div class="group py-6 md:py-7 border-b border-[#292929] flex items-center justify-between gap-8">
-
                     <h3 class="text-4xl md:text-6xl lg:text-7xl font-bold transition-colors duration-300 group-hover:text-[#0066FF]">
                         Identidad visual
                     </h3>
@@ -216,12 +106,9 @@ import maverickImage from "../content/images/maverick/1.jpg";
                     <span class="text-[#0066FF] text-2xl md:text-3xl shrink-0">
                         ↗
                     </span>
-
                 </div>
 
-
                 <div class="group py-6 md:py-7 border-b border-[#292929] flex items-center justify-between gap-8">
-
                     <h3 class="text-4xl md:text-6xl lg:text-7xl font-bold transition-colors duration-300 group-hover:text-[#0066FF]">
                         Diseño web
                     </h3>
@@ -229,12 +116,9 @@ import maverickImage from "../content/images/maverick/1.jpg";
                     <span class="text-[#0066FF] text-2xl md:text-3xl shrink-0">
                         ↗
                     </span>
-
                 </div>
 
-
                 <div class="group py-6 md:py-7 border-b border-[#292929] flex items-center justify-between gap-8">
-
                     <h3 class="text-4xl md:text-6xl lg:text-7xl font-bold transition-colors duration-300 group-hover:text-[#0066FF]">
                         Campañas digitales
                     </h3>
@@ -242,12 +126,9 @@ import maverickImage from "../content/images/maverick/1.jpg";
                     <span class="text-[#0066FF] text-2xl md:text-3xl shrink-0">
                         ↗
                     </span>
-
                 </div>
 
-
                 <div class="group py-6 md:py-7 border-b border-[#292929] flex items-center justify-between gap-8">
-
                     <h3 class="text-4xl md:text-6xl lg:text-7xl font-bold transition-colors duration-300 group-hover:text-[#0066FF]">
                         Gestión de proyectos
                     </h3>
@@ -255,23 +136,19 @@ import maverickImage from "../content/images/maverick/1.jpg";
                     <span class="text-[#0066FF] text-2xl md:text-3xl shrink-0">
                         ↗
                     </span>
-
                 </div>
 
             </div>
 
         </div>
-
     </section>
 
 
     <!-- SELECTED WORK -->
-
     <section
         id="selected-work"
         class="bg-black text-white px-6 md:px-12 lg:px-20 pt-6 md:pt-10 pb-10 md:pb-12"
     >
-
         <div class="max-w-[1400px] mx-auto">
 
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8 md:mb-10">
@@ -288,12 +165,10 @@ import maverickImage from "../content/images/maverick/1.jpg";
 
                 </div>
 
-
                 <a
                     href="/works"
                     class="group inline-flex items-center gap-4 text-sm uppercase tracking-[0.15em] text-neutral-400 hover:text-white transition-colors"
                 >
-
                     <span>
                         Ver todos
                     </span>
@@ -314,7 +189,6 @@ import maverickImage from "../content/images/maverick/1.jpg";
                         </svg>
 
                     </span>
-
                 </a>
 
             </div>
@@ -323,8 +197,10 @@ import maverickImage from "../content/images/maverick/1.jpg";
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 md:gap-y-12">
 
                 <!-- PLAY TO DIE -->
-
-                <a href="/works/play-to-die" class="group block">
+                <a
+                    href="/works/play-to-die"
+                    class="group block"
+                >
 
                     <div class="relative aspect-[4/3] overflow-hidden bg-[#0A0A0A] rounded-2xl">
 
@@ -375,8 +251,10 @@ import maverickImage from "../content/images/maverick/1.jpg";
 
 
                 <!-- MAVERICK -->
-
-                <a href="/works/maverick" class="group block md:mt-12">
+                <a
+                    href="/works/maverick"
+                    class="group block md:mt-12"
+                >
 
                     <div class="relative aspect-[4/3] overflow-hidden bg-[#0A0A0A] rounded-2xl">
 
@@ -428,17 +306,14 @@ import maverickImage from "../content/images/maverick/1.jpg";
             </div>
 
         </div>
-
     </section>
 
 
     <!-- CONTACTO -->
-
     <section
         id="contact"
         class="bg-black text-white px-6 md:px-12 lg:px-20 pt-6 md:pt-10 pb-8 md:pb-10"
     >
-
         <div class="max-w-[1400px] mx-auto">
 
             <div class="border-t border-[#292929] pt-7 md:pt-8">
@@ -453,17 +328,13 @@ import maverickImage from "../content/images/maverick/1.jpg";
             <div class="mt-7 md:mt-8">
 
                 <h2 class="text-[clamp(4rem,10vw,9rem)] font-bold max-w-[1300px]">
-
                     Hablemos
                     <br />
-
                     de tu próximo
                     <br />
-
                     <span class="text-[#0066FF]">
                         proyecto.
                     </span>
-
                 </h2>
 
             </div>
@@ -487,7 +358,6 @@ import maverickImage from "../content/images/maverick/1.jpg";
                         Cuéntame tu idea
                     </span>
 
-
                     <span class="w-12 h-12 rounded-full bg-[#0066FF] flex items-center justify-center group-hover:scale-105 transition-transform">
 
                         <svg
@@ -510,7 +380,6 @@ import maverickImage from "../content/images/maverick/1.jpg";
             </div>
 
         </div>
-
     </section>
 
 </Layout>

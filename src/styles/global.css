@@ -26,7 +26,7 @@ h6 {
 
     /* Espaciado base de la identidad tipográfica */
     letter-spacing: 0.002em !important;
-    line-height: 0.92 !important;
+    line-height: 1;
 }
 
 a {

@@ -1,11 +1,12 @@
 .markdown-content {
     color: #999999;
     font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.7;
+    font-size: 1.125rem;
+    line-height: 1.8;
 }
 
 
-/* Títulos */
+/* TÍTULOS */
 
 .markdown-content h1,
 .markdown-content h2,
@@ -14,17 +15,18 @@
 .markdown-content h5,
 .markdown-content h6 {
     color: #ffffff;
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    line-height: 0.95;
+    font-family: 'Anton', Impact, 'Arial Narrow', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.002em;
+    line-height: 1;
 }
 
 
 /* H1 */
 
 .markdown-content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin-top: 4rem;
     margin-bottom: 1.5rem;
 }
 
@@ -32,8 +34,8 @@
 /* H2 */
 
 .markdown-content h2 {
-    font-size: 2.5rem;
-    margin-top: 4rem;
+    font-size: 3rem;
+    margin-top: 4.5rem;
     margin-bottom: 1.5rem;
 }
 
@@ -41,17 +43,17 @@
 /* H3 */
 
 .markdown-content h3 {
-    font-size: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
 }
 
 
 /* H4 */
 
 .markdown-content h4 {
-    font-size: 1.5rem;
-    margin-top: 2.5rem;
+    font-size: 2rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
 }
 
@@ -59,8 +61,8 @@
 /* H5 */
 
 .markdown-content h5 {
-    font-size: 1.25rem;
-    margin-top: 2rem;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
     margin-bottom: 0.75rem;
 }
 
@@ -68,22 +70,23 @@
 /* H6 */
 
 .markdown-content h6 {
-    font-size: 1rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
 }
 
 
-/* Párrafos */
+/* PÁRRAFOS */
 
 .markdown-content p {
     color: #999999;
+    font-size: 1.125rem;
     line-height: 1.8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 
-/* Enlaces */
+/* ENLACES */
 
 .markdown-content a {
     color: #0066FF;
@@ -97,12 +100,12 @@
 }
 
 
-/* Listas */
+/* LISTAS */
 
 .markdown-content ul,
 .markdown-content ol {
     color: #999999;
-    margin: 1.5rem 0;
+    margin: 1.75rem 0;
     padding-left: 1.5rem;
 }
 
@@ -119,7 +122,7 @@
 }
 
 
-/* Texto destacado */
+/* TEXTO DESTACADO */
 
 .markdown-content strong {
     color: #ffffff;
@@ -127,17 +130,21 @@
 }
 
 
-/* Citas */
+/* CITAS */
 
 .markdown-content blockquote {
     border-left: 2px solid #0066FF;
     padding-left: 1.5rem;
-    margin: 3rem 0;
+    margin: 3.5rem 0;
+    color: #ffffff;
+}
+
+.markdown-content blockquote p {
     color: #ffffff;
 }
 
 
-/* Separadores */
+/* SEPARADORES */
 
 .markdown-content hr {
     border: 0;
@@ -146,32 +153,82 @@
 }
 
 
-/* Desktop */
+/* IMÁGENES INSERTADAS DESDE MARKDOWN */
+
+.markdown-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 3rem 0;
+}
+
+
+/* TEXTO EN CURSIVA */
+
+.markdown-content em {
+    color: #b5b5b5;
+}
+
+
+/* CÓDIGO */
+
+.markdown-content code {
+    color: #ffffff;
+    background: #0A0A0A;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+}
+
+.markdown-content pre {
+    background: #0A0A0A;
+    border: 1px solid #292929;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 2.5rem 0;
+}
+
+.markdown-content pre code {
+    background: transparent;
+    padding: 0;
+}
+
+
+/* DESKTOP */
 
 @media (min-width: 768px) {
 
+    .markdown-content {
+        font-size: 1.2rem;
+    }
+
     .markdown-content h1 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     .markdown-content h2 {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
 
     .markdown-content h3 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .markdown-content h4 {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 
     .markdown-content h5 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 
     .markdown-content h6 {
-        font-size: 1.25rem;
+        font-size: 1.35rem;
+    }
+
+    .markdown-content p {
+        font-size: 1.2rem;
+        max-width: 850px;
     }
 
 }

@@ -51,26 +51,30 @@ function getProjectImages(slug: string): ImageMetadata[] {
     description="Una selección de proyectos de YerxCreative."
 >
 
-    <main class="bg-black text-white px-5 sm:px-6 md:px-12 lg:px-20 pt-16 sm:pt-20 md:pt-28 pb-14 md:pb-16">
+    <main class="bg-black text-white px-5 sm:px-6 md:px-12 lg:px-20 pt-20 sm:pt-24 md:pt-28 pb-14 md:pb-16">
 
         <div class="max-w-[1400px] mx-auto">
 
 
             <!-- CABECERA -->
 
-            <header class="mb-14 sm:mb-16 md:mb-20">
+            <header class="mb-16 sm:mb-20 md:mb-24">
 
-                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-5 md:mb-6">
+                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-7">
                     YerxCreative / Proyectos
                 </p>
 
-                <div class="border-t border-[#292929] pt-6 sm:pt-7 md:pt-8">
+                <div class="border-t border-[#292929] pt-8">
 
-                    <h1 class="text-[clamp(4.5rem,17vw,11rem)] sm:text-[clamp(5rem,14vw,11rem)] md:text-[clamp(5rem,12vw,11rem)] font-bold uppercase max-w-6xl leading-[1]">
-                        Proyectos.
+                    <h1
+                        class="font-bold uppercase max-w-6xl leading-[0.82] tracking-[-0.02em]"
+                    >
+                        <span class="block text-[clamp(4rem,8vw,7.5rem)]">
+                            PROYECTOS.
+                        </span>
                     </h1>
 
-                    <p class="mt-6 sm:mt-7 md:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-400 leading-relaxed">
+                    <p class="mt-7 md:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-400 leading-relaxed">
                         Una selección de proyectos de identidad visual, diseño digital,
                         campañas y dirección gráfica.
                     </p>
@@ -100,60 +104,76 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
                     return (
 
-                        <article class="border-t border-[#292929] pt-8 sm:pt-10 md:pt-12 mb-20 sm:mb-24 md:mb-36">
+                        <article
+                            class="border-t border-[#292929] pt-8 sm:pt-10 md:pt-12 mb-20 sm:mb-24 md:mb-36"
+                        >
 
 
                             <!-- INFORMACIÓN DEL PROYECTO -->
 
-                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-7 sm:gap-8 md:gap-16 mb-8 sm:mb-10 md:mb-12">
+                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 sm:gap-10 md:gap-16 mb-10 sm:mb-12 md:mb-14">
+
+
+                                <!-- TÍTULO -->
 
                                 <div>
 
-                                    <p class="text-[#0066FF] text-xs sm:text-sm uppercase tracking-[0.18em] font-semibold mb-4 sm:mb-5">
+                                    <p class="text-[#0066FF] text-xs sm:text-sm uppercase tracking-[0.18em] font-semibold mb-4">
                                         {category}
                                     </p>
 
-                                    <h2 class="text-[3.5rem] sm:text-5xl md:text-7xl lg:text-[7rem] font-bold leading-[0.95]">
+                                    <h2
+                                        class="font-bold uppercase text-[clamp(3.5rem,7vw,7rem)] leading-[0.86] tracking-[-0.02em]"
+                                    >
                                         {title}
                                     </h2>
 
                                 </div>
 
 
+                                <!-- INFORMACIÓN -->
+
                                 <div class="md:pt-1">
 
-                                    <div class="grid grid-cols-2 gap-x-5 gap-y-5 sm:gap-x-8 md:grid-cols-2 md:gap-x-10 md:gap-y-6 mb-7 sm:mb-8">
+                                    <div class="grid grid-cols-2 gap-x-5 gap-y-6 sm:gap-x-8 md:gap-x-10 mb-8">
+
 
                                         <div>
-                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-1.5 sm:mb-2">
+
+                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-2">
                                                 Cliente
                                             </p>
 
                                             <p class="text-sm sm:text-base text-white">
                                                 {client}
                                             </p>
+
                                         </div>
 
 
                                         <div>
-                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-1.5 sm:mb-2">
+
+                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-2">
                                                 Año
                                             </p>
 
                                             <p class="text-sm sm:text-base text-white">
                                                 {year}
                                             </p>
+
                                         </div>
 
 
                                         <div>
-                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-1.5 sm:mb-2">
+
+                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-2">
                                                 Servicios
                                             </p>
 
                                             <p class="text-sm sm:text-base text-white">
                                                 {services}
                                             </p>
+
                                         </div>
 
                                     </div>
@@ -179,11 +199,13 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                         <div class="max-w-[520px] mx-auto">
 
                                             <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
+
                                                 <ImageContainer
                                                     src={projectImages[0]}
                                                     alt={`${title} — imagen 1`}
                                                     class="w-full h-auto"
                                                 />
+
                                             </div>
 
                                         </div>
@@ -340,6 +362,7 @@ function getProjectImages(slug: string): ImageMetadata[] {
             class="absolute top-5 right-5 sm:top-7 sm:right-7 w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors"
             aria-label="Cerrar imagen"
         >
+
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -352,6 +375,7 @@ function getProjectImages(slug: string): ImageMetadata[] {
                 <path d="M6 6l12 12" />
                 <path d="M18 6L6 18" />
             </svg>
+
         </button>
 
 

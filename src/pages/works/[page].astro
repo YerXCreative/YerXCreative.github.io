@@ -58,9 +58,9 @@ const imageModules = import.meta.glob(
 );
 
 const projectImages = Object.entries(imageModules)
-    .filter(([path]) =>
-        path.includes(`/images/${work.data.slug}/`)
-    )
+    .filter(([path]) => {
+        return path.includes(`/images/${work.data.slug}/`);
+    })
     .sort(([pathA], [pathB]) => {
         const fileA = pathA.split("/").pop() ?? "";
         const fileB = pathB.split("/").pop() ?? "";
@@ -75,6 +75,10 @@ const projectImages = Object.entries(imageModules)
         return fileA.localeCompare(fileB);
     })
     .map(([, image]) => image as ImageMetadata);
+
+console.log("PROYECTO:", work.data.slug);
+console.log("IMÁGENES ENCONTRADAS:", projectImages.length);
+console.log("IMÁGENES:", projectImages);
 ---
 
 <Layout

@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import "../../styles/markdown.css";
 
 import type { GetStaticPaths } from "astro";
+import type { ImageMetadata } from "astro";
 import { render, getCollection } from "astro:content";
 
 import ImageContainer from "../../components/elements/ImageContainer.astro";
@@ -31,9 +32,49 @@ const {
     services,
     year,
     description,
-    featuredImage,
-    imageTwo,
 } = work.data;
+
+
+/*
+ * Busca automáticamente todas las imágenes del proyecto.
+ *
+ * Ejemplo:
+ *
+ * src/content/images/play-to-die/
+ * ├── 1.jpg
+ * ├── 2.jpg
+ * ├── 3.jpg
+ * └── 4.jpg
+ *
+ * No importa si hay 3, 4, 10 o 30.
+ */
+
+const imageModules = import.meta.glob(
+    "../../content/images/**/*.{jpg,jpeg,png,webp,avif}",
+    {
+        eager: true,
+        import: "default",
+    }
+);
+
+const projectImages = Object.entries(imageModules)
+    .filter(([path]) =>
+        path.includes(`/images/${work.data.slug}/`)
+    )
+    .sort(([pathA], [pathB]) => {
+        const fileA = pathA.split("/").pop() ?? "";
+        const fileB = pathB.split("/").pop() ?? "";
+
+        const numberA = parseInt(fileA, 10);
+        const numberB = parseInt(fileB, 10);
+
+        if (!Number.isNaN(numberA) && !Number.isNaN(numberB)) {
+            return numberA - numberB;
+        }
+
+        return fileA.localeCompare(fileB);
+    })
+    .map(([, image]) => image as ImageMetadata);
 ---
 
 <Layout
@@ -69,21 +110,29 @@ const {
             </header>
 
 
-            <!-- IMAGEN PRINCIPAL -->
+            <!-- IMÁGENES DEL PROYECTO -->
 
-            <section class="mb-16 md:mb-24">
+            {projectImages.length > 0 && (
 
-                <div class="w-full overflow-hidden bg-[#0A0A0A]">
+                <section class="mb-16 md:mb-24 space-y-8 md:space-y-12">
 
-                    <ImageContainer
-                        src={featuredImage}
-                        alt={title}
-                        class="w-full h-auto object-cover"
-                    />
+                    {projectImages.map((image, index) => (
 
-                </div>
+                        <div class="w-full overflow-hidden bg-[#0A0A0A]">
 
-            </section>
+                            <ImageContainer
+                                src={image}
+                                alt={`${title} — imagen ${index + 1}`}
+                                class="w-full h-auto"
+                            />
+
+                        </div>
+
+                    ))}
+
+                </section>
+
+            )}
 
 
             <!-- INFORMACIÓN DEL PROYECTO -->
@@ -171,23 +220,6 @@ const {
                         </p>
 
                     </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- SEGUNDA IMAGEN -->
-
-            <section class="mb-20 md:mb-32">
-
-                <div class="w-full overflow-hidden bg-[#0A0A0A]">
-
-                    <ImageContainer
-                        src={imageTwo}
-                        alt={`${title} — imagen del proyecto`}
-                        class="w-full h-auto"
-                    />
 
                 </div>
 

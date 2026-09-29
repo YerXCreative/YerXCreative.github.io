@@ -1,20 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
 import type { ImageMetadata } from "astro";
+import { getCollection } from "astro:content";
+import ImageContainer from "../../components/elements/ImageContainer.astro";
 
 export const getStaticPaths = (async () => {
     const works = await getCollection("works", ({ data }) => !data.isDraft);
 
     return [
         {
-            params: {
-                page: undefined,
-            },
-            props: {
-                works,
-            },
+            params: { page: undefined },
+            props: { works },
         },
     ];
 }) satisfies GetStaticPaths;
@@ -29,7 +26,7 @@ const imageModules = import.meta.glob(
     }
 );
 
-const getProjectImages = (slug: string) => {
+function getProjectImages(slug: string): ImageMetadata[] {
     return Object.entries(imageModules)
         .filter(([path]) => path.includes(`/images/${slug}/`))
         .sort(([pathA], [pathB]) => {
@@ -46,36 +43,36 @@ const getProjectImages = (slug: string) => {
             return fileA.localeCompare(fileB);
         })
         .map(([, image]) => image as ImageMetadata);
-};
+}
 ---
 
 <Layout
     title="Proyectos | YerxCreative"
-    description="Una selección de proyectos de Yeray Díaz en diseño web, campañas digitales e identidad visual."
+    description="Una selección de proyectos de YerxCreative."
 >
 
-    <main class="bg-black text-white px-6 md:px-12 lg:px-20 pt-28 md:pt-32 pb-16">
+    <main class="bg-black text-white px-5 sm:px-6 md:px-12 lg:px-20 pt-16 sm:pt-20 md:pt-28 pb-14 md:pb-16">
 
         <div class="max-w-[1400px] mx-auto">
 
+
             <!-- CABECERA -->
 
-            <header class="mb-20 md:mb-28">
+            <header class="mb-14 sm:mb-16 md:mb-20">
 
-                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-6">
+                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-5 md:mb-6">
                     YerxCreative / Proyectos
                 </p>
 
-                <div class="border-t border-[#292929] pt-8">
+                <div class="border-t border-[#292929] pt-6 sm:pt-7 md:pt-8">
 
-                    <h1 class="text-[clamp(5rem,12vw,11rem)] font-bold uppercase max-w-6xl">
+                    <h1 class="text-[clamp(4.5rem,17vw,11rem)] sm:text-[clamp(5rem,14vw,11rem)] md:text-[clamp(5rem,12vw,11rem)] font-bold uppercase max-w-6xl leading-[1]">
                         Proyectos.
                     </h1>
 
-                    <p class="mt-8 max-w-2xl text-lg md:text-xl text-neutral-400 leading-relaxed">
-                        Una selección de trabajos en diseño web,
-                        campañas digitales, identidad visual
-                        y proyectos creativos.
+                    <p class="mt-6 sm:mt-7 md:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-400 leading-relaxed">
+                        Una selección de proyectos de identidad visual, diseño digital,
+                        campañas y dirección gráfica.
                     </p>
 
                 </div>
@@ -83,266 +80,246 @@ const getProjectImages = (slug: string) => {
             </header>
 
 
-            <!-- PORTFOLIO -->
+            <!-- PROYECTOS -->
 
-            <section
-                aria-label="Proyectos seleccionados"
-                class="[&>article:last-child]:mb-0"
-            >
+            <div class="[&>article:last-child]:mb-0">
 
-                {works.map((work, projectIndex) => {
+                {works.map((work) => {
 
-                    const images = getProjectImages(work.data.slug);
-                    const visibleImages = images.slice(0, 4);
+                    const {
+                        title,
+                        client,
+                        category,
+                        services,
+                        year,
+                        description,
+                        slug,
+                    } = work.data;
+
+                    const projectImages = getProjectImages(slug);
 
                     return (
-                        <article class="border-t border-[#292929] pt-10 md:pt-12 mb-28 md:mb-36">
 
-                            <!-- CABECERA DEL PROYECTO -->
+                        <article class="border-t border-[#292929] pt-8 sm:pt-10 md:pt-12 mb-20 sm:mb-24 md:mb-36">
 
-                            <header class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16 mb-10 md:mb-12">
+
+                            <!-- INFORMACIÓN DEL PROYECTO -->
+
+                            <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-7 sm:gap-8 md:gap-16 mb-8 sm:mb-10 md:mb-12">
 
                                 <div>
 
-                                    <p class="text-[#0066FF] text-xs uppercase tracking-[0.18em] font-semibold mb-4">
-                                        {work.data.category}
+                                    <p class="text-[#0066FF] text-xs sm:text-sm uppercase tracking-[0.18em] font-semibold mb-4 sm:mb-5">
+                                        {category}
                                     </p>
 
-                                    <h2 class="text-5xl md:text-7xl lg:text-[7rem] font-bold uppercase">
-                                        {work.data.title}
+                                    <h2 class="text-[3.5rem] sm:text-5xl md:text-7xl lg:text-[7rem] font-bold leading-[0.95]">
+                                        {title}
                                     </h2>
 
                                 </div>
 
 
-                                <div class="md:pt-2">
+                                <div class="md:pt-1">
 
-                                    <div class="flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.15em] text-neutral-500 mb-7">
+                                    <div class="grid grid-cols-2 gap-x-5 gap-y-5 sm:gap-x-8 md:grid-cols-2 md:gap-x-10 md:gap-y-6 mb-7 sm:mb-8">
 
-                                        <span>
-                                            {work.data.client}
-                                        </span>
+                                        <div>
+                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-1.5 sm:mb-2">
+                                                Cliente
+                                            </p>
 
-                                        <span>
-                                            {work.data.year}
-                                        </span>
+                                            <p class="text-sm sm:text-base text-white">
+                                                {client}
+                                            </p>
+                                        </div>
 
-                                        <span>
-                                            {work.data.services}
-                                        </span>
+
+                                        <div>
+                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-1.5 sm:mb-2">
+                                                Año
+                                            </p>
+
+                                            <p class="text-sm sm:text-base text-white">
+                                                {year}
+                                            </p>
+                                        </div>
+
+
+                                        <div>
+                                            <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-1.5 sm:mb-2">
+                                                Servicios
+                                            </p>
+
+                                            <p class="text-sm sm:text-base text-white">
+                                                {services}
+                                            </p>
+                                        </div>
 
                                     </div>
 
-                                    <p class="max-w-2xl text-lg md:text-xl text-neutral-400 leading-relaxed">
-                                        {work.data.description}
+
+                                    <p class="max-w-2xl text-sm sm:text-base md:text-lg text-neutral-400 leading-relaxed">
+                                        {description}
                                     </p>
 
                                 </div>
 
-                            </header>
+                            </div>
 
 
-                            <!-- IMÁGENES DEL PROYECTO -->
+                            <!-- IMÁGENES -->
 
-                            {visibleImages.length > 0 && (
+                            {projectImages.length > 0 && (
+
                                 <div class="max-w-5xl mx-auto">
 
-                                    <!-- 1 IMAGEN -->
+                                    {projectImages.length === 1 && (
 
-                                    {visibleImages.length === 1 && (
                                         <div class="max-w-[520px] mx-auto">
 
-                                            <button
-                                                type="button"
-                                                class="group block w-full cursor-zoom-in border-0 bg-transparent p-0"
-                                                data-lightbox-image={visibleImages[0].src}
-                                                data-lightbox-alt={`${work.data.title} — imagen 1`}
-                                                aria-label={`Ampliar imagen 1 de ${work.data.title}`}
-                                            >
+                                            <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
+                                                <ImageContainer
+                                                    src={projectImages[0]}
+                                                    alt={`${title} — imagen 1`}
+                                                    class="w-full h-auto"
+                                                />
+                                            </div>
 
-                                                <div class="w-full aspect-[4/3] overflow-hidden bg-[#0A0A0A]">
+                                        </div>
 
-                                                    <img
-                                                        src={visibleImages[0].src}
-                                                        alt={`${work.data.title} — imagen 1`}
-                                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.015]"
-                                                        loading={projectIndex === 0 ? "eager" : "lazy"}
+                                    )}
+
+
+                                    {projectImages.length === 2 && (
+
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+
+                                            {projectImages.map((image, index) => (
+
+                                                <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
+
+                                                    <ImageContainer
+                                                        src={image}
+                                                        alt={`${title} — imagen ${index + 1}`}
+                                                        class="w-full h-auto"
                                                     />
 
                                                 </div>
 
-                                            </button>
+                                            ))}
 
                                         </div>
+
                                     )}
 
 
-                                    <!-- 2 IMÁGENES -->
+                                    {projectImages.length === 3 && (
 
-                                    {visibleImages.length === 2 && (
-                                        <div class="grid grid-cols-2 gap-0">
+                                        <div class="space-y-5 md:space-y-8">
 
-                                            {visibleImages.map((image, imageIndex) => (
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
 
-                                                <button
-                                                    type="button"
-                                                    class="group block w-full cursor-zoom-in border-0 bg-transparent p-0"
-                                                    data-lightbox-image={image.src}
-                                                    data-lightbox-alt={`${work.data.title} — imagen ${imageIndex + 1}`}
-                                                    aria-label={`Ampliar imagen ${imageIndex + 1} de ${work.data.title}`}
-                                                >
+                                                {projectImages.slice(0, 2).map((image, index) => (
 
-                                                    <div class="w-full aspect-[4/3] overflow-hidden bg-[#0A0A0A]">
+                                                    <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
 
-                                                        <img
-                                                            src={image.src}
-                                                            alt={`${work.data.title} — imagen ${imageIndex + 1}`}
-                                                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.015]"
-                                                            loading={projectIndex === 0 ? "eager" : "lazy"}
+                                                        <ImageContainer
+                                                            src={image}
+                                                            alt={`${title} — imagen ${index + 1}`}
+                                                            class="w-full h-auto"
                                                         />
 
                                                     </div>
 
-                                                </button>
+                                                ))}
 
-                                            ))}
-
-                                        </div>
-                                    )}
+                                            </div>
 
 
-                                    <!-- 3 IMÁGENES -->
+                                            <div class="max-w-[50%] mx-auto">
 
-                                    {visibleImages.length === 3 && (
-                                        <div class="grid grid-cols-2 gap-0">
+                                                <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
 
-                                            {visibleImages.slice(0, 2).map((image, imageIndex) => (
-
-                                                <button
-                                                    type="button"
-                                                    class="group block w-full cursor-zoom-in border-0 bg-transparent p-0"
-                                                    data-lightbox-image={image.src}
-                                                    data-lightbox-alt={`${work.data.title} — imagen ${imageIndex + 1}`}
-                                                    aria-label={`Ampliar imagen ${imageIndex + 1} de ${work.data.title}`}
-                                                >
-
-                                                    <div class="w-full aspect-[4/3] overflow-hidden bg-[#0A0A0A]">
-
-                                                        <img
-                                                            src={image.src}
-                                                            alt={`${work.data.title} — imagen ${imageIndex + 1}`}
-                                                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.015]"
-                                                            loading={projectIndex === 0 ? "eager" : "lazy"}
-                                                        />
-
-                                                    </div>
-
-                                                </button>
-
-                                            ))}
-
-
-                                            <button
-                                                type="button"
-                                                class="group block w-full max-w-[50%] mx-auto col-span-2 cursor-zoom-in border-0 bg-transparent p-0"
-                                                data-lightbox-image={visibleImages[2].src}
-                                                data-lightbox-alt={`${work.data.title} — imagen 3`}
-                                                aria-label={`Ampliar imagen 3 de ${work.data.title}`}
-                                            >
-
-                                                <div class="w-full aspect-[4/3] overflow-hidden bg-[#0A0A0A]">
-
-                                                    <img
-                                                        src={visibleImages[2].src}
-                                                        alt={`${work.data.title} — imagen 3`}
-                                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.015]"
-                                                        loading="lazy"
+                                                    <ImageContainer
+                                                        src={projectImages[2]}
+                                                        alt={`${title} — imagen 3`}
+                                                        class="w-full h-auto"
                                                     />
 
                                                 </div>
 
-                                            </button>
+                                            </div>
 
                                         </div>
+
                                     )}
 
 
-                                    <!-- 4 IMÁGENES -->
+                                    {projectImages.length >= 4 && (
 
-                                    {visibleImages.length >= 4 && (
-                                        <div class="grid grid-cols-2 gap-0">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
 
-                                            {visibleImages.map((image, imageIndex) => (
+                                            {projectImages.map((image, index) => (
 
-                                                <button
-                                                    type="button"
-                                                    class="group block w-full cursor-zoom-in border-0 bg-transparent p-0"
-                                                    data-lightbox-image={image.src}
-                                                    data-lightbox-alt={`${work.data.title} — imagen ${imageIndex + 1}`}
-                                                    aria-label={`Ampliar imagen ${imageIndex + 1} de ${work.data.title}`}
-                                                >
+                                                <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
 
-                                                    <div class="w-full aspect-[4/3] overflow-hidden bg-[#0A0A0A]">
+                                                    <ImageContainer
+                                                        src={image}
+                                                        alt={`${title} — imagen ${index + 1}`}
+                                                        class="w-full h-auto"
+                                                    />
 
-                                                        <img
-                                                            src={image.src}
-                                                            alt={`${work.data.title} — imagen ${imageIndex + 1}`}
-                                                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.015]"
-                                                            loading={projectIndex === 0 ? "eager" : "lazy"}
-                                                        />
-
-                                                    </div>
-
-                                                </button>
+                                                </div>
 
                                             ))}
 
                                         </div>
+
                                     )}
 
                                 </div>
+
                             )}
 
 
-                            <!-- ENTRAR AL PROYECTO -->
+                            <!-- ENLACE -->
 
-                            <div class="mt-10 md:mt-12 flex justify-end">
+                            <div class="mt-8 sm:mt-10 md:mt-12">
 
                                 <a
-                                    href={`/works/${work.data.slug}`}
-                                    class="group inline-flex items-center gap-4 text-white text-sm font-semibold"
+                                    href={`/works/${slug}`}
+                                    class="group inline-flex items-center gap-3 text-white text-sm sm:text-base font-semibold"
                                 >
 
-                                    <span class="border-b border-white pb-1 group-hover:border-[#0066FF] group-hover:text-[#0066FF] transition-colors">
+                                    <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
                                         Ver proyecto completo
                                     </span>
 
-                                    <span class="w-10 h-10 rounded-full border border-[#292929] flex items-center justify-center group-hover:border-[#0066FF] transition-colors">
-
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="1.8"
-                                            class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                                            aria-hidden="true"
-                                        >
-                                            <path d="M7 17L17 7" />
-                                            <path d="M7 7h10v10" />
-                                        </svg>
-
-                                    </span>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                                        aria-hidden="true"
+                                    >
+                                        <path d="M5 12h14" />
+                                        <path d="m13 6 6 6-6 6" />
+                                    </svg>
 
                                 </a>
 
                             </div>
 
                         </article>
+
                     );
+
                 })}
 
-            </section>
+            </div>
 
         </div>
 
@@ -353,17 +330,16 @@ const getProjectImages = (slug: string) => {
 
     <div
         id="image-lightbox"
-        class="fixed inset-0 z-[100] hidden bg-black/95 p-6 md:p-10 items-center justify-center"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 p-4 sm:p-6"
         aria-hidden="true"
     >
 
         <button
             id="lightbox-close"
             type="button"
-            class="absolute top-5 right-5 md:top-8 md:right-8 w-12 h-12 rounded-full border border-white/20 bg-transparent text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors duration-200"
+            class="absolute top-5 right-5 sm:top-7 sm:right-7 w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors"
             aria-label="Cerrar imagen"
         >
-
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -376,7 +352,6 @@ const getProjectImages = (slug: string) => {
                 <path d="M6 6l12 12" />
                 <path d="M18 6L6 18" />
             </svg>
-
         </button>
 
 
@@ -384,7 +359,7 @@ const getProjectImages = (slug: string) => {
             id="lightbox-image"
             src=""
             alt=""
-            class="max-w-full max-h-[90vh] w-auto h-auto object-contain"
+            class="max-w-full max-h-[90vh] object-contain"
         />
 
     </div>
@@ -393,45 +368,44 @@ const getProjectImages = (slug: string) => {
     <script>
         const lightbox = document.getElementById("image-lightbox");
         const lightboxImage = document.getElementById("lightbox-image");
-        const closeButton = document.getElementById("lightbox-close");
-        const imageButtons = document.querySelectorAll("[data-lightbox-image]");
+        const lightboxClose = document.getElementById("lightbox-close");
 
-        const openLightbox = (image, alt) => {
-            if (!lightbox || !lightboxImage) return;
+        const projectImages = document.querySelectorAll(
+            "[data-lightbox-image]"
+        );
 
-            lightboxImage.src = image;
-            lightboxImage.alt = alt || "";
-
-            lightbox.classList.remove("hidden");
-            lightbox.classList.add("flex");
-            lightbox.setAttribute("aria-hidden", "false");
-
-            document.body.style.overflow = "hidden";
-        };
-
-        const closeLightbox = () => {
+        function closeLightbox() {
             if (!lightbox || !lightboxImage) return;
 
             lightbox.classList.add("hidden");
             lightbox.classList.remove("flex");
             lightbox.setAttribute("aria-hidden", "true");
+            lightboxImage.setAttribute("src", "");
+        }
 
-            lightboxImage.src = "";
-            document.body.style.overflow = "";
-        };
+        function openLightbox(src, alt) {
+            if (!lightbox || !lightboxImage) return;
 
-        imageButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const image = button.getAttribute("data-lightbox-image");
-                const alt = button.getAttribute("data-lightbox-alt");
+            lightboxImage.setAttribute("src", src);
+            lightboxImage.setAttribute("alt", alt);
 
-                if (image) {
-                    openLightbox(image, alt);
+            lightbox.classList.remove("hidden");
+            lightbox.classList.add("flex");
+            lightbox.setAttribute("aria-hidden", "false");
+        }
+
+        projectImages.forEach((image) => {
+            image.addEventListener("click", () => {
+                const src = image.getAttribute("data-lightbox-image");
+                const alt = image.getAttribute("alt") ?? "";
+
+                if (src) {
+                    openLightbox(src, alt);
                 }
             });
         });
 
-        closeButton?.addEventListener("click", closeLightbox);
+        lightboxClose?.addEventListener("click", closeLightbox);
 
         lightbox?.addEventListener("click", (event) => {
             if (event.target === lightbox) {

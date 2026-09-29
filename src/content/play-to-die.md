@@ -14,7 +14,7 @@ isFeatured: true
 isDraft: false
 ---
 
-Pun to Die nace alrededor de una identidad visual con una estética claramente vinculada al universo gaming. El objetivo era construir un logotipo reconocible, con una personalidad gráfica potente y capaz de funcionar por sí mismo sobre distintos fondos y soportes.
+Play to Die nace alrededor de una identidad visual con una estética claramente vinculada al universo gaming. El objetivo era construir un logotipo reconocible, con una personalidad gráfica potente y capaz de funcionar por sí mismo sobre distintos fondos y soportes.
 
 La propuesta se basa en una tipografía experimental de formas orgánicas y contundentes, creando un conjunto visual fácilmente reconocible. El sistema se plantea principalmente en blanco y negro, permitiendo que el logotipo mantenga fuerza y legibilidad en diferentes contextos.
 

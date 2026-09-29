@@ -1,18 +1,66 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Work from "../../components/elements/Work.astro";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
 
-export const getStaticPaths = (async ({ paginate }) => {
+export const getStaticPaths = (async () => {
     const works = await getCollection("works", ({ data }) => !data.isDraft);
 
-    return paginate(works, {
-        pageSize: 6
-    });
+    return works.map((work) => ({
+        params: {
+            page: undefined,
+        },
+        props: {
+            works,
+        },
+    }));
 }) satisfies GetStaticPaths;
 
-const { page } = Astro.props;
+const { works } = Astro.props;
+
+
+/*
+ * Todas las imágenes disponibles del portfolio.
+ *
+ * Cada proyecto utiliza automáticamente las imágenes
+ * que tenga dentro de:
+ *
+ * src/content/images/[slug]/
+ */
+
+const imageModules = import.meta.glob(
+    "../../content/images/**/*.{jpg,jpeg,png,webp,avif}",
+    {
+        eager: true,
+        import: "default",
+    }
+);
+
+
+const getProjectImages = (slug: string) => {
+
+    return Object.entries(imageModules)
+        .filter(([path]) => {
+            return path.includes(`/images/${slug}/`);
+        })
+        .sort(([pathA], [pathB]) => {
+
+            const fileA = pathA.split("/").pop() ?? "";
+            const fileB = pathB.split("/").pop() ?? "";
+
+            const numberA = parseInt(fileA, 10);
+            const numberB = parseInt(fileB, 10);
+
+            if (!Number.isNaN(numberA) && !Number.isNaN(numberB)) {
+                return numberA - numberB;
+            }
+
+            return fileA.localeCompare(fileB);
+        })
+        .map(([, image]) => image as ImageMetadata);
+};
+
 ---
 
 <Layout
@@ -20,14 +68,14 @@ const { page } = Astro.props;
     description="Una selección de proyectos de Yeray Díaz en diseño web, campañas digitales e identidad visual."
 >
 
-    <main class="bg-black text-white px-6 md:px-12 lg:px-20 pt-28 md:pt-32 pb-24">
+    <main class="bg-black text-white px-6 md:px-12 lg:px-20 pt-28 md:pt-32 pb-32">
 
         <div class="max-w-[1400px] mx-auto">
 
 
             <!-- CABECERA -->
 
-            <header class="mb-20 md:mb-28">
+            <header class="mb-28 md:mb-40">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-6">
                     YerxCreative / Proyectos
@@ -50,81 +98,178 @@ const { page } = Astro.props;
             </header>
 
 
-            <!-- PROYECTOS -->
+            <!-- PORTFOLIO -->
 
             <section aria-label="Proyectos seleccionados">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-20 md:gap-y-28">
+                {works.map((work, projectIndex) => {
 
-                    {page.data.map((work) => (
-                        <Work
-                            slug={work.data.slug}
-                            featuredImage={work.data.featuredImage}
-                            title={work.data.title}
-                            client={work.data.client}
-                            category={work.data.category}
-                        />
-                    ))}
+                    const images = getProjectImages(work.data.slug);
 
-                </div>
+                    return (
+
+                        <article
+                            class="border-t border-[#292929] pt-10 md:pt-12 mb-32 md:mb-48"
+                        >
+
+
+                            <!-- CABECERA DEL PROYECTO -->
+
+                            <header class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16 mb-12 md:mb-16">
+
+                                <div>
+
+                                    <p class="text-[#0066FF] text-xs uppercase tracking-[0.18em] font-semibold mb-4">
+                                        {work.data.category}
+                                    </p>
+
+                                    <h2 class="text-5xl md:text-7xl lg:text-[7rem] font-bold uppercase">
+                                        {work.data.title}
+                                    </h2>
+
+                                </div>
+
+
+                                <div class="md:pt-2">
+
+                                    <div class="flex flex-wrap gap-x-8 gap-y-3 text-xs uppercase tracking-[0.15em] text-neutral-500 mb-8">
+
+                                        <span>
+                                            {work.data.client}
+                                        </span>
+
+                                        <span>
+                                            {work.data.year}
+                                        </span>
+
+                                        <span>
+                                            {work.data.services}
+                                        </span>
+
+                                    </div>
+
+                                    <p class="max-w-2xl text-lg md:text-xl text-neutral-400 leading-relaxed">
+                                        {work.data.description}
+                                    </p>
+
+                                </div>
+
+                            </header>
+
+
+                            <!-- IMÁGENES -->
+
+                            {images.length > 0 && (
+
+                                <div class="space-y-6 md:space-y-8">
+
+
+                                    <!-- IMAGEN PRINCIPAL -->
+
+                                    {images[0] && (
+
+                                        <a
+                                            href={`/works/${work.data.slug}`}
+                                            class="group block"
+                                        >
+
+                                            <div class="w-full max-w-5xl mx-auto overflow-hidden bg-[#0A0A0A]">
+
+                                                <img
+                                                    src={images[0].src}
+                                                    alt={`${work.data.title} — imagen principal`}
+                                                    class="w-full h-auto object-contain"
+                                                    loading={projectIndex === 0 ? "eager" : "lazy"}
+                                                />
+
+                                            </div>
+
+                                        </a>
+
+                                    )}
+
+
+                                    <!-- RESTO DE IMÁGENES -->
+
+                                    {images.length > 1 && (
+
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+                                            {images.slice(1, 4).map((image, imageIndex) => (
+
+                                                <a
+                                                    href={`/works/${work.data.slug}`}
+                                                    class:list={[
+                                                        "group block",
+                                                        imageIndex === 2 && "md:col-span-2"
+                                                    ]}
+                                                >
+
+                                                    <div class="w-full overflow-hidden bg-[#0A0A0A]">
+
+                                                        <img
+                                                            src={image.src}
+                                                            alt={`${work.data.title} — imagen ${imageIndex + 2}`}
+                                                            class="w-full h-auto object-contain"
+                                                            loading="lazy"
+                                                        />
+
+                                                    </div>
+
+                                                </a>
+
+                                            ))}
+
+                                        </div>
+
+                                    )}
+
+                                </div>
+
+                            )}
+
+
+                            <!-- ENTRAR AL PROYECTO -->
+
+                            <div class="mt-10 md:mt-12 flex justify-end">
+
+                                <a
+                                    href={`/works/${work.data.slug}`}
+                                    class="group inline-flex items-center gap-4 text-white text-sm font-semibold"
+                                >
+
+                                    <span class="border-b border-white pb-1 group-hover:border-[#0066FF] group-hover:text-[#0066FF] transition-colors">
+                                        Ver proyecto completo
+                                    </span>
+
+                                    <span class="w-10 h-10 rounded-full border border-[#292929] flex items-center justify-center group-hover:border-[#0066FF] transition-colors">
+
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.8"
+                                            class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                                            aria-hidden="true"
+                                        >
+                                            <path d="M7 17 17 7" />
+                                            <path d="M8 7h9v9" />
+                                        </svg>
+
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    );
+
+                })}
 
             </section>
-
-
-            <!-- PAGINACIÓN -->
-
-            {page.totalPages > 1 && (
-                <nav
-                    aria-label="Paginación de proyectos"
-                    class="mt-24 pt-8 border-t border-[#292929] flex items-center justify-between"
-                >
-
-                    {page.url.prev ? (
-                        <a
-                            href={page.url.prev}
-                            class="group inline-flex items-center gap-3 text-white text-sm font-medium"
-                        >
-
-                            <span class="text-[#0066FF] group-hover:-translate-x-1 transition-transform">
-                                ←
-                            </span>
-
-                            <span class="group-hover:text-[#0066FF] transition-colors">
-                                Anterior
-                            </span>
-
-                        </a>
-                    ) : (
-                        <span></span>
-                    )}
-
-
-                    <span class="text-neutral-600 text-xs uppercase tracking-[0.2em]">
-                        Página {page.currentPage}
-                    </span>
-
-
-                    {page.url.next ? (
-                        <a
-                            href={page.url.next}
-                            class="group inline-flex items-center gap-3 text-white text-sm font-medium"
-                        >
-
-                            <span class="group-hover:text-[#0066FF] transition-colors">
-                                Siguiente
-                            </span>
-
-                            <span class="text-[#0066FF] group-hover:translate-x-1 transition-transform">
-                                →
-                            </span>
-
-                        </a>
-                    ) : (
-                        <span></span>
-                    )}
-
-                </nav>
-            )}
 
         </div>
 

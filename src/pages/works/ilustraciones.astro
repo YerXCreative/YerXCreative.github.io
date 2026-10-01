@@ -1,17 +1,31 @@
-```astro
 ---
 import Layout from "../../layouts/Layout.astro";
+import type { ImageMetadata } from "astro";
 
-const illustrations = [
-    { title: "Ilustración 01" },
-    { title: "Ilustración 02" },
-    { title: "Ilustración 03" },
-    { title: "Ilustración 04" },
-    { title: "Ilustración 05" },
-    { title: "Ilustración 06" },
-    { title: "Ilustración 07" },
-    { title: "Ilustración 08" },
-];
+const imageModules = import.meta.glob(
+    "../../content/images/ilustraciones/*.png",
+    {
+        eager: true,
+        import: "default",
+    }
+);
+
+const illustrations = Object.entries(imageModules)
+    .sort(([pathA], [pathB]) => {
+        const fileA = pathA.split("/").pop() ?? "";
+        const fileB = pathB.split("/").pop() ?? "";
+
+        const numberA = parseInt(fileA, 10);
+        const numberB = parseInt(fileB, 10);
+
+        return numberA - numberB;
+    })
+    .map(([path, image]) => ({
+        image: image as ImageMetadata,
+        title: `Ilustración ${String(
+            parseInt(path.split("/").pop() ?? "0", 10)
+        ).padStart(2, "0")}`,
+    }));
 ---
 
 <Layout
@@ -72,12 +86,15 @@ const illustrations = [
 
                         <article>
 
-                            <div
-                                class="aspect-square bg-[#0A0A0A] border border-[#292929] flex items-center justify-center"
-                            >
-                                <span class="text-xs uppercase tracking-[0.18em] text-neutral-700">
-                                    Imagen
-                                </span>
+                            <div class="w-full overflow-hidden bg-[#0A0A0A]">
+
+                                <img
+                                    src={illustration.image.src}
+                                    alt={illustration.title}
+                                    class="block w-full h-auto"
+                                    loading="lazy"
+                                />
+
                             </div>
 
                             <h2
@@ -99,4 +116,3 @@ const illustrations = [
     </main>
 
 </Layout>
-```

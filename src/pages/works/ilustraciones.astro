@@ -1,3 +1,4 @@
+```astro
 ---
 import Layout from "../../layouts/Layout.astro";
 
@@ -22,9 +23,6 @@ const illustrations = [
 
         <div class="max-w-[1400px] mx-auto">
 
-
-            <!-- CABECERA -->
-
             <header class="mb-16 sm:mb-20 md:mb-24">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-7">
@@ -39,7 +37,25 @@ const illustrations = [
                         ILUSTRACIONES.
                     </h1>
 
-                    <p class="mt-7 md:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-400 leading-relaxed">
+                    <nav class="mt-8 md:mt-10 flex items-center gap-6">
+
+                        <a
+                            href="/works"
+                            class="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-neutral-500 border-b-2 border-transparent pb-2 hover:text-white hover:border-[#0066FF] transition-colors"
+                        >
+                            Proyectos
+                        </a>
+
+                        <a
+                            href="/works/ilustraciones"
+                            class="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-white border-b-2 border-[#0066FF] pb-2"
+                        >
+                            Ilustraciones
+                        </a>
+
+                    </nav>
+
+                    <p class="mt-8 md:mt-10 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-400 leading-relaxed">
                         Una selección de ilustraciones personales y trabajos
                         realizados a lo largo de los años.
                     </p>
@@ -47,9 +63,6 @@ const illustrations = [
                 </div>
 
             </header>
-
-
-            <!-- GALERÍA -->
 
             <section>
 
@@ -59,20 +72,13 @@ const illustrations = [
 
                         <article>
 
-                            <!-- IMAGEN DE PRUEBA -->
-
                             <div
                                 class="aspect-square bg-[#0A0A0A] border border-[#292929] flex items-center justify-center"
                             >
-
                                 <span class="text-xs uppercase tracking-[0.18em] text-neutral-700">
                                     Imagen
                                 </span>
-
                             </div>
-
-
-                            <!-- TÍTULO -->
 
                             <h2
                                 class="mt-4 text-xl md:text-2xl font-bold uppercase tracking-[-0.01em]"
@@ -88,9 +94,9 @@ const illustrations = [
 
             </section>
 
-
         </div>
 
     </main>
 
 </Layout>
+```

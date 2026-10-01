@@ -1,9 +1,10 @@
+
 ---
 import Layout from "../../layouts/Layout.astro";
 import type { ImageMetadata } from "astro";
 
 const imageModules = import.meta.glob(
-    "../../content/images/posters/*.{png,jpg,jpeg,webp}",
+    "../../content/images/posters/*.{png,jpg,jpeg,webp,avif}",
     {
         eager: true,
         import: "default",
@@ -14,7 +15,6 @@ const posters = Object.entries(imageModules)
     .sort(([pathA], [pathB]) => {
         const fileA = pathA.split("/").pop() ?? "";
         const fileB = pathB.split("/").pop() ?? "";
-
         const numberA = parseInt(fileA, 10);
         const numberB = parseInt(fileB, 10);
 
@@ -26,9 +26,7 @@ const posters = Object.entries(imageModules)
     })
     .map(([path, image]) => ({
         image: image as ImageMetadata,
-        title: `Póster ${String(
-            parseInt(path.split("/").pop() ?? "0", 10)
-        ).padStart(2, "0")}`,
+        title: path.split("/").pop() ?? "Póster",
     }));
 ---
 
@@ -36,93 +34,152 @@ const posters = Object.entries(imageModules)
     title="Pósters | YerxCreative"
     description="Una selección de pósters de Yeray Díaz."
 >
-
     <main class="bg-black text-white px-5 sm:px-6 md:px-12 lg:px-20 pt-20 sm:pt-24 md:pt-28 pb-14 md:pb-16">
-
         <div class="max-w-[1400px] mx-auto">
 
             <header class="mb-16 sm:mb-20 md:mb-24">
-
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-7">
                     YerxCreative / Pósters
                 </p>
 
                 <div class="border-t border-[#292929] pt-8">
-
-                    <h1
-                        class="font-bold uppercase max-w-6xl text-[clamp(4rem,8vw,7.5rem)] leading-[0.82] tracking-[-0.02em]"
-                    >
+                    <h1 class="font-bold uppercase max-w-6xl text-[clamp(4rem,8vw,7.5rem)] leading-[0.82] tracking-[-0.02em]">
                         PÓSTERS.
                     </h1>
 
-                    <nav class="mt-8 md:mt-10 flex items-center gap-6">
+                    <nav class="mt-8 md:mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+                        <a
+                            href="/works"
+                            class="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-neutral-500 border-b-2 border-transparent pb-2 hover:text-white hover:border-[#0066FF] transition-colors"
+                        >
+                            Proyectos
+                        </a>
 
-    <a
-        href="/works"
-        class="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-white border-b-2 border-[#0066FF] pb-2"
-    >
-        Proyectos
-    </a>
+                        <a
+                            href="/works/ilustraciones"
+                            class="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-neutral-500 border-b-2 border-transparent pb-2 hover:text-white hover:border-[#0066FF] transition-colors"
+                        >
+                            Ilustraciones
+                        </a>
 
-    <a
-        href="/works/ilustraciones"
-        class="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-neutral-500 border-b-2 border-transparent pb-2 hover:text-white hover:border-[#0066FF] transition-colors"
-    >
-        Ilustraciones
-    </a>
-
-    <a
-        href="/works/posters"
-        class="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-neutral-500 border-b-2 border-transparent pb-2 hover:text-white hover:border-[#0066FF] transition-colors"
-    >
-        Pósters
-    </a>
-
-</nav>
+                        <a
+                            href="/works/posters"
+                            aria-current="page"
+                            class="text-sm md:text-base font-semibold uppercase tracking-[0.08em] text-white border-b-2 border-[#0066FF] pb-2"
+                        >
+                            Pósters
+                        </a>
+                    </nav>
 
                     <p class="mt-8 md:mt-10 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-400 leading-relaxed">
-                        Una selección de pósters y piezas gráficas desarrolladas por Yeray Díaz.
+                        Una selección de pósters y piezas gráficas
+                        desarrolladas a lo largo de los años.
                     </p>
-
                 </div>
-
             </header>
 
             <section>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-12 md:gap-y-16">
-
                     {posters.map((poster) => (
-
                         <article>
-
-                            <div class="w-full overflow-hidden bg-[#0A0A0A]">
-
+                            <button
+                                type="button"
+                                class="block w-full cursor-zoom-in text-left focus-visible:outline-2 focus-visible:outline-[#0066FF]"
+                                data-lightbox-image={poster.image.src}
+                                data-lightbox-alt={poster.title}
+                                aria-label="Ampliar póster"
+                            >
                                 <img
                                     src={poster.image.src}
                                     alt={poster.title}
                                     class="block w-full h-auto"
                                     loading="lazy"
                                 />
-
-                            </div>
-
-                            <h2
-                                class="mt-4 text-xl md:text-2xl font-bold uppercase tracking-[-0.01em]"
-                            >
-                                {poster.title}
-                            </h2>
-
+                            </button>
                         </article>
-
                     ))}
-
                 </div>
-
             </section>
-
         </div>
-
     </main>
 
+    <div
+        id="image-lightbox"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 p-4 sm:p-8"
+        aria-hidden="true"
+    >
+        <button
+            id="lightbox-close"
+            type="button"
+            class="absolute top-5 right-5 sm:top-7 sm:right-7 w-11 h-11 rounded-full border border-white/30 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors"
+            aria-label="Cerrar imagen ampliada"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="w-5 h-5"
+                aria-hidden="true"
+            >
+                <path d="M6 6l12 12" />
+                <path d="M18 6L6 18" />
+            </svg>
+        </button>
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt=""
+            class="max-w-full max-h-[90vh] w-auto h-auto object-contain"
+        />
+    </div>
+
+    <script>
+        const lightbox = document.getElementById("image-lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+        const lightboxClose = document.getElementById("lightbox-close");
+
+        const openImage = (src, alt) => {
+            if (!lightbox || !lightboxImage) return;
+
+            lightboxImage.setAttribute("src", src);
+            lightboxImage.setAttribute("alt", alt);
+            lightbox.classList.remove("hidden");
+            lightbox.classList.add("flex");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            lightboxClose?.focus();
+        };
+
+        const closeImage = () => {
+            if (!lightbox || !lightboxImage) return;
+
+            lightbox.classList.add("hidden");
+            lightbox.classList.remove("flex");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxImage.setAttribute("src", "");
+            document.body.style.overflow = "";
+        };
+
+        document.querySelectorAll("[data-lightbox-image]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const src = button.getAttribute("data-lightbox-image");
+                const alt = button.getAttribute("data-lightbox-alt") ?? "";
+
+                if (src) openImage(src, alt);
+            });
+        });
+
+        lightboxClose?.addEventListener("click", closeImage);
+
+        lightbox?.addEventListener("click", (event) => {
+            if (event.target === lightbox) closeImage();
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeImage();
+        });
+    </script>
 </Layout>

@@ -1,0 +1,96 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const illustrations = [
+    { title: "Ilustración 01" },
+    { title: "Ilustración 02" },
+    { title: "Ilustración 03" },
+    { title: "Ilustración 04" },
+    { title: "Ilustración 05" },
+    { title: "Ilustración 06" },
+    { title: "Ilustración 07" },
+    { title: "Ilustración 08" },
+];
+---
+
+<Layout
+    title="Ilustraciones | YerxCreative"
+    description="Una selección de ilustraciones de Yeray Díaz."
+>
+
+    <main class="bg-black text-white px-5 sm:px-6 md:px-12 lg:px-20 pt-20 sm:pt-24 md:pt-28 pb-14 md:pb-16">
+
+        <div class="max-w-[1400px] mx-auto">
+
+
+            <!-- CABECERA -->
+
+            <header class="mb-16 sm:mb-20 md:mb-24">
+
+                <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-7">
+                    YerxCreative / Ilustraciones
+                </p>
+
+                <div class="border-t border-[#292929] pt-8">
+
+                    <h1
+                        class="font-bold uppercase max-w-6xl text-[clamp(4rem,8vw,7.5rem)] leading-[0.82] tracking-[-0.02em]"
+                    >
+                        ILUSTRACIONES.
+                    </h1>
+
+                    <p class="mt-7 md:mt-8 max-w-2xl text-base sm:text-lg md:text-xl text-neutral-400 leading-relaxed">
+                        Una selección de ilustraciones personales y trabajos
+                        realizados a lo largo de los años.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!-- GALERÍA -->
+
+            <section>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-12 md:gap-y-16">
+
+                    {illustrations.map((illustration) => (
+
+                        <article>
+
+                            <!-- IMAGEN DE PRUEBA -->
+
+                            <div
+                                class="aspect-square bg-[#0A0A0A] border border-[#292929] flex items-center justify-center"
+                            >
+
+                                <span class="text-xs uppercase tracking-[0.18em] text-neutral-700">
+                                    Imagen
+                                </span>
+
+                            </div>
+
+
+                            <!-- TÍTULO -->
+
+                            <h2
+                                class="mt-4 text-xl md:text-2xl font-bold uppercase tracking-[-0.01em]"
+                            >
+                                {illustration.title}
+                            </h2>
+
+                        </article>
+
+                    ))}
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</Layout>

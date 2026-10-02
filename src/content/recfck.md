@@ -1,19 +1,20 @@
 ---
+
 title: "recfck"
 slug: "recfck"
 client: "recfck"
 category: "Branding"
 services: "Diseño de logotipo, Identidad visual, Packaging, Diseño editorial"
 year: "2025"
-featuredImage: "./images/recfck/1.jpg"
-imageTwo: "./images/recfck/2.jpg"
-imageThree: "./images/recfck/3.jpg"
-imageFour: "./images/recfck/4.jpg"
+featuredImage: "./images/recfck/1.png"
+imageTwo: "./images/recfck/2.png"
+imageThree: "./images/recfck/3.png"
+imageFour: "./images/recfck/4.png"
 liveSite: "https://yerxcreative.github.io"
 description: "Identidad de marca para Cosmic Slice, una pizzería con temática espacial. El proyecto abarca logotipo, sistema gráfico, carta, packaging y presencia en redes sociales, todo construido sobre un universo visual de cómic retro-espacial."
 isFeatured: true
 isDraft: false
----
+--------------
 
 Cosmic Slice necesitaba una identidad que transmitiera diversión y personalidad desde el primer vistazo, diferenciándose de la estética clásica italiana que domina el sector de las pizzerías. La propuesta partió de un universo visual propio: el espacio, con su mascota central, una porción de pizza cósmica con actitud, y un lema directo: "Eat me!!".
 

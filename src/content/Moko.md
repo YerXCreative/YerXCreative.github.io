@@ -1,6 +1,6 @@
 ---
 title: "Moko"
-slug: "Mokor"
+slug: "Moko"
 client: "COFFEE STUDIO"
 category: "Product Design"
 services: "Industrial Design, Prototyping, Design for Manufacturing"

@@ -2,7 +2,7 @@
 title: "move in"
 slug: "move in"
 client: "move in Sports"
-category: "Sport Design"
+category: "Web Design"
 services: "User Research, Prototyping, Visual Design"
 year: "2026"
 featuredImage: "./images/zenith-wellness/1.jpg"

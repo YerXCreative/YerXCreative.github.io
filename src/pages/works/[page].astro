@@ -83,6 +83,36 @@ const projectImages = Object.entries(imageModules)
                         {title}
                     </h1>
 
+                    <!-- VOLVER A PROYECTOS -->
+
+                    <div class="mt-5 sm:mt-6">
+
+                        <a
+                            href="/works"
+                            class="group inline-flex items-center gap-3 text-[#0066FF] text-sm sm:text-base font-semibold"
+                        >
+
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
+                                aria-hidden="true"
+                            >
+                                <path d="M19 12H5" />
+                                <path d="m11 18-6-6 6-6" />
+                            </svg>
+
+                            <span class="border-b border-[#0066FF] pb-1">
+                                Todos los proyectos
+                            </span>
+
+                        </a>
+
+                    </div>
+
                 </div>
 
             </header>
@@ -193,38 +223,106 @@ const projectImages = Object.entries(imageModules)
 
             </article>
 
-
-            <!-- VOLVER -->
-
-            <section class="mt-8 md:mt-10 pt-0">
-
-                <a
-                    href="/works"
-                    class="group inline-flex items-center gap-3 text-white font-semibold"
-                >
-
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        class="w-5 h-5 group-hover:-translate-x-1 transition-transform"
-                        aria-hidden="true"
-                    >
-                        <path d="M19 12H5" />
-                        <path d="m11 18-6-6 6-6" />
-                    </svg>
-
-                    <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
-                        Todos los proyectos
-                    </span>
-
-                </a>
-
-            </section>
-
         </div>
 
     </main>
+
+
+    <!-- LIGHTBOX -->
+
+    <div
+        id="image-lightbox"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 p-4 sm:p-6"
+        aria-hidden="true"
+    >
+
+        <button
+            id="lightbox-close"
+            type="button"
+            class="absolute top-5 right-5 sm:top-7 sm:right-7 w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors"
+            aria-label="Cerrar imagen"
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                class="w-5 h-5"
+                aria-hidden="true"
+            >
+                <path d="M6 6l12 12" />
+                <path d="M18 6L6 18" />
+            </svg>
+
+        </button>
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt=""
+            class="max-w-full max-h-[90vh] object-contain"
+        />
+
+    </div>
+
+
+    <script>
+        const lightbox = document.getElementById("image-lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+        const lightboxClose = document.getElementById("lightbox-close");
+
+        function closeLightbox() {
+            if (!lightbox || !lightboxImage) return;
+
+            lightbox.classList.add("hidden");
+            lightbox.classList.remove("flex");
+            lightbox.setAttribute("aria-hidden", "true");
+            lightboxImage.setAttribute("src", "");
+        }
+
+        function openLightbox(src, alt) {
+            if (!lightbox || !lightboxImage) return;
+
+            lightboxImage.setAttribute("src", src);
+            lightboxImage.setAttribute("alt", alt);
+
+            lightbox.classList.remove("hidden");
+            lightbox.classList.add("flex");
+            lightbox.setAttribute("aria-hidden", "false");
+        }
+
+        document.addEventListener("click", (event) => {
+            const target = event.target as HTMLElement | null;
+
+            if (!target) return;
+
+            const image = target.closest("[data-lightbox-image]");
+
+            if (!image) return;
+
+            const src = image.getAttribute("data-lightbox-image");
+            const alt = image.getAttribute("alt") ?? "";
+
+            if (src) {
+                openLightbox(src, alt);
+            }
+        });
+
+        lightboxClose?.addEventListener("click", closeLightbox);
+
+        lightbox?.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+        });
+    </script>
+
 </Layout>

@@ -63,6 +63,8 @@ const projectImages = Object.entries(imageModules)
 
         <div class="max-w-[1400px] mx-auto">
 
+            <!-- CABECERA -->
+
             <header class="mb-12 sm:mb-14 md:mb-16">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-6">
@@ -85,7 +87,10 @@ const projectImages = Object.entries(imageModules)
 
             </header>
 
-            <section class="border-y border-[#292929] py-7 md:py-8 mb-12 md:mb-16">
+
+            <!-- INFORMACIÓN DEL PROYECTO -->
+
+            <section class="border-y border-[#292929] py-7 md:py-8 mb-12 md:mb-14">
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-10">
 
@@ -133,53 +138,63 @@ const projectImages = Object.entries(imageModules)
 
             </section>
 
-            <section class="mb-12 md:mb-16">
 
-                <div class="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-6 md:gap-16">
+            <!-- PROYECTO + IMÁGENES -->
 
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.18em] text-neutral-500">
-                            El proyecto
-                        </p>
+            <section class="grid grid-cols-1 lg:grid-cols-[1.6fr_0.9fr] gap-10 lg:gap-16 mb-12 md:mb-16">
+
+                <!-- IMÁGENES -->
+
+                {projectImages.length > 0 && (
+
+                    <div class="grid grid-cols-2 gap-4 md:gap-5">
+
+                        {projectImages.map((image, index) => (
+
+                            <div class="w-full overflow-hidden bg-[#0A0A0A] rounded-xl">
+
+                                <ImageContainer
+                                    src={image}
+                                    alt={`${title} — imagen ${index + 1}`}
+                                    class="w-full h-auto"
+                                />
+
+                            </div>
+
+                        ))}
+
                     </div>
 
-                    <div>
-                        <p class="font-bold text-[clamp(2rem,4vw,4.5rem)] leading-[0.95] tracking-[-0.02em] text-white max-w-5xl">
-                            {description}
-                        </p>
-                    </div>
+                )}
+
+
+                <!-- EL PROYECTO -->
+
+                <div class="lg:pt-1">
+
+                    <p class="text-xs uppercase tracking-[0.18em] text-neutral-500 mb-5">
+                        El proyecto
+                    </p>
+
+                    <p class="font-bold text-[clamp(1.8rem,3vw,3.5rem)] leading-[0.98] tracking-[-0.02em] text-white">
+                        {description}
+                    </p>
 
                 </div>
 
             </section>
 
-            {projectImages.length > 0 && (
 
-                <section class="mb-14 sm:mb-16 md:mb-20 space-y-5 md:space-y-7">
+            <!-- CONTENIDO DEL PROYECTO -->
 
-                    {projectImages.map((image, index) => (
-
-                        <div class="max-w-[900px] mx-auto overflow-hidden bg-[#0A0A0A] rounded-2xl">
-
-                            <ImageContainer
-                                src={image}
-                                alt={`${title} — imagen ${index + 1}`}
-                                class="w-full h-auto"
-                            />
-
-                        </div>
-
-                    ))}
-
-                </section>
-
-            )}
-
-            <article class="markdown-content max-w-4xl mx-auto py-6 md:py-10">
+            <article class="markdown-content max-w-4xl mx-auto py-2 md:py-6">
 
                 <Content />
 
             </article>
+
+
+            <!-- VOLVER -->
 
             <section class="mt-12 md:mt-16 border-t border-[#292929] pt-7">
 

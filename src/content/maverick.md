@@ -1,5 +1,5 @@
 ---
-title: "Maverick"
+title: "maverick"
 slug: "maverick"
 client: "Maverick"
 category: "Branding"

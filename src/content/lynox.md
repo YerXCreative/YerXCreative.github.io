@@ -1,5 +1,5 @@
 ---
-title: "Lynox"
+title: "lynox"
 slug: "lynox"
 client: "Lynox"
 category: "Branding"

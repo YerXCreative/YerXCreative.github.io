@@ -1,5 +1,5 @@
 ---
-title: "Moko"
+title: "moko"
 slug: "moko"
 client: "Coffee Studio"
 category: "Branding"

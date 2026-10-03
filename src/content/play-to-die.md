@@ -1,7 +1,7 @@
 ---
-title: "Play to Die"
+title: "play to Die"
 slug: "play-to-die"
-client: "Play to Die"
+client: "play to Die"
 category: "Branding"
 services: "Diseño de logotipo, Identidad visual, Dirección gráfica, Mockups"
 year: "2024"

@@ -1,7 +1,7 @@
 ---
-title: "recfck"
+title: "Recfck"
 slug: "recfck"
-client: "recfck"
+client: "Recfck"
 category: "Branding"
 services: "Diseño de logotipo, Identidad visual, Dirección de arte, Mockups"
 year: "2025"

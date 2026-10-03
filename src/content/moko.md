@@ -1,7 +1,7 @@
 ---
 title: "moko"
 slug: "moko"
-client: "Coffee Studio"
+client: "Moko Coffee"
 category: "Branding"
 services: "Diseño de logotipo, Identidad visual, Packaging, Mockups"
 year: "2026"

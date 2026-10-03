@@ -1,5 +1,5 @@
 ---
-title: "move-in"
+title: "move in"
 slug: "move-in"
 client: "move in Sports"
 category: "Branding"

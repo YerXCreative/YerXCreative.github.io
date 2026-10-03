@@ -1,7 +1,7 @@
 ---
 title: "move in"
 slug: "move-in"
-client: "move in Sports"
+client: "Move in Sports"
 category: "Branding"
 services: "Diseño de logotipo, Identidad visual, Dirección de arte, Mockups"
 year: "2026"

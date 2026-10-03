@@ -14,7 +14,7 @@ isFeatured: true
 isDraft: false
 ---
 
-**recfck no pide permiso. Su identidad es ruidosa, divertida y imposible de ignorar.**
+**Recfck no pide permiso. Su identidad es ruidosa, divertida y imposible de ignorar.**
 
 ## El reto
 

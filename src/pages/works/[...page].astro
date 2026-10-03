@@ -19,17 +19,20 @@ export const getStaticPaths = (async () => {
 const { works } = Astro.props;
 
 const projectOrder = [
-    "redfackle",
+    "recfac",
     "linux",
-    "move-in",
-    "play-today",
+    "move in",
+    "play today",
     "moco",
     "maverick",
 ];
 
 const orderedWorks = [...works].sort((a, b) => {
-    const positionA = projectOrder.indexOf(a.data.slug);
-    const positionB = projectOrder.indexOf(b.data.slug);
+    const titleA = a.data.title.trim().toLowerCase();
+    const titleB = b.data.title.trim().toLowerCase();
+
+    const positionA = projectOrder.indexOf(titleA);
+    const positionB = projectOrder.indexOf(titleB);
 
     return (
         (positionA === -1 ? 999 : positionA) -
@@ -74,8 +77,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
         <div class="max-w-[1400px] mx-auto">
 
-            <!-- CABECERA -->
-
             <header class="mb-16 sm:mb-20 md:mb-24">
 
                 <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-500 mb-7">
@@ -96,8 +97,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
                         Una selección de proyectos de identidad visual, diseño digital,
                         campañas y dirección gráfica.
                     </p>
-
-                    <!-- NAVEGACIÓN DE PORTFOLIO -->
 
                     <nav class="mt-8 md:mt-10 flex items-center gap-6">
 
@@ -128,8 +127,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
             </header>
 
-            <!-- PROYECTOS -->
-
             <div class="[&>article:last-child]:mb-0">
 
                 {orderedWorks.map((work) => {
@@ -153,11 +150,7 @@ function getProjectImages(slug: string): ImageMetadata[] {
                             class="border-t border-[#292929] pt-8 sm:pt-10 md:pt-12 mb-20 sm:mb-24 md:mb-36"
                         >
 
-                            <!-- INFORMACIÓN DEL PROYECTO -->
-
                             <div class="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-8 sm:gap-10 md:gap-16 mb-10 sm:mb-12 md:mb-14">
-
-                                <!-- TÍTULO -->
 
                                 <div>
 
@@ -172,8 +165,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                     </h2>
 
                                 </div>
-
-                                <!-- INFORMACIÓN -->
 
                                 <div class="md:pt-1">
 
@@ -216,8 +207,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
                             </div>
 
-                            <!-- IMÁGENES -->
-
                             {visibleImages.length > 0 && (
 
                                 <div class="max-w-5xl mx-auto">
@@ -250,6 +239,7 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
                                     {visibleImages.length === 3 && (
                                         <div class="space-y-5 md:space-y-8">
+
                                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
                                                 {visibleImages.slice(0, 2).map((image, index) => (
                                                     <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
@@ -271,6 +261,7 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                                     />
                                                 </div>
                                             </div>
+
                                         </div>
                                     )}
 
@@ -291,13 +282,13 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                 </div>
                             )}
 
-                            <!-- ENLACE -->
-
                             <div class="mt-8 sm:mt-10 md:mt-12">
+
                                 <a
                                     href={`/works/${slug}`}
                                     class="group inline-flex items-center gap-3 text-white text-sm sm:text-base font-semibold"
                                 >
+
                                     <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
                                         Ver proyecto completo
                                     </span>
@@ -314,7 +305,9 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                         <path d="M5 12h14" />
                                         <path d="m13 6 6 6-6 6" />
                                     </svg>
+
                                 </a>
+
                             </div>
 
                         </article>
@@ -326,8 +319,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
         </div>
 
     </main>
-
-    <!-- LIGHTBOX -->
 
     <div
         id="image-lightbox"

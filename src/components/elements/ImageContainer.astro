@@ -5,14 +5,17 @@ const { src, alt, class: className = "" } = Astro.props;
 ---
 
 <div
-    class="cursor-zoom-in"
+    class={`cursor-zoom-in ${className}`}
     data-lightbox-image={src.src}
+    role="button"
+    tabindex="0"
+    aria-label={`Ampliar imagen: ${alt}`}
 >
     <Image
         src={src}
         alt={alt}
         loading="lazy"
-        class={className}
+        class="w-full h-auto"
         widths={[300, 450, 700, 1100, src.width]}
         sizes={`(max-width: 768px) 100vw, (max-width: 1200px) 50vw, ${src.width}px`}
     />

@@ -45,6 +45,22 @@ function getProjectImages(slug: string): ImageMetadata[] {
         })
         .map(([, image]) => image as ImageMetadata);
 }
+
+const projectOrder = [
+    "recfck",
+    "lynox",
+    "move-in",
+    "play-to-die",
+    "moko",
+    "maverick",
+];
+
+const orderedWorks = [...works].sort((a, b) => {
+    const positionA = projectOrder.indexOf(a.data.slug);
+    const positionB = projectOrder.indexOf(b.data.slug);
+
+    return positionA - positionB;
+});
 ---
 
 <Layout
@@ -79,7 +95,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
                         campañas y dirección gráfica.
                     </p>
 
-
                     <!-- NAVEGACIÓN DE PORTFOLIO -->
 
                     <nav class="mt-8 md:mt-10 flex items-center gap-6">
@@ -111,12 +126,11 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
             </header>
 
-
             <!-- PROYECTOS -->
 
             <div class="[&>article:last-child]:mb-0">
 
-                {works.map((work) => {
+                {orderedWorks.map((work) => {
 
                     const {
                         title,
@@ -151,11 +165,10 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                     <h2
                                         class="font-bold uppercase text-[clamp(3.5rem,7vw,7rem)] leading-[0.86] tracking-[-0.02em]"
                                     >
-                                        {title}
+                                        {title.toUpperCase()}
                                     </h2>
 
                                 </div>
-
 
                                 <!-- INFORMACIÓN -->
 
@@ -175,7 +188,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
                                         </div>
 
-
                                         <div>
 
                                             <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-2">
@@ -187,7 +199,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                             </p>
 
                                         </div>
-
 
                                         <div>
 
@@ -203,7 +214,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
                                     </div>
 
-
                                     <p class="max-w-2xl text-sm sm:text-base md:text-lg text-neutral-400 leading-relaxed">
                                         {description}
                                     </p>
@@ -211,7 +221,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                 </div>
 
                             </div>
-
 
                             <!-- IMÁGENES -->
 
@@ -237,12 +246,11 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
                                     )}
 
-
                                     {projectImages.length === 2 && (
 
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
 
-                                            {projectImages.map((image, index) => (
+                                            {projectImages.slice(0, 2).map((image, index) => (
 
                                                 <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
 
@@ -259,7 +267,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                         </div>
 
                                     )}
-
 
                                     {projectImages.length === 3 && (
 
@@ -283,7 +290,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
                                             </div>
 
-
                                             <div class="max-w-[50%] mx-auto">
 
                                                 <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
@@ -302,12 +308,11 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
                                     )}
 
-
                                     {projectImages.length >= 4 && (
 
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
 
-                                            {projectImages.map((image, index) => (
+                                            {projectImages.slice(0, 4).map((image, index) => (
 
                                                 <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
 
@@ -328,7 +333,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                 </div>
 
                             )}
-
 
                             <!-- ENLACE -->
 
@@ -372,7 +376,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
     </main>
 
-
     <!-- LIGHTBOX -->
 
     <div
@@ -403,7 +406,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
 
         </button>
 
-
         <img
             id="lightbox-image"
             src=""
@@ -412,7 +414,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
         />
 
     </div>
-
 
     <script>
         const lightbox = document.getElementById("image-lightbox");

@@ -1,4 +1,3 @@
-```astro
 ---
 import Layout from "../../layouts/Layout.astro";
 import type { GetStaticPaths } from "astro";
@@ -18,6 +17,25 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { works } = Astro.props;
+
+const projectOrder = [
+    "recfck",
+    "lynox",
+    "move-in",
+    "play-to-die",
+    "moko",
+    "maverick",
+];
+
+const orderedWorks = [...works].sort((a, b) => {
+    const positionA = projectOrder.indexOf(a.data.slug);
+    const positionB = projectOrder.indexOf(b.data.slug);
+
+    return (
+        (positionA === -1 ? 999 : positionA) -
+        (positionB === -1 ? 999 : positionB)
+    );
+});
 
 const imageModules = import.meta.glob(
     "../../content/images/**/*.{jpg,jpeg,png,webp,avif}",
@@ -45,22 +63,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
         })
         .map(([, image]) => image as ImageMetadata);
 }
-
-const projectOrder = [
-    "recfck",
-    "lynox",
-    "move-in",
-    "play-to-die",
-    "moko",
-    "maverick",
-];
-
-const orderedWorks = [...works].sort((a, b) => {
-    const positionA = projectOrder.indexOf(a.data.slug);
-    const positionB = projectOrder.indexOf(b.data.slug);
-
-    return positionA - positionB;
-});
 ---
 
 <Layout
@@ -143,6 +145,7 @@ const orderedWorks = [...works].sort((a, b) => {
                     } = work.data;
 
                     const projectImages = getProjectImages(slug);
+                    const visibleImages = projectImages.slice(0, 4);
 
                     return (
 
@@ -177,39 +180,30 @@ const orderedWorks = [...works].sort((a, b) => {
                                     <div class="grid grid-cols-2 gap-x-5 gap-y-6 sm:gap-x-8 md:gap-x-10 mb-8">
 
                                         <div>
-
                                             <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-2">
                                                 Cliente
                                             </p>
-
                                             <p class="text-sm sm:text-base text-white">
                                                 {client}
                                             </p>
-
                                         </div>
 
                                         <div>
-
                                             <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-2">
                                                 Año
                                             </p>
-
                                             <p class="text-sm sm:text-base text-white">
                                                 {year}
                                             </p>
-
                                         </div>
 
                                         <div>
-
                                             <p class="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-neutral-500 mb-2">
                                                 Servicios
                                             </p>
-
                                             <p class="text-sm sm:text-base text-white">
                                                 {services}
                                             </p>
-
                                         </div>
 
                                     </div>
@@ -224,125 +218,86 @@ const orderedWorks = [...works].sort((a, b) => {
 
                             <!-- IMÁGENES -->
 
-                            {projectImages.length > 0 && (
+                            {visibleImages.length > 0 && (
 
                                 <div class="max-w-5xl mx-auto">
 
-                                    {projectImages.length === 1 && (
-
+                                    {visibleImages.length === 1 && (
                                         <div class="max-w-[520px] mx-auto">
-
                                             <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
-
                                                 <ImageContainer
-                                                    src={projectImages[0]}
+                                                    src={visibleImages[0]}
                                                     alt={`${title} — imagen 1`}
                                                     class="w-full h-auto"
                                                 />
-
                                             </div>
-
                                         </div>
-
                                     )}
 
-                                    {projectImages.length === 2 && (
-
+                                    {visibleImages.length === 2 && (
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
-
-                                            {projectImages.slice(0, 2).map((image, index) => (
-
+                                            {visibleImages.map((image, index) => (
                                                 <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
-
                                                     <ImageContainer
                                                         src={image}
                                                         alt={`${title} — imagen ${index + 1}`}
                                                         class="w-full h-auto"
                                                     />
-
                                                 </div>
-
                                             ))}
-
                                         </div>
-
                                     )}
 
-                                    {projectImages.length === 3 && (
-
+                                    {visibleImages.length === 3 && (
                                         <div class="space-y-5 md:space-y-8">
-
                                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
-
-                                                {projectImages.slice(0, 2).map((image, index) => (
-
+                                                {visibleImages.slice(0, 2).map((image, index) => (
                                                     <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
-
                                                         <ImageContainer
                                                             src={image}
                                                             alt={`${title} — imagen ${index + 1}`}
                                                             class="w-full h-auto"
                                                         />
-
                                                     </div>
-
                                                 ))}
-
                                             </div>
 
                                             <div class="max-w-[50%] mx-auto">
-
                                                 <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
-
                                                     <ImageContainer
-                                                        src={projectImages[2]}
+                                                        src={visibleImages[2]}
                                                         alt={`${title} — imagen 3`}
                                                         class="w-full h-auto"
                                                     />
-
                                                 </div>
-
                                             </div>
-
                                         </div>
-
                                     )}
 
-                                    {projectImages.length >= 4 && (
-
+                                    {visibleImages.length >= 4 && (
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
-
-                                            {projectImages.slice(0, 4).map((image, index) => (
-
+                                            {visibleImages.map((image, index) => (
                                                 <div class="overflow-hidden bg-[#0A0A0A] rounded-2xl">
-
                                                     <ImageContainer
                                                         src={image}
                                                         alt={`${title} — imagen ${index + 1}`}
                                                         class="w-full h-auto"
                                                     />
-
                                                 </div>
-
                                             ))}
-
                                         </div>
-
                                     )}
 
                                 </div>
-
                             )}
 
                             <!-- ENLACE -->
 
                             <div class="mt-8 sm:mt-10 md:mt-12">
-
                                 <a
                                     href={`/works/${slug}`}
                                     class="group inline-flex items-center gap-3 text-white text-sm sm:text-base font-semibold"
                                 >
-
                                     <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
                                         Ver proyecto completo
                                     </span>
@@ -359,15 +314,11 @@ const orderedWorks = [...works].sort((a, b) => {
                                         <path d="M5 12h14" />
                                         <path d="m13 6 6 6-6 6" />
                                     </svg>
-
                                 </a>
-
                             </div>
 
                         </article>
-
                     );
-
                 })}
 
             </div>
@@ -471,4 +422,3 @@ const orderedWorks = [...works].sort((a, b) => {
     </script>
 
 </Layout>
-```

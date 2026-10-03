@@ -167,6 +167,34 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                         {displayTitles[slug] ?? title.toUpperCase()}
                                     </h2>
 
+                                    <div class="mt-5 sm:mt-6">
+
+                                        <a
+                                            href={`/works/${slug}`}
+                                            class="group inline-flex items-center gap-3 text-[#0066FF] text-sm sm:text-base font-semibold"
+                                        >
+
+                                            <span class="border-b border-[#0066FF] pb-1">
+                                                Ver proyecto completo
+                                            </span>
+
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                                                aria-hidden="true"
+                                            >
+                                                <path d="M5 12h14" />
+                                                <path d="m13 6 6 6-6 6" />
+                                            </svg>
+
+                                        </a>
+
+                                    </div>
+
                                 </div>
 
                                 <div class="md:pt-1">
@@ -285,34 +313,6 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                 </div>
                             )}
 
-                            <div class="mt-8 sm:mt-10 md:mt-12">
-
-                                <a
-                                    href={`/works/${slug}`}
-                                    class="group inline-flex items-center gap-3 text-white text-sm sm:text-base font-semibold"
-                                >
-
-                                    <span class="border-b border-white pb-1 group-hover:border-[#0066FF] transition-colors">
-                                        Ver proyecto completo
-                                    </span>
-
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        class="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                                        aria-hidden="true"
-                                    >
-                                        <path d="M5 12h14" />
-                                        <path d="m13 6 6 6-6 6" />
-                                    </svg>
-
-                                </a>
-
-                            </div>
-
                         </article>
                     );
                 })}
@@ -345,7 +345,7 @@ function getProjectImages(slug: string): ImageMetadata[] {
                 class="w-5 h-5"
                 aria-hidden="true"
             >
-                <path d="M6 6l12 12-6 6" />
+                <path d="M6 6l12 12" />
                 <path d="M18 6L6 18" />
             </svg>
 

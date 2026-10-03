@@ -1,22 +1,33 @@
 ---
-title: "move in"
-slug: "move in"
+title: "Move In"
+slug: "move-in"
 client: "move in Sports"
 category: "Branding"
-services: "User Research, Prototyping, Visual Design"
+services: "Diseño de logotipo, Identidad visual, Dirección de arte, Mockups"
 year: "2026"
-featuredImage: "./images/move in/1.png"
-imageTwo: "./images/move in/2.png"
-imageThree: "./images/move in/3.png"
-imageFour: "./images/move in/4.png"
-liveSite: "https://astro.build"
-description: "A comprehensive wellness platform that combines meditation, fitness tracking, and mental health resources. The app features personalized wellness journeys, community support, and integration with wearable devices to create a holistic approach to personal well-being."
+featuredImage: "./images/move-in/1.png"
+imageTwo: "./images/move-in/2.png"
+imageThree: "./images/move-in/3.png"
+imageFour: "./images/move-in/4.png"
+description: "Una identidad deportiva con velocidad y personalidad: un logotipo en cursiva con las líneas de movimiento integradas, un amarillo que no pasa desapercibido y un sistema gráfico pensado para cartelería, papelería y pantalla."
 isFeatured: false
 isDraft: false
 ---
 
-The Zenith Wellness App project began with extensive user research to understand the pain points of existing wellness applications. Through interviews with 50+ users and competitive analysis, we identified that most wellness apps felt overwhelming and lacked personalization. Users wanted a single platform that could adapt to their changing needs without feeling prescriptive or judgmental.
+**Move In es una marca que se mueve. Su identidad convierte la velocidad en un símbolo y el amarillo en una firma.**
 
-Our design process focused on creating an intuitive onboarding experience that learns from user preferences without being intrusive. We developed a modular interface system where users could customize their dashboard based on their current wellness goals. 
+## El reto
 
-The final product increased user engagement by 240% compared to the client's previous app, with 89% of users completing the onboarding process. The app launched to critical acclaim and was featured in Apple's "Apps We Love" section, leading to over 500K downloads in the first month.
+Diseñar la identidad de una marca deportiva que se distinguiera de la estética habitual del sector y que transmitiera dinamismo sin perder claridad. Tenía que funcionar igual de bien en un mural de gran formato que en una tarjeta de visita o en la pantalla de un móvil.
+
+## La solución
+
+El logotipo está escrito en una cursiva inclinada que ya sugiere avance. La "E" central se sustituye por un conjunto de líneas horizontales que evocan velocidad y estela, y que se convierten en el gesto gráfico más reconocible de la marca.
+
+Esas mismas líneas se repiten como patrón y como recurso gráfico, y dan al sistema un ritmo propio. El amarillo intenso sobre negro y gris crea un contraste fuerte y directo: energía, atención y una presencia que se ve de lejos. Un tono de comunicación seguro y cercano, con mensajes como *El movimiento no es prisa*, refuerza una marca que apuesta por el control y la precisión frente al ruido.
+
+## El resultado
+
+Una identidad coherente, flexible y con mucha personalidad, aplicada en cartelería exterior, papelería, interfaz móvil y composiciones de marca. Cada pieza refuerza la misma idea, y el símbolo de las líneas hace que la marca se reconozca incluso sin el nombre.
+
+**¿Buscas una identidad que transmita movimiento y energía? [Hablemos.](/contacto)**

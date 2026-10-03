@@ -1,23 +1,33 @@
 ---
-
 title: "recfck"
 slug: "recfck"
 client: "recfck"
 category: "Branding"
-services: "Diseño de logotipo, Identidad visual, Packaging, Diseño editorial"
+services: "Diseño de logotipo, Identidad visual, Dirección de arte, Mockups"
 year: "2025"
 featuredImage: "./images/recfck/1.png"
 imageTwo: "./images/recfck/2.jpg"
 imageThree: "./images/recfck/3.jpg"
 imageFour: "./images/recfck/4.jpg"
-liveSite: "https://yerxcreative.github.io"
-description: "Identidad de marca para Cosmic Slice, una pizzería con temática espacial. El proyecto abarca logotipo, sistema gráfico, carta, packaging y presencia en redes sociales, todo construido sobre un universo visual de cómic retro-espacial."
+description: "Una identidad con voltaje: tipografía condensada y deformada, un azul cielo eléctrico sobre negro, y un sistema de iconos y lemas con humor que funciona en camisetas, bolsas, pegatinas y señalética."
 isFeatured: true
 isDraft: false
---------------
+---
 
-Cosmic Slice necesitaba una identidad que transmitiera diversión y personalidad desde el primer vistazo, diferenciándose de la estética clásica italiana que domina el sector de las pizzerías. La propuesta partió de un universo visual propio: el espacio, con su mascota central, una porción de pizza cósmica con actitud, y un lema directo: "Eat me!!".
+**recfck no pide permiso. Su identidad es ruidosa, divertida y imposible de ignorar.**
 
-El sistema tipográfico, con la palabra "Cosmic Slice" como pieza central, se construyó con un trazo grueso de cómic y contornos marcados, pensado para funcionar igual de bien en una caja de pizza que en un icono de redes sociales. La paleta de azules y el motivo de estrellas dan cohesión a todas las aplicaciones de marca.
+## El reto
 
-La identidad se desarrolló para todos los puntos de contacto de la marca: carta con nombres de platos tematizados ("Marte Suprema", "Vía Láctea", "Black Hole BBQ"), packaging de caja de pizza, tarjetas de fidelización "Eat & Repeat", perfil de Instagram y contenido para historias, consiguiendo una experiencia de marca coherente de principio a fin.
+Construir una marca con actitud, que se saliera de la estética limpia y contenida de tantas identidades actuales. Necesitaba un lenguaje propio, con humor y energía, que se reconociera tanto en una camiseta como en un cartel o una pegatina.
+
+## La solución
+
+El nombre se escribe con una tipografía ultra condensada, inclinada y apilada, con un acabado áspero que recuerda a la cartelería callejera. Es un logotipo que se estira, se gira y se repite sin perder fuerza.
+
+El sistema se completa con un conjunto de símbolos: una cara sonriente atravesada por un rayo, un triángulo de aviso con el mismo rayo, el saludo "Hi" en un círculo y el monograma RF. El azul cielo sobre negro y gris da un contraste muy marcado, y lemas como *Needs more voltage*, *Always delivers* o *A lot of fun* ponen el tono: cercano, irónico y con carga eléctrica.
+
+## El resultado
+
+Una identidad con mucha personalidad y muy flexible, aplicada en camisetas, tote bags, pegatinas, carteles y señalética. Cada pieza funciona sola, pero todas hablan el mismo idioma, así que la marca se reconoce al instante.
+
+**¿Tu marca necesita más voltaje? [Hablemos.](/contacto)**

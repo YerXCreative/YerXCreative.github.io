@@ -10,13 +10,25 @@ imageTwo: "./images/lynox/2.jpg"
 imageThree: "./images/lynox/3.jpg"
 imageFour: "./images/lynox/4.jpg"
 liveSite: "https://yerxcreative.github.io"
-description: "Identidad visual para Lynox, construida alrededor de un símbolo reconocible y un lenguaje gráfico sobrio, deportivo y contemporáneo. El proyecto desarrolla una identidad preparada para funcionar tanto en soportes digitales como en aplicaciones físicas."
+description: "Una identidad deportiva sobria y contundente: un símbolo que nace del movimiento, una paleta de grises con carácter y un sistema visual listo para pantalla y soportes físicos."
 isFeatured: true
 isDraft: false
 ---
 
-Lynox parte de una idea clara: construir una identidad con carácter, movimiento y una presencia reconocible desde el primer vistazo. El punto de partida es un símbolo geométrico de formas enfrentadas que funciona como elemento central de la marca, acompañado por una tipografía limpia y una dirección visual que busca transmitir energía sin recurrir a una estética deportiva convencional.
+**Lynox no quería parecerse a una marca deportiva más. Quería empujar a quien la lleva a salir de su zona de confort.**
 
-El sistema gráfico se articula alrededor de una paleta de grises y negros que aporta una imagen sobria y tecnológica. La identidad incorpora además recursos visuales basados en el movimiento, el contraste y la repetición del símbolo, creando un lenguaje flexible que puede adaptarse a diferentes composiciones y formatos sin perder reconocimiento.
+## El reto
 
-La propuesta se llevó a distintas aplicaciones para demostrar la capacidad del sistema fuera del logotipo: piezas de comunicación, composición publicitaria, interfaz móvil y diferentes soportes de marca. El resultado es una identidad coherente y versátil, pensada para crecer y mantener su personalidad en cada punto de contacto.
+Crear una identidad con presencia desde el primer vistazo, capaz de transmitir energía y exigencia sin caer en los clichés visuales del deporte: colores estridentes, tipografías agresivas y siluetas genéricas.
+
+## La solución
+
+El corazón de la marca es un símbolo geométrico de formas enfrentadas, que sugiere tensión, impulso y movimiento. Es reconocible incluso en tamaños mínimos, y funciona igual de bien en positivo, en negativo y sobre fotografía.
+
+Lo acompaña un logotipo tipográfico limpio, con letras espaciadas, y una paleta contenida de tres tonos (`#D8D8D8`, `#778287` y `#2C2D28`) que da a la marca un aire sobrio, tecnológico y premium. El claim, *The end of comfort zone*, y mensajes como *New day, new record* dan voz a un sistema visual basado en el contraste, la repetición del símbolo y una fotografía de atmósfera cinematográfica.
+
+## El resultado
+
+Una identidad coherente y flexible, probada en cartelería, composición publicitaria, interfaz móvil y soportes de marca. Es un sistema pensado para crecer: cada nueva pieza refuerza la misma personalidad, sin perder reconocimiento en ningún punto de contacto.
+
+**¿Tienes un proyecto que necesita una marca con carácter? [Hablemos.](/contacto)**

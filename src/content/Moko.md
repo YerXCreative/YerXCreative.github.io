@@ -1,22 +1,33 @@
 ---
 title: "Moko"
-slug: "Moko"
-client: "COFFEE STUDIO"
-category: "Product Design"
-services: "Industrial Design, Prototyping, Design for Manufacturing"
+slug: "moko"
+client: "Coffee Studio"
+category: "Branding"
+services: "Diseño de logotipo, Identidad visual, Packaging, Mockups"
 year: "2026"
-featuredImage: "./images/Moko/1.jpg"
-imageTwo: "./images/Moko/2.jpg"
-imageThree: "./images/Moko/3.jpg"
-imageFour: "./images/Moko/4.jpg"
-liveSite: "https://astro.build"
-description: "Premium smart speaker that seamlessly blends into modern living spaces. Emphasizes superior audio quality, privacy controls, and intuitive physical interactions. The design balances cutting-edge technology with warm, approachable aesthetics that complement rather than dominate interior spaces."
+featuredImage: "./images/moko/1.jpg"
+imageTwo: "./images/moko/2.jpg"
+imageThree: "./images/moko/3.jpg"
+imageFour: "./images/moko/4.jpg"
+description: "Una identidad cálida y con mucho carácter para una marca de café: un logotipo tipográfico redondeado, un naranja que se reconoce al instante y un sistema visual que funciona en la taza, en el packaging y en la papelería."
 isFeatured: true
 isDraft: false
 ---
 
-Harmony Audio wanted to enter the competitive smart speaker market with a product that addressed growing privacy concerns while delivering exceptional audio quality. Unlike tech-focused competitors, they envisioned a device that would appeal to design-conscious consumers who value both form and function. The challenge was creating a speaker that looked beautiful when silent but came alive with intuitive interactions when needed.
+**Moko convierte una pausa para el café en una marca que se recuerda: cercana, vibrante y imposible de confundir.**
 
-Our design process began with extensive material exploration and acoustic testing to achieve the optimal balance between visual appeal and sound performance. We developed a unique fabric wrap system that conceals the speaker grille while allowing clear audio transmission. 
+## El reto
 
-The Harmony Speaker launched to critical acclaim, winning the Red Dot Design Award and selling out its initial production run within six weeks. Audio reviewers praised its warm, room-filling sound, while design publications highlighted its sophisticated aesthetic. 
+Crear la identidad de una marca de café con personalidad propia en un sector lleno de estética repetida: kraft, tipografías clásicas y tonos tierra. Necesitaba sentirse cercana y artesanal, pero también moderna y reconocible desde lejos.
+
+## La solución
+
+El centro de la marca es un logotipo tipográfico de trazo redondeado y generoso, con una "o" final que recuerda a una taza vista desde arriba. Es un guiño sutil al producto que da carácter al nombre sin recurrir a un icono literal.
+
+El color lo hace todo: un naranja intenso sobre fondos oscuros y cálidos, que da una identidad energética y apetecible. El claim *Coffee Break* acompaña a la marca como una voz tranquila y cotidiana, y el patrón tipográfico repetido crea una textura propia para el packaging y otras piezas.
+
+## El resultado
+
+Un sistema visual completo y coherente, probado en una taza, una bolsa de café de origen, tarjetas de visita y composiciones de marca. Todas las piezas comparten el mismo carácter, así que la marca se reconoce igual en el mostrador, en una fotografía o en una estantería.
+
+**¿Quieres una marca que se note en cualquier estantería? [Hablemos.](/contacto)**

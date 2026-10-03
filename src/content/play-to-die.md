@@ -9,13 +9,25 @@ featuredImage: "./images/play-to-die/1.jpg"
 imageTwo: "./images/play-to-die/2.jpg"
 imageThree: "./images/play-to-die/3.jpg"
 imageFour: "./images/play-to-die/4.jpg"
-description: "Identidad visual y diseño de logotipo para Play to Die, una propuesta gráfica con estética gaming, personalidad propia y un lenguaje visual pensado para funcionar tanto en digital como en aplicaciones físicas."
+description: "Una identidad gaming que rompe las reglas: un logotipo de lettering orgánico y deformado, un sistema en blanco y negro con mucho carácter y aplicaciones que van de la acreditación a la camiseta."
 isFeatured: true
 isDraft: false
 ---
 
-Play to Die nace alrededor de una identidad visual con una estética claramente vinculada al universo gaming. El objetivo era construir un logotipo reconocible, con una personalidad gráfica potente y capaz de funcionar por sí mismo sobre distintos fondos y soportes.
+**Play to Die no intenta parecer una marca de videojuegos pulida. Quiere sonar a sala recreativa, a mando gastado y a partida que no se deja a medias.**
 
-La propuesta se basa en una tipografía experimental de formas orgánicas y contundentes, creando un conjunto visual fácilmente reconocible. El sistema se plantea principalmente en blanco y negro, permitiendo que el logotipo mantenga fuerza y legibilidad en diferentes contextos.
+## El reto
 
-La identidad también se exploró mediante diferentes aplicaciones y tratamientos gráficos: desde una versión aplicada sobre una carcasa de móvil hasta un mockup relacionado directamente con el mundo gaming. También se desarrollaron versiones más experimentales con color para explorar hasta dónde podía llevarse el lenguaje visual de la marca.
+Crear una identidad con estética gaming que no cayera en los tópicos del sector, como el neón, las tipografías futuristas y los píxeles. Necesitaba un logotipo con personalidad propia, capaz de aguantar sobre cualquier fondo y de aplicarse a soportes muy distintos.
+
+## La solución
+
+Todo empieza en el papel. El logotipo nace de un lettering dibujado a mano, con letras hinchadas y deformadas que se apilan en una composición compacta. Ese origen artesanal le da un aire expresivo y desenfadado que contrasta con el tono rotundo del nombre.
+
+El sistema se construye sobre blanco y negro puros, con destellos en forma de estrella, códigos QR, códigos de barras y microtipografía como recursos gráficos. El resultado tiene un aire de cultura urbana y de coleccionista, y deja que el logotipo sea siempre el protagonista. Dentro del universo de la marca, la línea GOD GAMES funciona como sello secundario en acreditaciones, wearables y merchandising.
+
+## El resultado
+
+Una identidad reconocible y flexible, aplicada en acreditaciones, interfaz de reloj, camisetas y bolsas. Funciona igual de bien con el logotipo grande que con detalles pequeños, y mantiene su carácter en cualquier soporte.
+
+**¿Quieres una marca que no tenga miedo de ser distinta? [Hablemos.](/contacto)**

@@ -29,5 +29,3 @@ Esas mismas líneas se repiten como patrón y como recurso gráfico, y dan al si
 ## El resultado
 
 Una identidad coherente, flexible y con mucha personalidad, aplicada en cartelería exterior, papelería, interfaz móvil y composiciones de marca. Cada pieza refuerza la misma idea, y el símbolo de las líneas hace que la marca se reconozca incluso sin el nombre.
-
-**¿Buscas una identidad que transmita movimiento y energía? [Hablemos.](/contacto)**

@@ -29,5 +29,3 @@ El color lo hace todo: un naranja intenso sobre fondos oscuros y cálidos, que d
 ## El resultado
 
 Un sistema visual completo y coherente, probado en una taza, una bolsa de café de origen, tarjetas de visita y composiciones de marca. Todas las piezas comparten el mismo carácter, así que la marca se reconoce igual en el mostrador, en una fotografía o en una estantería.
-
-**¿Quieres una marca que se note en cualquier estantería? [Hablemos.](/contacto)**

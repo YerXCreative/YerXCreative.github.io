@@ -30,5 +30,3 @@ Lo acompaña un logotipo tipográfico limpio, con letras espaciadas, y una palet
 ## El resultado
 
 Una identidad coherente y flexible, probada en cartelería, composición publicitaria, interfaz móvil y soportes de marca. Es un sistema pensado para crecer: cada nueva pieza refuerza la misma personalidad, sin perder reconocimiento en ningún punto de contacto.
-
-**¿Tienes un proyecto que necesita una marca con carácter? [Hablemos.](/contacto)**

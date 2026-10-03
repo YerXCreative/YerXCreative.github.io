@@ -29,5 +29,3 @@ El sistema se completa con un conjunto de símbolos: una cara sonriente atravesa
 ## El resultado
 
 Una identidad con mucha personalidad y muy flexible, aplicada en camisetas, tote bags, pegatinas, carteles y señalética. Cada pieza funciona sola, pero todas hablan el mismo idioma, así que la marca se reconoce al instante.
-
-**¿Tu marca necesita más voltaje? [Hablemos.](/contacto)**

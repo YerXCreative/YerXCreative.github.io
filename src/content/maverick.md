@@ -31,5 +31,3 @@ Todo el sistema se apoya en una base de blancos y negros, con tonos metálicos y
 ## El resultado
 
 Una identidad coherente que se traslada sin esfuerzo del diseño gráfico a otros formatos: relieve metálico, interfaz móvil, pantalla de carga y aplicaciones de marca. Cada soporte refuerza la misma personalidad, firme y reconocible.
-
-**¿Necesitas una marca con una identidad que se imponga? [Hablemos.](/contacto)**

@@ -29,5 +29,3 @@ El sistema se construye sobre blanco y negro puros, con destellos en forma de es
 ## El resultado
 
 Una identidad reconocible y flexible, aplicada en acreditaciones, interfaz de reloj, camisetas y bolsas. Funciona igual de bien con el logotipo grande que con detalles pequeños, y mantiene su carácter en cualquier soporte.
-
-**¿Quieres una marca que no tenga miedo de ser distinta? [Hablemos.](/contacto)**

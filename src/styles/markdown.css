@@ -5,7 +5,6 @@
     line-height: 1.8;
 }
 
-
 /* TÍTULOS */
 
 .markdown-content h1,
@@ -21,60 +20,53 @@
     line-height: 0.95;
 }
 
-
 /* H1 */
 
 .markdown-content h1 {
     font-size: clamp(3.5rem, 7vw, 6rem);
-    margin-top: 4rem;
-    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
 }
-
 
 /* H2 */
 
 .markdown-content h2 {
     font-size: clamp(3rem, 6vw, 5rem);
-    margin-top: 4.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
 }
-
 
 /* H3 */
 
 .markdown-content h3 {
     font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-top: 3.5rem;
-    margin-bottom: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
 }
-
 
 /* H4 */
 
 .markdown-content h4 {
     font-size: clamp(2rem, 4vw, 3rem);
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
 }
-
 
 /* H5 */
 
 .markdown-content h5 {
     font-size: clamp(1.5rem, 3vw, 2.25rem);
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     margin-bottom: 0.75rem;
 }
-
 
 /* H6 */
 
 .markdown-content h6 {
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.75rem;
 }
-
 
 /* PÁRRAFOS */
 
@@ -82,9 +74,8 @@
     color: #999999;
     font-size: 1.125rem;
     line-height: 1.8;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
 }
-
 
 /* ENLACES */
 
@@ -99,13 +90,12 @@
     color: #1687FF;
 }
 
-
 /* LISTAS */
 
 .markdown-content ul,
 .markdown-content ol {
     color: #999999;
-    margin: 1.75rem 0;
+    margin: 1.5rem 0;
     padding-left: 1.5rem;
 }
 
@@ -118,9 +108,8 @@
 }
 
 .markdown-content li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
-
 
 /* TEXTO DESTACADO */
 
@@ -129,13 +118,12 @@
     font-weight: 700;
 }
 
-
 /* CITAS */
 
 .markdown-content blockquote {
     border-left: 2px solid #0066FF;
     padding-left: 1.5rem;
-    margin: 3.5rem 0;
+    margin: 2.5rem 0;
     color: #ffffff;
 }
 
@@ -143,15 +131,13 @@
     color: #ffffff;
 }
 
-
 /* SEPARADORES */
 
 .markdown-content hr {
     border: 0;
-    border-top: 1px solid #292929;
-    margin: 4rem 0;
+    border-top: 0;
+    margin: 0;
 }
-
 
 /* IMÁGENES INSERTADAS DESDE MARKDOWN */
 
@@ -159,16 +145,14 @@
     display: block;
     width: 100%;
     height: auto;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
-
 
 /* TEXTO EN CURSIVA */
 
 .markdown-content em {
     color: #b5b5b5;
 }
-
 
 /* CÓDIGO */
 
@@ -185,7 +169,7 @@
     border: 1px solid #292929;
     padding: 1.5rem;
     overflow-x: auto;
-    margin: 2.5rem 0;
+    margin: 2rem 0;
 }
 
 .markdown-content pre code {

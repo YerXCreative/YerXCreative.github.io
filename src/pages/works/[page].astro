@@ -228,10 +228,12 @@ const projectImages = Object.entries(imageModules)
         aria-hidden="true"
     >
 
+        <!-- CERRAR -->
+
         <button
             id="lightbox-close"
             type="button"
-            class="absolute top-5 right-5 sm:top-7 sm:right-7 w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors"
+            class="absolute top-5 right-5 sm:top-7 sm:right-7 z-20 w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors"
             aria-label="Cerrar imagen"
         >
 
@@ -250,11 +252,59 @@ const projectImages = Object.entries(imageModules)
 
         </button>
 
+        <!-- ANTERIOR -->
+
+        <button
+            id="lightbox-prev"
+            type="button"
+            class="absolute left-4 sm:left-7 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors"
+            aria-label="Imagen anterior"
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                class="w-6 h-6"
+                aria-hidden="true"
+            >
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+
+        </button>
+
+        <!-- SIGUIENTE -->
+
+        <button
+            id="lightbox-next"
+            type="button"
+            class="absolute right-4 sm:right-7 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:border-[#0066FF] hover:text-[#0066FF] transition-colors"
+            aria-label="Imagen siguiente"
+        >
+
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                class="w-6 h-6"
+                aria-hidden="true"
+            >
+                <path d="m9 18 6-6-6-6" />
+            </svg>
+
+        </button>
+
+        <!-- IMAGEN -->
+
         <img
             id="lightbox-image"
             src=""
             alt=""
-            class="max-w-full max-h-[90vh] object-contain"
+            class="max-w-[90vw] max-h-[90vh] object-contain"
         />
 
     </div>
@@ -263,6 +313,44 @@ const projectImages = Object.entries(imageModules)
         const lightbox = document.getElementById("image-lightbox");
         const lightboxImage = document.getElementById("lightbox-image");
         const lightboxClose = document.getElementById("lightbox-close");
+        const lightboxPrev = document.getElementById("lightbox-prev");
+        const lightboxNext = document.getElementById("lightbox-next");
+
+        let currentImageIndex = 0;
+
+        function getLightboxImages() {
+            return Array.from(
+                document.querySelectorAll("[data-lightbox-image]")
+            );
+        }
+
+        function showImage(index: number) {
+            if (!lightbox || !lightboxImage) return;
+
+            const images = getLightboxImages();
+
+            if (images.length === 0) return;
+
+            currentImageIndex =
+                (index + images.length) % images.length;
+
+            const image = images[currentImageIndex];
+
+            const src = image.getAttribute("data-lightbox-image");
+            const alt =
+                image.getAttribute("aria-label") ??
+                image.getAttribute("alt") ??
+                "";
+
+            if (!src) return;
+
+            lightboxImage.setAttribute("src", src);
+            lightboxImage.setAttribute("alt", alt);
+
+            lightbox.classList.remove("hidden");
+            lightbox.classList.add("flex");
+            lightbox.setAttribute("aria-hidden", "false");
+        }
 
         function closeLightbox() {
             if (!lightbox || !lightboxImage) return;
@@ -273,15 +361,12 @@ const projectImages = Object.entries(imageModules)
             lightboxImage.setAttribute("src", "");
         }
 
-        function openLightbox(src: string, alt: string) {
-            if (!lightbox || !lightboxImage) return;
+        function showPreviousImage() {
+            showImage(currentImageIndex - 1);
+        }
 
-            lightboxImage.setAttribute("src", src);
-            lightboxImage.setAttribute("alt", alt);
-
-            lightbox.classList.remove("hidden");
-            lightbox.classList.add("flex");
-            lightbox.setAttribute("aria-hidden", "false");
+        function showNextImage() {
+            showImage(currentImageIndex + 1);
         }
 
         document.addEventListener("click", (event) => {
@@ -293,15 +378,25 @@ const projectImages = Object.entries(imageModules)
 
             if (!image) return;
 
-            const src = image.getAttribute("data-lightbox-image");
-            const alt = image.getAttribute("aria-label") ?? "";
+            const images = getLightboxImages();
+            const index = images.indexOf(image);
 
-            if (src) {
-                openLightbox(src, alt);
+            if (index !== -1) {
+                showImage(index);
             }
         });
 
         lightboxClose?.addEventListener("click", closeLightbox);
+
+        lightboxPrev?.addEventListener("click", (event) => {
+            event.stopPropagation();
+            showPreviousImage();
+        });
+
+        lightboxNext?.addEventListener("click", (event) => {
+            event.stopPropagation();
+            showNextImage();
+        });
 
         lightbox?.addEventListener("click", (event) => {
             if (event.target === lightbox) {
@@ -310,8 +405,20 @@ const projectImages = Object.entries(imageModules)
         });
 
         document.addEventListener("keydown", (event) => {
+            if (!lightbox || lightbox.classList.contains("hidden")) {
+                return;
+            }
+
             if (event.key === "Escape") {
                 closeLightbox();
+            }
+
+            if (event.key === "ArrowLeft") {
+                showPreviousImage();
+            }
+
+            if (event.key === "ArrowRight") {
+                showNextImage();
             }
         });
     </script>

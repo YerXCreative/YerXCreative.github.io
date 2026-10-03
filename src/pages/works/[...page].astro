@@ -19,25 +19,28 @@ export const getStaticPaths = (async () => {
 const { works } = Astro.props;
 
 const projectOrder = [
-    "rec fuck",
-    "linux",
-    "moving",
-    "play to die",
-    "moco",
+    "recfck",
+    "lynox",
+    "move in",
+    "play-to-die",
+    "Moko",
     "maverick",
 ];
 
+const displayTitles: Record<string, string> = {
+    recfck: "RECFCK",
+    lynox: "LYNOX",
+    "move in": "MOVE IN",
+    "play-to-die": "PLAY TO DIE",
+    Moko: "MOKO",
+    maverick: "MAVERICK",
+};
+
 const orderedWorks = [...works].sort((a, b) => {
-    const titleA = a.data.title.trim().toLowerCase();
-    const titleB = b.data.title.trim().toLowerCase();
+    const slugA = a.data.slug.trim();
+    const slugB = b.data.slug.trim();
 
-    const positionA = projectOrder.indexOf(titleA);
-    const positionB = projectOrder.indexOf(titleB);
-
-    return (
-        (positionA === -1 ? 999 : positionA) -
-        (positionB === -1 ? 999 : positionB)
-    );
+    return projectOrder.indexOf(slugA) - projectOrder.indexOf(slugB);
 });
 
 const imageModules = import.meta.glob(
@@ -161,7 +164,7 @@ function getProjectImages(slug: string): ImageMetadata[] {
                                     <h2
                                         class="font-bold uppercase text-[clamp(3.5rem,7vw,7rem)] leading-[0.86] tracking-[-0.02em]"
                                     >
-                                        {title.toUpperCase()}
+                                        {displayTitles[slug] ?? title.toUpperCase()}
                                     </h2>
 
                                 </div>
@@ -342,7 +345,7 @@ function getProjectImages(slug: string): ImageMetadata[] {
                 class="w-5 h-5"
                 aria-hidden="true"
             >
-                <path d="M6 6l12 12" />
+                <path d="M6 6l12 12-6 6" />
                 <path d="M18 6L6 18" />
             </svg>
 
